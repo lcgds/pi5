@@ -1,0 +1,87 @@
+@mixin textarea-configs {
+  @include textarea-tokens;
+  @include textarea-default;
+  @include textarea-density;
+  @include textarea-state;
+  @include textarea-dark-mode;
+}
+
+@mixin textarea-tokens {
+  --textarea-background: var(--color-secondary-01);
+  --textarea-color: var(--color-secondary-07);
+  --textarea-border: var(--color-secondary-06);
+  --textarea-font-weight: var(--font-weight-medium);
+  --textarea-text-size: var(--font-size-scale-up-01);
+  --textarea-border-radius: 6px;
+  --textarea-padding: var(--textarea-medium);
+  --textarea-small: var(--spacing-scale-base);
+  --textarea-medium: var(--spacing-scale-baseh);
+  --textarea-large: var(--spacing-scale-2x);
+}
+
+@mixin textarea-dark-mode {
+  &.inverted,
+  &.dark-mode {
+    @include dark-mode;
+  }
+}
+
+@mixin textarea-default {
+  color: var(--text-color);
+
+  label {
+    display: inline-block;
+    margin-bottom: var(--spacing-scale-half);
+  }
+
+  textarea {
+    background: var(--textarea-background);
+    border: 1px solid var(--textarea-border);
+    border-radius: var(--textarea-border-radius);
+    color: var(--textarea-color);
+    display: block;
+    font-size: var(--textarea-text-size);
+    font-weight: var(--textarea-font-weight);
+    padding: var(--textarea-padding);
+    width: 100%;
+
+    &::placeholder {
+      color: var(--textarea-color);
+    }
+  }
+}
+
+@mixin textarea-state {
+  @each $color in success, danger, warning, info {
+    &.#{$color},
+    &[data-#{$color}] {
+      textarea {
+        --textarea-border: var(--#{$color});
+        border-width: 2px;
+      }
+    }
+  }
+
+  textarea {
+    &:focus,
+    &:focus-visible,
+    &.focus-visible {
+      @include focus-soft;
+    }
+
+    &:hover {
+      @include hover("color");
+    }
+  }
+}
+
+@mixin textarea-density {
+  @each $size in "small", "medium", "large" {
+    &.#{$size},
+    &[data-#{$size}] {
+      textarea {
+        --textarea-padding: var(--textarea-#{$size});
+      }
+    }
+  }
+}

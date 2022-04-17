@@ -1,0 +1,398 @@
+.br-list {
+  --list-item-align: v(spacing-horizontal-left);
+}
+.br-list.horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+.br-list.horizontal > .header {
+  flex-grow: 1;
+  width: 100%;
+}
+.br-list.horizontal > .header + .br-divider {
+  border-top: 1px solid var(--color-secondary-04);
+  width: 100%;
+}
+.br-list.horizontal > .br-item,
+.br-list.horizontal > .group {
+  flex: 1;
+  height: auto;
+  min-height: 56px;
+  width: auto;
+}
+.br-list.horizontal > .br-item + .br-divider,
+.br-list.horizontal > .group + .br-divider {
+  border-right: 1px solid var(--color-secondary-04);
+  border-top: 0;
+  width: 1px;
+}
+.br-list.horizontal > .br-item.one-line > .content,
+.br-list.horizontal > .group.one-line > .content {
+  height: 56px;
+}
+.br-list.horizontal > .br-item.two-lines > .content,
+.br-list.horizontal > .group.two-lines > .content {
+  height: 72px;
+}
+.br-list.horizontal > .br-item.three-lines > .content,
+.br-list.horizontal > .group.three-lines > .content {
+  height: 6em;
+}
+.br-list.horizontal[data-toggle] > .br-item, .br-list.horizontal.toggle > .br-item {
+  display: block;
+}
+.br-list .br-item {
+  text-align: var(--list-item-align);
+  width: 100%;
+}
+.br-list .br-item .svg-inline--fa,
+.br-list .br-item .fa,
+.br-list .br-item .fab,
+.br-list .br-item .fad,
+.br-list .br-item .fal,
+.br-list .br-item .far,
+.br-list .br-item .fas {
+  text-align: center;
+}
+.br-list .br-item > .content {
+  align-items: var(--spacing-vertical-top);
+  display: flex;
+}
+.br-list .br-item > .content > .content {
+  flex: 1;
+}
+.br-list .br-item .content:hover button.br-button {
+  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+}
+.br-list .br-item[data-toggle] {
+  cursor: pointer;
+}
+.br-list .br-item[data-toggle] ~ .br-list .br-item {
+  padding: var(--spacing-scale-base) var(--spacing-scale-3x);
+}
+.br-list .br-checkbox,
+.br-list .br-radio {
+  --interactive-rgb: var(--rgb-primary-default);
+  --item-padding-x: 0;
+  --item-padding-y: 0;
+}
+.br-list .br-checkbox input:hover:not(:disabled) + label::before,
+.br-list .br-radio input:hover:not(:disabled) + label::before {
+  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+}
+.br-list .br-list {
+  overflow: hidden;
+  transition: all 400ms ease-in-out;
+}
+.br-list .header {
+  align-items: var(--spacing-vertical-center);
+  display: flex;
+  font-size: var(--font-size-scale-base);
+  font-weight: var(--font-weight-bold);
+  justify-content: space-between;
+  padding: var(--spacing-scale-base) var(--spacing-scale-2x);
+}
+.br-list[data-one-line] .br-item, .br-list[data-one-line] .br-list .br-item {
+  height: 2em;
+}
+.br-list[data-one-line] .br-item .content, .br-list[data-one-line] .br-list .br-item .content {
+  height: auto;
+  overflow: hidden;
+  padding: 0 var(--spacing-scale-2x);
+  text-overflow: unset;
+  white-space: initial;
+}
+.br-list[data-two-lines] .br-item, .br-list[data-two-lines] .br-list .br-item {
+  height: 4em;
+}
+.br-list[data-two-lines] .br-item .content, .br-list[data-two-lines] .br-list .br-item .content {
+  height: auto;
+  overflow: hidden;
+  padding: 0 var(--spacing-scale-2x);
+  text-overflow: unset;
+  white-space: initial;
+}
+.br-list[data-three-lines] .br-item, .br-list[data-three-lines] .br-list .br-item {
+  height: 6em;
+}
+.br-list[data-three-lines] .br-item .content, .br-list[data-three-lines] .br-list .br-item .content {
+  height: auto;
+  overflow: hidden;
+  padding: 0 var(--spacing-scale-2x);
+  text-overflow: unset;
+  white-space: initial;
+}
+.br-list .br-checkbox,
+.br-list .br-radio {
+  --interactive-rgb: var(--rgb-primary-default);
+  --item-padding-x: 0;
+  --item-padding-y: 0;
+}
+.br-list .br-checkbox input:hover:not(:disabled) + label::before,
+.br-list .br-radio input:hover:not(:disabled) + label::before {
+  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+}
+.br-list .br-checkbox {
+  --checkbox-padding: var(--spacing-scale-base);
+  --checkbox-size: 24px;
+  display: block;
+  line-height: 0px;
+}
+.br-list .br-checkbox label {
+  color: var(--color);
+  cursor: pointer;
+  display: inline-block;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.6em;
+  min-height: var(--checkbox-size);
+  padding-left: calc(var(--checkbox-size) + var(--checkbox-padding));
+  position: relative;
+}
+.br-list .br-checkbox label:empty {
+  padding-left: var(--checkbox-size);
+}
+.br-list .br-checkbox.hidden-label label {
+  padding-left: calc(var(--checkbox-size) + var(--surface-width-md) * 2);
+  text-indent: -10000px;
+  white-space: nowrap;
+  width: 0;
+}
+.br-list .br-checkbox.d-inline label {
+  padding-right: var(--spacing-scale-4x);
+}
+.br-list .br-checkbox input {
+  opacity: 0;
+  position: absolute;
+}
+.br-list .br-checkbox input:focus-visible:checked + label::before,
+.br-list .br-checkbox input:focus-visible + label::before, .br-list .br-checkbox input.focus-visible:checked + label::before,
+.br-list .br-checkbox input.focus-visible + label::before {
+  border-color: var(--focus) !important;
+  box-shadow: 0 0 0 var(--surface-width-md) var(--focus);
+  outline: none;
+}
+.br-list .br-checkbox input:hover:not(:disabled) + label::before {
+  --interactive-rgb: var(--interactive-light-rgb);
+  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+}
+.br-list .br-checkbox input:disabled + label {
+  cursor: not-allowed;
+  opacity: var(--disabled);
+}
+.br-list .br-checkbox input:disabled + label * {
+  pointer-events: none;
+}
+.br-list .br-checkbox input:disabled + label:hover::before {
+  background-image: none;
+}
+.br-list .br-checkbox input + label {
+  align-items: flex-start;
+  cursor: pointer;
+  display: inline-block;
+  font-size: var(--font-size-scale-base);
+  font-weight: var(--font-weight-medium);
+  min-height: var(--spacing-scale-3x);
+  position: relative;
+}
+.br-list .br-checkbox input + label::before {
+  background: var(--background-light);
+  border-color: var(--border-color);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  content: "";
+  height: var(--checkbox-size);
+  left: 0;
+  position: absolute;
+  width: var(--checkbox-size);
+}
+.br-list .br-checkbox input + label:empty {
+  padding-left: var(--spacing-scale-3x);
+}
+.br-list .br-checkbox input[indeterminate] {
+  color: var(--color-d);
+}
+.br-list .br-checkbox input[indeterminate] + label::before {
+  --interactive-rgb: var(--color-rgb);
+  background: var(--selected);
+  border-color: var(--selected);
+}
+.br-list .br-checkbox input[indeterminate]:hover:not(:disabled) + label::before {
+  --interactive-rgb: var(--color-dark-rgb);
+}
+.br-list .br-checkbox input:checked + label::after {
+  border: solid var(--selected);
+  border-width: 0 3px 3px 0;
+  content: "";
+  height: var(--icon-size-sm);
+  left: 8px;
+  position: absolute;
+  top: 4px;
+  transform: rotate(45deg);
+  width: 8px;
+}
+.br-list .br-checkbox input:checked[indeterminate] + label::after {
+  border-color: var(--background-light);
+  border-width: 0 0 3px;
+  top: 2px;
+  transform: none;
+}
+.br-list .br-checkbox input:invalid + label::before {
+  --border-color: var(--danger);
+  border-width: 2px;
+}
+.br-list .br-checkbox input:disabled + label::before {
+  box-shadow: none;
+}
+.br-list .br-checkbox.is-small input[type=checkbox] + label, .br-list .br-checkbox.small input[type=checkbox] + label, .br-list .br-checkbox[small] input[type=checkbox] + label {
+  line-height: var(--spacing-scale-2xh);
+  min-height: var(--spacing-scale-2xh);
+}
+.br-list .br-checkbox.is-small input[type=checkbox] + label::before, .br-list .br-checkbox.small input[type=checkbox] + label::before, .br-list .br-checkbox[small] input[type=checkbox] + label::before {
+  height: var(--spacing-scale-2xh);
+  width: var(--spacing-scale-2xh);
+}
+.br-list .br-checkbox.is-small input[type=checkbox]:checked + label::after, .br-list .br-checkbox.small input[type=checkbox]:checked + label::after, .br-list .br-checkbox[small] input[type=checkbox]:checked + label::after {
+  border-width: 0 2px 2px 0;
+  height: var(--icon-size-sm);
+  left: 7px;
+  top: 6px;
+  width: 6px;
+}
+.br-list .br-checkbox.is-small input[type=checkbox]:checked[indeterminate] + label::after, .br-list .br-checkbox.small input[type=checkbox]:checked[indeterminate] + label::after, .br-list .br-checkbox[small] input[type=checkbox]:checked[indeterminate] + label::after {
+  border-color: var(--background-light);
+  border-width: 0 0 3px;
+  top: 2px;
+  transform: none;
+}
+.br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before, .br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before, .br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before {
+  --border-color: var(--danger);
+  border-width: 2px;
+}
+.br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before, .br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before, .br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before {
+  --border-color: var(--focus-color);
+}
+.br-list .br-checkbox.is-invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before, .br-list .br-checkbox.invalid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before, .br-list .br-checkbox[invalid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before {
+  --border-color: var(--danger);
+}
+.br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before, .br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before, .br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox] + label::before {
+  --border-color: var(--success);
+  border-width: 2px;
+}
+.br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before, .br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before, .br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible:checked + label::before,
+.br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:focus-visible + label::before, .br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible:checked + label::before,
+.br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox].focus-visible + label::before {
+  --border-color: var(--focus-color);
+}
+.br-list .br-checkbox.is-valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before, .br-list .br-checkbox.valid:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before, .br-list .br-checkbox[valid]:not(.is-inverted):not(.inverted):not([inverted]) input[type=checkbox]:checked + label::before {
+  --border-color: var(--success);
+}
+.br-list .br-checkbox.inverted,
+.br-list .br-checkbox.inverted label, .br-list .br-checkbox.dark-mode,
+.br-list .br-checkbox.dark-mode label {
+  color: var(--color-dark);
+}
+.br-list .br-item {
+  text-align: var(--list-item-align);
+  width: 100%;
+}
+.br-list .br-item .svg-inline--fa,
+.br-list .br-item .fa,
+.br-list .br-item .fab,
+.br-list .br-item .fad,
+.br-list .br-item .fal,
+.br-list .br-item .far,
+.br-list .br-item .fas {
+  text-align: center;
+}
+.br-list .br-item > .content {
+  align-items: var(--spacing-vertical-top);
+  display: flex;
+}
+.br-list .br-item > .content > .content {
+  flex: 1;
+}
+.br-list .br-item .content:hover button.br-button {
+  background-image: linear-gradient(rgba(var(--interactive-rgb), var(--hover)), rgba(var(--interactive-rgb), var(--hover)));
+}
+.br-list .br-item[data-toggle] {
+  cursor: pointer;
+}
+.br-list .br-item[data-toggle] ~ .br-list .br-item {
+  padding: var(--spacing-scale-base) var(--spacing-scale-3x);
+}
+.br-list .br-item[data-toggle=selection]:not(:disabled):hover {
+  background-image: linear-gradient(rgba(var(--color-rgb), var(--hover)), rgba(var(--color-rgb), var(--hover)));
+}
+.br-list .br-item .br-checkbox,
+.br-list .br-item .br-radio {
+  margin-bottom: calc(var(--item-padding-y) * -1);
+  margin-left: calc(var(--item-padding-x) * -1);
+  margin-right: calc(var(--item-padding-x) * -1);
+  margin-top: calc(var(--item-padding-y) * -1);
+}
+.br-list .br-item .br-checkbox input + label,
+.br-list .br-item .br-radio input + label {
+  padding-bottom: var(--item-padding-y);
+  padding-top: var(--item-padding-y);
+  top: 1px;
+  width: 100%;
+}
+.br-list .br-item .br-checkbox input + label::before,
+.br-list .br-item .br-radio input + label::before {
+  left: var(--item-padding-x);
+  top: calc(var(--item-padding-y) - 1px);
+}
+.br-list .br-item .br-checkbox input + label:empty,
+.br-list .br-item .br-radio input + label:empty {
+  left: 0;
+  top: 1px;
+}
+.br-list .br-item .br-checkbox input:hover:not(:disabled) + label::before,
+.br-list .br-item .br-radio input:hover:not(:disabled) + label::before {
+  background-image: none;
+}
+.br-list .br-item .br-checkbox input + label {
+  min-height: calc(var(--checkbox-size) + var(--item-padding-y) * 2);
+}
+.br-list .br-item .br-checkbox input + label:not(:empty) {
+  padding-left: calc(var(--checkbox-padding) + var(--checkbox-size) + var(--item-padding-x));
+}
+.br-list .br-item .br-checkbox input + label::after {
+  left: calc(var(--item-padding-x) + 8px);
+  top: calc(var(--item-padding-y) + 4px);
+}
+.br-list .br-item .br-checkbox input + label:empty {
+  min-height: var(--checkbox-size);
+}
+.br-list .br-item .br-checkbox input + label:empty::after {
+  left: 8px;
+  top: 4px;
+}
+.br-list .br-item .br-radio input + label {
+  min-height: calc(var(--radio-size) + var(--item-padding-y) * 2);
+  padding-left: calc(var(--radio-padding) + var(--radio-size) + var(--item-padding-x));
+}
+.br-list .br-item .br-radio input + label::after {
+  left: calc(var(--item-padding-x) + var(--radio-bullet-position));
+  top: calc(var(--item-padding-y) + var(--radio-bullet-position) - 1px);
+}
+.br-list .br-item .br-radio input + label:empty {
+  min-height: var(--radio-size);
+}
+.br-list .br-item .br-radio input + label:empty::after {
+  left: var(--radio-bullet-position);
+  top: var(--radio-bullet-position);
+}
+
+/*# sourceMappingURL=list.css.map*/

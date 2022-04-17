@@ -1,0 +1,7 @@
+@import "mixins";
+
+.#{$prefix}loading {
+  @include loading-configs;
+}
+
+@include loading-indetermined;

@@ -1,0 +1,21 @@
+@import "mixins";
+@import "../item/mixins";
+@import "../checkbox/mixins";
+
+.#{$prefix}list {
+  @include list-configs;
+
+  // Mixins abaixo podem ser usados no shadow dom
+  .#{$prefix}checkbox,
+  .#{$prefix}radio {
+    @include list-checkbox-radio-config;
+  }
+
+  .#{$prefix}checkbox {
+    @include checkbox-configs;
+  }
+  .#{$prefix}item {
+    @include list-item-config;
+    @include item-checkbox;
+  }
+}

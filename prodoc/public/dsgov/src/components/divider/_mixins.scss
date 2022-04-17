@@ -1,0 +1,118 @@
+@mixin divider-configs {
+  @include divider-tokens;
+  @include divider-default;
+  @include divider-content;
+  @include divider-vertical;
+  @include divider-inverted;
+  @include divider-dashed;
+  @include divider-thickness;
+}
+
+@mixin divider-tokens {
+  --divider-style: solid;
+  --divider-color: var(--divider-light);
+  --divider-padding: var(--spacing-scale-base);
+  --divider-size: 1px;
+  --divider-light: var(--color-secondary-04);
+  --divider-dark: var(--color-secondary-01);
+}
+
+@mixin divider-default {
+  border-color: var(--divider-color);
+  border-style: var(--divider-style);
+  border-width: 0;
+  border-top-width: var(--divider-size);
+  display: block;
+}
+
+@mixin divider-content {
+  &.content {
+    align-items: center;
+    border: 0;
+    display: flex;
+    justify-content: center;
+
+    &::after,
+    &::before {
+      border-color: var(--divider-color);
+      border-style: var(--divider-style);
+      border-width: 0;
+      border-top-width: var(--divider-size);
+      content: "";
+      flex: 1;
+    }
+
+    &::after {
+      margin-left: var(--divider-padding);
+    }
+
+    &::before {
+      margin-right: var(--divider-padding);
+    }
+  }
+}
+
+@mixin divider-vertical {
+  &.vertical {
+    align-self: stretch;
+    border-right-width: var(--divider-size);
+    border-top-width: 0;
+
+    &.content {
+      flex-direction: column;
+
+      &::after,
+      &::before {
+        border-right-width: var(--divider-size);
+        border-top-width: 0;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@mixin divider-inverted {
+  &.inverted {
+    --divider-color: var(--color-secondary-01);
+  }
+}
+
+@mixin divider-dashed {
+  &.dashed {
+    --divider-style: dashed;
+  }
+}
+
+@mixin divider-thickness {
+  &.sm {
+    --divider-size: 2px;
+  }
+
+  &.md {
+    --divider-size: 3px;
+  }
+
+  &.lg {
+    --divider-size: 4px;
+  }
+}
+
+@mixin divider-dashed {
+  &.dashed {
+    --divider-style: dashed;
+  }
+}
+
+@mixin divider-thickness {
+  &.sm {
+    --divider-size: 2px;
+  }
+
+  &.md {
+    --divider-size: 3px;
+  }
+
+  &.lg {
+    --divider-size: 4px;
+  }
+}

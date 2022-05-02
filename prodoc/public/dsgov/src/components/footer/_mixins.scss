@@ -1,0 +1,138 @@
+@import "../item/mixins";
+
+@mixin footer-configs {
+  @include footer-tokens;
+  @include footer-default;
+  @include footer-dark;
+  @include footer-light;
+  @include footer-logo;
+  @include footer-list;
+  @include footer-social;
+  @include footer-info;
+}
+@mixin footer-tokens {
+  --footer-logo-height: 48px;
+  --footer-logo-width: 180px;
+  --footer-logo-padding: var(--spacing-scale-6x) 0 var(--spacing-scale-4x);
+  --footer-assigns-height: 46px;
+  --footer-assigns-width: 180px;
+}
+@mixin footer-default {
+  background: var(--background);
+  border-top: 1px solid var(--border-color);
+  color: var(--color);
+  display: block;
+}
+@mixin footer-dark {
+  --background: var(--background-dark);
+  @include dark-mode;
+  .#{$prefix}item {
+    @include dark-mode;
+  }
+}
+@mixin footer-light {
+  &[inverted],
+  &.inverted {
+    --background: var(--background-light);
+    @include light-mode;
+    .#{$prefix}item {
+      @include light-mode;
+    }
+  }
+}
+@mixin footer-logo {
+  .logo {
+    padding: var(--footer-logo-padding);
+
+    img {
+      max-height: var(--footer-logo-height);
+      max-width: var(--footer-logo-widht);
+    }
+  }
+}
+@mixin footer-list {
+  .#{$prefix}list {
+    @include footer-list-config;
+  }
+}
+
+@mixin footer-list-config {
+  &.horizontal {
+    display: flex;
+    flex-wrap: wrap;
+
+    .header {
+      width: 100%;
+    }
+    //  Para ser compatível com outros navegadores no
+    //  uso máximo de 2 linhas, foram adicionados os
+    //  comandos line-height e max-height.
+
+    .col,
+    [class*="col-"] {
+      flex-grow: 0;
+      padding: 0;
+      @include media-breakpoint-down(sm) {
+        flex-basis: 100% !important;
+        max-width: 100%;
+      }
+    }
+  }
+}
+@mixin footer-item-hide-suport {
+  @include media-breakpoint-up(md) {
+    .support:last-child {
+      display: none;
+      pointer-events: none;
+    }
+    .content {
+      flex: 1;
+    }
+  }
+}
+
+@mixin footer-list-hide-suport {
+  // evita collapse no breakpoint
+  @include media-breakpoint-up(md) {
+    // .#{$prefix}list {
+    background-image: none;
+    max-height: 200em !important;
+    // }
+  }
+}
+
+//  Para ser compatível com outros navegadores no
+//  uso máximo de 2 linhas, foram adicionados os
+//  comandos line-height e max-height.
+@mixin footer-item-2linemax {
+  height: 4em;
+  .content {
+    display: box;
+    height: auto;
+    -webkit-line-clamp: 2;
+    line-height: 16px;
+    max-height: 32px;
+    overflow: hidden;
+    padding: 0 var(--spacing-scale-2x);
+    text-overflow: ellipsis;
+  }
+}
+@mixin footer-social {
+  .social-network {
+    border: 0;
+  }
+
+  .assigns {
+    img {
+      max-height: var(--footer-assigns-height);
+      max-width: var(--footer-assigns-width);
+    }
+  }
+}
+@mixin footer-info {
+  @include media-breakpoint-up(md) {
+    .info {
+      text-align: center;
+    }
+  }
+}

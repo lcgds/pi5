@@ -1,0 +1,70 @@
+.br-card {
+  --card-background: var(--color-secondary-01);
+  --card-back-background: var(--color-secondary-07);
+  --card-margin: var(--spacing-scale-2x);
+  --card-padding: var(--spacing-scale-2x);
+  --card-shadow: var(--surface-shadow-sm);
+  --card-height-fixed: 250px;
+  background: var(--card-background);
+  box-shadow: var(--card-shadow);
+  color: var(--color);
+  margin-bottom: var(--card-margin);
+}
+.br-card .card-content,
+.br-card .front .content,
+.br-card .back .content {
+  padding: var(--card-padding);
+}
+.br-card .card-content *:last-child,
+.br-card .front .content *:last-child,
+.br-card .back .content *:last-child {
+  margin-bottom: 0;
+}
+.br-card .front .header,
+.br-card .back .header,
+.br-card .card-header {
+  padding: var(--card-padding) var(--card-padding) 0;
+}
+.br-card .front .footer,
+.br-card .back .footer,
+.br-card .card-footer {
+  padding: 0 var(--card-padding) var(--card-padding);
+}
+.br-card.h-fixed .card-content {
+  max-height: var(--card-height-fixed);
+  overflow-y: auto;
+}
+.br-card.h-fixed .card-content::-webkit-scrollbar {
+  height: var(--spacing-scale-base);
+  width: var(--spacing-scale-base);
+}
+.br-card.h-fixed .card-content::-webkit-scrollbar-track {
+  background: var(--gray-10);
+}
+.br-card.h-fixed .card-content::-webkit-scrollbar-thumb {
+  background: var(--gray-30);
+}
+.br-card.h-fixed .card-footer {
+  padding: var(--card-padding) var(--card-padding);
+}
+.br-card .back {
+  background: var(--card-back-background);
+  color: var(--color-secondary-01);
+}
+.br-card.hover:hover {
+  background-image: linear-gradient(rgba(var(--color-rgb), var(--hover)), rgba(var(--color-rgb), var(--hover)));
+}
+.br-card.inverted, .br-card.dark-mode {
+  --color: var(--color-dark);
+  --color-rgb: var(--color-dark-rgb);
+  --text-color: var(--color);
+  --interactive: var(--interactive-dark);
+  --interactive-rgb: var(--interactive-dark-rgb);
+  --visited: var(--visited-dark);
+  --hover: var(--hover-dark);
+  --pressed: var(--pressed-dark);
+  --focus-color: var(--focus-color-dark);
+  --focus: var(--focus-color);
+}
+
+/*# sourceMappingURL=card.css.map*/

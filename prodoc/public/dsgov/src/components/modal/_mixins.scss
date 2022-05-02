@@ -1,0 +1,112 @@
+@mixin modal-configs {
+  @include modal-token;
+  @include modal-default;
+  @include modal-responsive;
+}
+@mixin modal-token {
+  --modal-z-index: var(--z-index-layer-4);
+  --modal-shadow: var(--surface-shadow-sm);
+  --modal-margin-bottom: var(--spacing-scale-3xh);
+  --modal-padding: var(--spacing-scale-2x);
+}
+
+@mixin modal-default {
+  box-shadow: var(--modal-shadow);
+  z-index: var(--modal-z-index);
+  &-header {
+    margin-bottom: v(spacing-scale-3xh);
+    position: relative;
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: calc(#{v(spacing-scale-half)} * -1);
+    }
+  }
+
+  &-title {
+    font-size: var(--font-size-scale-up-01);
+    font-weight: var(--font-weight-bold);
+    margin: 0 40px 0 0;
+    max-height: calc(var(--font-size-scale-up-01) * 3);
+    overflow: hidden;
+  }
+
+  &-body {
+    margin: 0 0 v(spacing-scale-5x);
+  }
+
+  &-footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  //  Div sombreada e com scroll se necessário para modal de termo de aceite
+  .#{$prefix}card {
+    --card-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .terms {
+    border: 0;
+    box-shadow: var(--surface-shadow-sm-inset),
+      var(--surface-shadow-sm-inset-up);
+    font-size: v(font-size-scale-base);
+    height: 216px;
+    margin-bottom: var(--spacing-scale-2x);
+    margin-left: calc(#{v(spacing-scale-2x)} * -1);
+    margin-right: calc(#{v(spacing-scale-2x)} * -1);
+    overflow: auto;
+    padding: var(--spacing-scale-2x);
+    resize: none;
+    width: auto;
+
+    @include scrollbar;
+
+    &:active {
+      outline: none;
+    }
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: v(color-secondary-07);
+      }
+    }
+  }
+}
+
+@mixin modal-responsive {
+  @include media-breakpoint-down(sm) {
+    .terms {
+      margin-left: unset !important;
+      margin-right: unset !important;
+    }
+
+    &-header {
+      .close {
+        top: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    width: auto;
+
+    &.is-xsmall {
+      max-width: 220px;
+    }
+
+    &.is-small {
+      max-width: 300px;
+    }
+
+    &.is-medium {
+      max-width: 500px;
+    }
+
+    &.is-large,
+    &.is-scroll {
+      max-width: 640px;
+    }
+  }
+}

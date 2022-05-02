@@ -1,0 +1,159 @@
+@mixin upload-configs {
+  @include upload-tokens;
+  @include upload-default;
+  @include upload-state;
+}
+
+@mixin upload-tokens {
+  --onboarding-dragging-color: var(--color-danger);
+  --upload-z-index: var(--z-index-layer-0);
+}
+
+@mixin upload-default {
+  z-index: var(--upload-z-index);
+
+  @include media-breakpoint-down(xs) {
+    .br-button.upload-button {
+      height: auto;
+      padding: v(spacing-scale-base) v(spacing-scale-2x);
+      width: 100% !important;
+    }
+
+    .upload-button {
+      span {
+        font-size: v(font-size-scale-down-01);
+        white-space: break-spaces;
+      }
+    }
+
+    .item {
+      flex-wrap: nowrap;
+    }
+
+    .upload-list .support {
+      flex-shrink: 0;
+      margin-right: var(--spacing-scale-base);
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &.dragging {
+    .upload-button {
+      background-color: v(color-support-01);
+
+      span,
+      svg {
+        color: var(--interactive);
+        pointer-events: none;
+      }
+    }
+  }
+
+  .br-button.upload-button {
+    max-width: 550px;
+    width: 100%;
+
+    &:active * {
+      color: v(color-primary-pastel-01);
+    }
+  }
+
+  .upload-button {
+    border: var(--surface-width-sm) dashed;
+    border-color: var(--interactive);
+    border-radius: var(--surface-rounder-sm);
+    display: block;
+    padding-left: v(spacing-scale-2x);
+    padding-right: v(spacing-scale-2x);
+    text-align: left;
+    width: 100%;
+
+    svg {
+      color: var(--interactive);
+      font-size: v(icon-size-lg);
+      padding-left: var(--spacing-scale-2x);
+    }
+
+    span {
+      color: var(--interactive);
+      font-size: v(font-size-scale-base);
+      font-style: italic;
+      font-weight: v(font-weight-regular);
+      padding-left: v(spacing-scale-half);
+    }
+  }
+
+  .upload-list {
+    max-width: 550px;
+    position: relative;
+
+    .content {
+      align-self: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 70%;
+    }
+
+    .support {
+      align-items: center;
+      display: flex;
+    }
+
+    .cargas {
+      box-sizing: border-box;
+      color: v(color-secondary-08);
+      display: inline-block;
+      left: 54%;
+      position: relative;
+      text-align: right;
+      top: 4px;
+    }
+  }
+
+  .br-tooltip {
+    max-width: 93%;
+  }
+
+  .#{$prefix}item {
+    --item-padding: var(--spacing-scale-half) var(--spacing-scale-base)
+      var(--spacing-scale-half) var(--spacing-scale-2x);
+    align-items: center;
+    display: flex;
+
+    &:first-child {
+      margin-top: calc(var(--spacing-scale-half) * 2);
+    }
+  }
+}
+
+@mixin upload-state {
+  /*** Estados ***/
+  @each $state, $color in (success, v(success)), (danger, v(danger)),
+    (warning, v(warning)), (info, v(info))
+  {
+    &.#{$state},
+    &[data-#{$state}] {
+      .upload-button {
+        border-color: $color;
+      }
+      .feedback.color-#{$state} {
+        align-items: center;
+        background: $color;
+        color: var(--color-secondary-01) !important;
+        display: inline-flex;
+        height: 35px;
+        margin-bottom: var(--spacing-scale-base);
+        padding: 5px;
+      }
+      @if ($state == warning) {
+        .feedback.color-warning {
+          color: var(--color-secondary-08) !important;
+        }
+      }
+    }
+  }
+}

@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Rotas index , criar e salvar no banco.
 Route::get('/documento', [DocumentosController::class, 'index'])->name('documento.index');
 Route::get('/documento/create', [DocumentosController::class,'create'])->name('documento.create');
 Route::post('/documento/store', [DocumentosController::class,'store'])->name('documento.store');

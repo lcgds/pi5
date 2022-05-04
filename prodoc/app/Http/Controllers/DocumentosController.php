@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Documento;
 
 class DocumentosController extends Controller
 {
@@ -16,7 +17,7 @@ class DocumentosController extends Controller
         }
     //Armazenar dados no banco
         public function store(Request $request){
-          dd ($request->all());
+          documento::create($request->all());
             }
 
 }

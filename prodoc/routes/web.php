@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocumentosController;
+use App\Http\Controllers\FuncionarioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,4 +23,7 @@ Route::get('/documento', [DocumentosController::class, 'index'])->name('document
 Route::get('/documento/create', [DocumentosController::class,'create'])->name('documento.create');
 Route::post('/documento/store', [DocumentosController::class,'store'])->name('documento.store');
 
-
+//Rotas index , criar e salvar no banco.
+Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('funcionario.index');
+Route::get('/funcionario/create', [FuncionarioController::class,'create'])->name('funcionario.create');
+Route::post('/funcionario/store', [FuncionarioController::class,'store'])->name('funcionario.store');

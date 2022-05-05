@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tipodedocumento', function (Blueprint $table) {
+        Schema::create('tipo_documento', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
             $table->string('descricao');
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipodedocumento');
+        Schema::dropIfExists('tipo_documento');
     }
 };

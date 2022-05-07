@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\tipoDocumento;
+use App\Models\tipodocumento;
 
-class tipoDocumentoController extends Controller
+class tipodocumentoController extends Controller
 {
-     //Pagina Inicial
-     public function index(){
-        return view('tipoDocumento.index');
+  //Pagina Inicial
+  public function index(){
+    return view('tipodocumento.index');
+}
+//Criar Documento
+public function create(){
+    return view('tipodocumento.create');
     }
-    //Criar Documento
-    public function create(){
-        return view('tipoDocumento.create');
+//Armazenar dados no banco
+    public function store(Request $request){
+      tipodocumento::create($request->all());
+      //Redireciona a rota pra pagina inicial
+      return redirect(route('tipodocumento.index'));
         }
-    //Armazenar dados no banco
-        public function store(Request $request){
-          tipoDocumento::create($request->all());
-            }
+
 }

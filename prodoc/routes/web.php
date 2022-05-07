@@ -5,7 +5,7 @@ use App\Http\Controllers\DocumentosController;
 use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepartamentoController;
-use App\Http\Controllers\tipoDocumentoController;
+use App\Http\Controllers\tipodocumentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +43,6 @@ Route::get('/departamento/create', [DepartamentoController::class,'create'])->na
 Route::post('/departamento/store', [DepartamentoController::class,'store'])->name('departamento.store');
 
 //Rotas index , criar e salvar no banco.
-Route::get('/tipoDocumento', [tipoDocumentoController::class, 'index'])->name('tipoDocumento.index');
-Route::get('/tipoDocumento/create', [tipoDocumentoController::class,'create'])->name('tipoDocumento.create');
-Route::post('/tipoDocumento/store', [tipoDocumentoController::class,'store'])->name('tipoDocumento.store');
+Route::get('/tipodocumento', [tipodocumentoController::class, 'index'])->name('tipodocumento.index');
+Route::get('/tipodocumento/create', [tipodocumentoController::class,'create'])->name('tipodocumento.create');
+Route::post('/tipodocumento/store', [tipodocumentoController::class,'store'])->name('tipodocumento.store');

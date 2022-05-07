@@ -18,5 +18,7 @@ class FuncionarioController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           funcionario::create($request->all());
+          //Redireciona a rota pra pagina inicial
+          return redirect(route('funcionario.index'));
             }
 }

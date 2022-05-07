@@ -18,6 +18,8 @@ class DepartamentoController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           departamento::create($request->all());
+          //Redireciona a rota pra pagina inicial
+          return redirect(route('departamento.index'));
             }
 
 }

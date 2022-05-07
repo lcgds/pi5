@@ -18,5 +18,7 @@ class ClienteController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           cliente::create($request->all());
+          //Redireciona a rota pra pagina inicial
+          return redirect(route('cliente.index'));
             }
 }

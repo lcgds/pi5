@@ -18,6 +18,8 @@ class DocumentosController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           documento::create($request->all());
+          //Redireciona a rota pra pagina inicial
+          return redirect(route('documento.index'));
             }
 
 }

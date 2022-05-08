@@ -14,7 +14,7 @@ use App\Http\Controllers\DocumentosController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 //Rotas index , criar e salvar no banco.

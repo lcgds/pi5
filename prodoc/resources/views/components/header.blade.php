@@ -1,6 +1,6 @@
 <script src="<node_modules>/@govbr/dsgov/dist/dsgov.min.js"></script>
 
-<header class="br-header compact pb-3 mb-3">
+<header class="br-header compact pb-3">
     <div class="container-lg">
 
         <div class="header-top">
@@ -25,7 +25,7 @@
         <div class="header-bottom">
             <div class="header-menu">
                 <div class="header-info">
-                    <div class="header-title">Pro Doc</div>
+                    <div class="header-title text-bold">Pro Doc</div>
                     <div class="header-subtitle">Professional Documentation</div>
                 </div>
             </div>

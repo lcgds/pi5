@@ -3,23 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Documento;
+use App\Models\Departamento;
 
-class DocumentosController extends Controller
+class DepartamentoController extends Controller
 {
     //Pagina Inicial
     public function index(){
-        return view('documento.index');
+        return view('departamento.index');
     }
-    //Criar Documento
+    //Criar Departamento
     public function create(){
-        return view('documento.create');
+        return view('departamento.create');
         }
     //Armazenar dados no banco
         public function store(Request $request){
-          documento::create($request->all());
+          departamento::create($request->all());
           //Redireciona a rota pra pagina inicial
-          return redirect(route('documento.index'));
+          return redirect(route('departamento.index'));
             }
 
 }

@@ -11,5 +11,35 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <body>
     <h1>Lista de Funcionarios</h1>
     <a href="{{Route('funcionario.create') }}" class="btn btn-lg btn-primary">Criar Funcionario</a>
+    <div class="row">
+    <table class="tabela table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+            </tr>
+    <thead>
+        <tbody>
+            <!--Pega as informações do banco-->
+            @foreach($funcionarios as $func)
+            <tr>
+                    <td>{{$func->id}}</td>
+                    <td>{{$func->nome}}</td>
+                    <td>{{$func->email}}</td>
+                    <td>{{$func->telefone}}</td>
+                    <td> 
+                        <a hred="#" class="btn btn-sm btn-info">Visualizar</a>
+                        <a hred="#" class="btn btn-sm btn-warning">Editar</a>
+                        <a hred="#" class="btn btn-sm btn-danger">Apagar</a>
+                        </td>
+            </tr>
+            @endforeach
+                    </tbody>
+
+</table>
+
+</div>
 </body>
 </html>

@@ -9,7 +9,7 @@ class DepartamentoController extends Controller
 {
     //Pagina Inicial
     public function index(){
-        return view('departamento.index');
+        return view('departamento.index')->with('departamentos', Departamento::all());
     }
     //Criar Departamento
     public function create(){

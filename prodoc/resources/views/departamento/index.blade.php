@@ -11,5 +11,34 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 <body>
     <h1>Lista de Departamentos</h1>
     <a href="{{Route('departamento.create') }}" class="btn btn-lg btn-primary">Criar Departamento</a>
+
+    <div class="row">
+    <table class="tabela table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Sigla departamento</th>
+            </tr>
+    <thead>
+        <tbody>
+            <!--Pega as informações do banco-->
+            @foreach($departamentos as $dep)
+            <tr>
+                    <td>{{ $dep->id }}</td>
+                    <td>{{$dep->nome}}a</td>
+                    <td>{{$dep->sigla_departamento}} </td>
+                    <td> 
+                        <a hred="#" class="btn btn-sm btn-info">Visualizar</a>
+                        <a hred="#" class="btn btn-sm btn-warning">Editar</a>
+                        <a hred="#" class="btn btn-sm btn-danger">Apagar</a>
+                        </td>
+            </tr>
+            @endforeach
+                    </tbody>
+
+</table>
+
+</div>
 </body>
 </html>

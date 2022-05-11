@@ -9,7 +9,7 @@ class tipodocumentoController extends Controller
 {
   //Pagina Inicial
   public function index(){
-    return view('tipodocumento.index');
+    return view('tipodocumento.index')->with('tipodocumentos', tipodocumento::all());
 }
 //Criar Documento
 public function create(){

@@ -9,7 +9,7 @@ class DocumentosController extends Controller
 {
     //Pagina Inicial
     public function index(){
-        return view('documento.index');
+        return view('documento.index')->with('documentos', Documento::all());
     }
     //Criar Documento
     public function create(){

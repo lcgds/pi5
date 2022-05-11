@@ -9,7 +9,7 @@ class FuncionarioController extends Controller
 {
       //Pagina Inicial
       public function index(){
-        return view('funcionario.index');
+        return view('funcionario.index')->with('funcionarios', Funcionario::all());
     }
     //Criar Documento
     public function create(){

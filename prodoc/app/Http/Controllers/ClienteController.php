@@ -9,7 +9,7 @@ class ClienteController extends Controller
 {
      //Pagina Inicial
      public function index(){
-        return view('cliente.index');
+        return view('cliente.index')->with('clientes', Cliente::all());
     }
     //Criar Documento
     public function create(){

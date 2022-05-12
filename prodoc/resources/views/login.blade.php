@@ -1,4 +1,8 @@
-<x-head/>
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    
+<x-head />
 
 <body>
     <div class="template-base">
@@ -28,15 +32,15 @@
                             <div class="input-group">
                                 <div class="input-icon"><i class="fas fa-lock" aria-hidden="true"></i>
                                 </div>
-                                <input id="input-password" type="password" placeholder="Digite sua senha de segurança" />
+                                <input id="input-password" type="password"
+                                    placeholder="Digite sua senha de segurança" />
                             </div>
                         </div>
                     </div>
 
-
-                    <button class="br-button primary block mb-4" type="button">Entrar
+                   <button class="br-button primary block mb-4" type="button">Entrar
                     </button>
-                        
+
                 </div>
             </div>
 

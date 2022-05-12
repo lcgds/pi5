@@ -1,30 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <title>Lista de Dapartamentos</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>
-<body class = "container mt-5">
-    <h1>Cria Departamentos</h1>
-    <form method="POST" action = "{{ route('departamento.store') }}">
-        @csrf
-        <div class="row">
-            <span class="form-label">Id Departamento</span>
-            <input type="text" name="id" class="form-control">
-        </div>
-        <div class="row">
-            <span class="form-label">Nome</span>
-            <textarea class="form-control" name="nome"></textarea>
-        </div>
-        <div class="row">
-            <span class="form-label">Sigla Departamento</span>
-            <textarea class="form-control" name="sigla_departamento"></textarea>
-        </div>
-        <div class="row mt-4">
-    <button type="submit" class="btn btn-sucess btn-lg">Salvar</button>
-</div>
-</form>
+
+<html lang="pt-BR">
+
+<x-head />
+
+<body>
+    <x-header />
+
+    <main class="container">
+
+        <h1 class="my-5">Cadastro de Departamento</h1>
+
+        <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('departamento.store') }}">
+            @csrf
+
+            <!--<div class="br-input">
+                <label class="form-label">Id Departamento</label>
+                <input type="text" name="id" class="form-control">
+            </div>-->
+
+
+            <div class="row">
+
+                <div class="col-lg-9 col-md-8 mb-4">
+                    <div class="br-input">
+                        <label for="input-departamento-nome">Nome do Departamento</label>
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <input id="input-departamento-nome" type="text" name="nome"
+                                placeholder="Ex.: Administrativo"></input>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 mb-5">
+                    <div class="br-input">
+                        <label for="input-departamento-sigla_departamento">Sigla Departamento</label>
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fas fa-spell-check"></i>
+                            </div>
+                            <input id="input-departamento-sigla_departamento" type="text" name="sigla_departamento"
+                                placeholder="Ex.: ADM"></input>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="d-flex justify-content-end">
+                <button class="br-button secondary mr-4" type="button">Cancelar</button>
+                <button type="submit" class="br-button primary">Cadastrar</button>
+            </div>
+
+        </form>
+    </main>
+
 </body>
+
 </html>

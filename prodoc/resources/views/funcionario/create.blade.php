@@ -8,7 +8,7 @@
 
     <main class="container">
 
-        <h1 class="my-5">Cadastro de Funcionário</h1>
+        <h2 class="my-5">Cadastro de Funcionário</h2>
 
         <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('funcionario.store') }}">
             @csrf
@@ -43,7 +43,7 @@
                             
                             <div class="input-group">
                                 <div class="input-icon">
-                                <i class="fas fa-briefcase"></i>
+                                <i class="fas fa-search"></i>
                                 </div>
                                 <input id="select-departamento" type="text" placeholder="Selecione um departamento" />
                             </div>

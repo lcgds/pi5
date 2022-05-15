@@ -1,5 +1,3 @@
-<script src="<node_modules>/@govbr/dsgov/dist/dsgov.min.js"></script>
-
 <header class="br-header compact pb-3">
     <div class="container-lg">
 

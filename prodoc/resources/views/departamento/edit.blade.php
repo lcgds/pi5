@@ -7,7 +7,7 @@
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class = "container mt-5">
-    <h1>Cria Departamentos</h1>
+    <h1>Editar Departamentos</h1>
     <form method="POST" action = "{{route ('departamento.update', $departamento->id) }}">
         @csrf
         <div class="row">

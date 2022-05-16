@@ -29,9 +29,9 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     <td>{{$dep->nome}}a</td>
                     <td>{{$dep->sigla_departamento}} </td>
                     <td> 
-                        <a hred="#" class="btn btn-sm btn-info">Visualizar</a>
-                        <a hred="#" class="btn btn-sm btn-warning">Editar</a>
-                        <a hred="#" class="btn btn-sm btn-danger">Apagar</a>
+                        <a href="#" class="btn btn-sm btn-info">Visualizar</a>
+                        <a href="{{ route('departamento.edit',$dep->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="#" class="btn btn-sm btn-danger">Apagar</a>
                         </td>
             </tr>
             @endforeach

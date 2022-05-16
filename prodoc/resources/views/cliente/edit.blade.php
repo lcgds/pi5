@@ -7,7 +7,7 @@
 integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body class = "container mt-5">
-    <h1>Cria Clientes</h1>
+    <h1>Editar Clientes</h1>
     <form method="POST" action = "{{route ('cliente.update', $cliente->id) }}">
         @csrf
         <div class="row">

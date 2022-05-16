@@ -28,9 +28,9 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     <td>{{$tipodoc->nome}}</td>
                     <td>{{$tipodoc->descricao}}</td>
                     <td> 
-                        <a hred="#" class="btn btn-sm btn-info">Visualizar</a>
-                        <a hred="#" class="btn btn-sm btn-warning">Editar</a>
-                        <a hred="#" class="btn btn-sm btn-danger">Apagar</a>
+                        <a href="#" class="btn btn-sm btn-info">Visualizar</a>
+                        <a href="{{ route('tipodocumento.edit',$tipodoc->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="#" class="btn btn-sm btn-danger">Apagar</a>
                         </td>
             </tr>
             @endforeach

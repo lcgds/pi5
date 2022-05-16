@@ -8,7 +8,7 @@
 
     <main class="container">
         
-        <h1 class="my-5">Editar Tipo de Documento</h1>
+        <h1 class="my-5">Editar Tipos de Documentos</h1>
 
         <form method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
             @csrf

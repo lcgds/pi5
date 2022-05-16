@@ -21,5 +21,14 @@ public function create(){
       //Redireciona a rota pra pagina inicial
       return redirect(route('tipodocumento.index'));
         }
+        public function edit(tipodocumento $tipodocumento){
+          return view('tipodocumento.edit')->with('tipodocumento', $tipodocumento);
+             }
+       
+      public function update(Request $request, tipodocumento $tipodocumento){
+         $tipodocumento->update($request->all());
+          session()->flash('success', 'tipo documento alterado com sucesso!');
+         return redirect(route('tipodocumento.index'));
+             }
 
 }

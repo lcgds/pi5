@@ -9,6 +9,12 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 </head>
 <body>
+     @if(session()->has('success'))
+     <div class="alert alert-success" role="alert">
+        {{session()->get('success')}}
+</div>
+     @endif 
+
     <h1>Lista de Clientes</h1>
     <a href="{{Route('cliente.create') }}" class="btn btn-lg btn-primary">Criar Clientes</a>
 <div class="row">
@@ -26,8 +32,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
             <!--Pega as informações do banco-->
             @foreach($clientes as $cli)
             <tr>
-                    <td>{{ $cli->id }}</td>
-                    <td>{{$cli->nome}}a</td>
+                    <td>{{$cli->id }}</td>
+                    <td>{{$cli->nome}}</td>
                     <td>{{$cli->cnpj}}</td>
                     <td>{{$cli->email}}</td>
                     <td>{{$cli->telefone}}</td>

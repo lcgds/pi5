@@ -18,6 +18,7 @@ class DocumentosController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           documento::create($request->all());
+   // session()->flash('success', 'documento cadastrado com sucesso!');
           //Redireciona a rota pra pagina inicial
           return redirect(route('documento.index'));
             }

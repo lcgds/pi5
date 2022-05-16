@@ -21,4 +21,17 @@ class FuncionarioController extends Controller
           //Redireciona a rota pra pagina inicial
           return redirect(route('funcionario.index'));
             }
+            public function edit(Funcionario $funcionario){
+              return view('funcionario.edit')->with('funcionario', $funcionario);
+                 }
+           
+          public function update(Request $request, Funcionario $funcionario){
+             $funcionario->update($request->all());
+              session()->flash('success', 'funcionario alterado com sucesso!');
+             return redirect(route('funcionario.index'));
+                 }
+
+
+
+
 }

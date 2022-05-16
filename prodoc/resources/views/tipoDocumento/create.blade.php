@@ -8,7 +8,7 @@
 
     <main class="container">
         
-        <h1 class="my-5">Cadastrar Tipo de Documento</h1>
+        <h2 class="my-5">Cadastrar Tipo de Documento</h2>
 
         <form method="POST" action="{{ route('tipodocumento.store') }}">
             @csrf

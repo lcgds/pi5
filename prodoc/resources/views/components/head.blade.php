@@ -15,13 +15,15 @@
         href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900&amp;display=swap" />
 
     <!-- Design System de Governo -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('dsgov/dist/dsgov.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('@govbr/dsgov/dist/dsgov.css') }}" />
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
 
     <!-- Scripts -->
-    <script src="{{ asset('dsgov/dist/dsgov.js') }}"></script>
-    <script src="{{ asset('dsgov/dist/dsgov.min.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+
 
 </head>

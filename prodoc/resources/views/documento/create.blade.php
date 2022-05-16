@@ -4,7 +4,9 @@
 <x-head />
 
 <body>
+
     <x-header />
+
     <main class="container">
 
         <h2 class="my-5">Cadastro de Documento</h2>
@@ -64,7 +66,7 @@
                                 <input id="select-cliente" type="text" placeholder="Selecione um item" />
                             </div>
 
-                            <button class="br-button circle small" type="button" tabindex="-1" data-trigger>
+                            <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
                                 <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
                             </button>
                         </div>
@@ -107,6 +109,9 @@
             </div>
         </form>
     </main>
+
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+
 </body>
 
 </html>

@@ -28,7 +28,7 @@ Route::get('/pesquisa', function () {
 
 Route::get('/tipoDocumentoLuiz', function () {
     return view('tipoDocumento_create');
-});
+})->name('tdLuiz');
 
 //Rotas index , criar e salvar no banco.
 Route::get('/documento', [DocumentosController::class, 'index'])->name('documento.index');

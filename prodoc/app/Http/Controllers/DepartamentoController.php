@@ -32,4 +32,10 @@ class DepartamentoController extends Controller
                return redirect(route('departamento.index'));
                    }
 
+                   public function destroy(Departamento $departamento){
+                    $departamento->delete();
+                    session()->flash('success', 'departamento apagado com sucesso!');
+                    return redirect(route('departamento.index'));
+          
+                }
 }

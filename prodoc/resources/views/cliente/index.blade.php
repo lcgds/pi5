@@ -40,7 +40,7 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
                     <td> 
                         <a href="#" class="btn btn-sm btn-info">Visualizar</a>
                         <a href="{{ route('cliente.edit',$cli->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="#" class="btn btn-sm btn-danger">Apagar</a>
+                        <a href="{{ route('cliente.destroy',$cli->id) }}" class="btn btn-sm btn-danger">Apagar</a>
                         </td>
             </tr>
             @endforeach

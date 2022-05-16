@@ -30,6 +30,13 @@ class FuncionarioController extends Controller
               session()->flash('success', 'funcionario alterado com sucesso!');
              return redirect(route('funcionario.index'));
                  }
+              
+                 public function destroy(Funcionario $funcionario){
+                  $funcionario->delete();
+                  session()->flash('success', 'funcionario apagado com sucesso!');
+                  return redirect(route('funcionario.index'));
+        
+              }
 
 
 

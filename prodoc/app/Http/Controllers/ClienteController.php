@@ -32,4 +32,11 @@ class ClienteController extends Controller
           session()->flash('success', 'cliente alterado com sucesso!');
           return redirect(route('cliente.index'));
       }
+
+      public function destroy(Cliente $cliente){
+          $cliente->delete();
+          session()->flash('success', 'cliente apagado com sucesso!');
+          return redirect(route('cliente.index'));
+
+      }
 }

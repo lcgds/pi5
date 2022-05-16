@@ -41,6 +41,7 @@ Route::get('/funcionario/create', [FuncionarioController::class,'create'])->name
 Route::post('/funcionario/store', [FuncionarioController::class,'store'])->name('funcionario.store');
 Route::get('/funcionario/edit/{funcionario}', [FuncionarioController::class,'edit'])->name('funcionario.edit');
 Route::post('/funcionario/update/{funcionario}', [FuncionarioController::class,'update'])->name('funcionario.update');
+Route::get('/funcionario/destroy/{funcionario}', [FuncionarioController::class,'destroy'])->name('funcionario.destroy');
 
 
 //Rotas index , criar e salvar no banco.
@@ -49,6 +50,7 @@ Route::get('/cliente/create', [ClienteController::class,'create'])->name('client
 Route::post('/cliente/store', [ClienteController::class,'store'])->name('cliente.store');
 Route::get('/cliente/edit/{cliente}', [ClienteController::class,'edit'])->name('cliente.edit');
 Route::post('/cliente/update/{cliente}', [ClienteController::class,'update'])->name('cliente.update');
+Route::get('/cliente/destroy/{cliente}', [ClienteController::class,'destroy'])->name('cliente.destroy');
 
 //Rotas index , criar e salvar no banco.
 Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
@@ -56,6 +58,7 @@ Route::get('/departamento/create', [DepartamentoController::class,'create'])->na
 Route::post('/departamento/store', [DepartamentoController::class,'store'])->name('departamento.store');
 Route::get('/departamento/edit/{departamento}', [DepartamentoController::class,'edit'])->name('departamento.edit');
 Route::post('/departamento/update/{departamento}', [DepartamentoController::class,'update'])->name('departamento.update');
+Route::get('/departamento/destroy/{departamento}', [DepartamentoController::class,'destroy'])->name('departamento.destroy');
 
 //Rotas index , criar e salvar no banco.
 Route::get('/tipodocumento', [tipodocumentoController::class, 'index'])->name('tipodocumento.index');
@@ -63,3 +66,4 @@ Route::get('/tipodocumento/create', [tipodocumentoController::class,'create'])->
 Route::post('/tipodocumento/store', [tipodocumentoController::class,'store'])->name('tipodocumento.store');
 Route::get('/tipodocumento/edit/{tipodocumento}', [tipodocumentoController::class,'edit'])->name('tipodocumento.edit');
 Route::post('/tipodocumento/update/{tipodocumento}', [tipodocumentoController::class,'update'])->name('tipodocumento.update');
+Route::get('/tipodocumento/destroy/{tipodocumento}', [tipodocumentoController::class,'destroy'])->name('tipodocumento.destroy');

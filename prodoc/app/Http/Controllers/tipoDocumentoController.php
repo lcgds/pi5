@@ -31,4 +31,11 @@ public function create(){
          return redirect(route('tipodocumento.index'));
              }
 
+             public function destroy(tipodocumento $tipodocumento){
+              $tipodocumento->delete();
+              session()->flash('success', 'tipo documento apagado com sucesso!');
+              return redirect(route('tipodocumento.index'));
+    
+          }
+
 }

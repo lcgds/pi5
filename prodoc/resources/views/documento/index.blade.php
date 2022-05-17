@@ -29,7 +29,7 @@
                         <!--Pega as informações do banco-->
                         @foreach($documentos as $doc)
                         <tr>
-                            <!--<td>Nº do documento</td>-->
+                            <td>{{$doc->id}}</td>
                             <!--<td>Tipo de documento</td>-->
                             <!--<td>Data de cadastro</td>-->
                             <td>{{$doc->status}}</td>

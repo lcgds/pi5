@@ -22,4 +22,20 @@ class DepartamentoController extends Controller
           return redirect(route('departamento.index'));
             }
 
+            public function edit(Departamento $departamento){
+                return view('departamento.edit')->with('departamento', $departamento);
+                   }
+             
+            public function update(Request $request, Departamento $departamento){
+               $departamento->update($request->all());
+                session()->flash('success', 'departamento alterado com sucesso!');
+               return redirect(route('departamento.index'));
+                   }
+
+                   public function destroy(Departamento $departamento){
+                    $departamento->delete();
+                    session()->flash('success', 'departamento apagado com sucesso!');
+                    return redirect(route('departamento.index'));
+          
+                }
 }

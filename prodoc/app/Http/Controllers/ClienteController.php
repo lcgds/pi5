@@ -18,7 +18,25 @@ class ClienteController extends Controller
     //Armazenar dados no banco
         public function store(Request $request){
           cliente::create($request->all());
+          session()->flash('success', 'cliente cadastrado com sucesso!');
           //Redireciona a rota pra pagina inicial
           return redirect(route('cliente.index'));
             }
+          
+      public function edit(Cliente $cliente){
+   return view('cliente.edit')->with('cliente', $cliente);
+      }
+
+      public function update(Request $request, Cliente $cliente){
+          $cliente->update($request->all());
+          session()->flash('success', 'cliente alterado com sucesso!');
+          return redirect(route('cliente.index'));
+      }
+
+      public function destroy(Cliente $cliente){
+          $cliente->delete();
+          session()->flash('success', 'cliente apagado com sucesso!');
+          return redirect(route('cliente.index'));
+
+      }
 }

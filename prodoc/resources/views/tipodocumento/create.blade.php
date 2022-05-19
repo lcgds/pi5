@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <x-head />
 
 <body>
-    <x-header />
-    <main class="container">
-        <h2 class="my-5">Cadastro de Tipo de Documento</h2>
-        <form class="bg-gray-3 p-5 mb-5" action="" method="post">
-            @csrf
+    
+<x-header />
 
-            <div class="row">
+    <main class="container">
+        
+    <h2 class="my-5">Cadastro de Tipo de Documento</h2>
+
+        <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('tipodocumento.store') }}">
+            
+        @csrf
+        
+        <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="br-input">
                         <label for="input-tipoDocumento-nome" class="form-label">Título</label>
@@ -23,13 +29,13 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="row">
                 <div class="col-lg-6 col-md-8 mb-4">
                     <div class="br-textarea">
                         <label for="textarea-tipoDocumento-descricao">Descrição</label>
                         <textarea id="textarea-tipoDocumento-descricao"
-                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300"></textarea>
+                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300"></textarea name="descricao">
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>
@@ -44,6 +50,7 @@
             </div>
         </form>
     </main>
+
 </body>
 
 </html>

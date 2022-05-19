@@ -532,6 +532,7 @@
         }
 
     </style>
+
     <div class="container-fluid">
 
         <div class="row">
@@ -541,7 +542,7 @@
                 <div class="header-menu">
 
                     <div class="header-info">
-                        <h1 class="header-title h6 my-0">Pro Doc</h1>
+                        <h1 class="header-title h6 my-0"><a href="{{ url('dashboard'); }}">Pro Doc</a></h1>
                         <div class="header-subtitle pb-3 text-base">Professional Documentation</div>
                     </div>
                 </div>
@@ -551,14 +552,14 @@
             <div class="col header-actions d-flex justify-content-end my-0">
 
                 <div class="header-search-trigger">
-                    <button class="br-button circle" type="button" aria-label="Abrir Busca"><i class="fas fa-search"
+                    <button onclick="window.location = '{{ url('pesquisa'); }}'" class="br-button circle" type="button" aria-label="Abrir Busca"><i class="fas fa-search"
                             aria-hidden="true"></i>
                     </button>
                 </div>
 
                 <div class="header-login">
                     <div class="header-sign-in">
-                        <button class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user"
+                        <button onclick="window.location = '{{ url('login'); }}'" class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user"
                                 aria-hidden="true"></i><span class="d-sm-inline">Minha conta</span>
                         </button>
                     </div>

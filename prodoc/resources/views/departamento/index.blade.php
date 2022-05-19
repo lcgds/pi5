@@ -1,51 +1,88 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    
-    <title>Lista de Departamentos</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<!--Caixa de pergunta-->
-<script>
-    function remover(route){
-        if(confirm('Você deseja remover o departamento ?'))
-        window.location = route;
-    }
-    </script>
-</head>
+<x-head />
+
 <body>
-    <h1>Lista de Departamentos</h1>
-    <a href="{{Route('departamento.create') }}" class="btn btn-lg btn-primary">Criar Departamento</a>
 
-    <div class="row">
-    <table class="tabela table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Sigla departamento</th>
-            </tr>
-    <thead>
-        <tbody>
-            <!--Pega as informações do banco-->
-            @foreach($departamentos as $dep)
-            <tr>
-                    <td>{{ $dep->id }}</td>
-                    <td>{{$dep->nome}}</td>
-                    <td>{{$dep->sigla_departamento}} </td>
-                    <td> 
-                        <a href="#" class="btn btn-sm btn-info">Visualizar</a>
-                        <a href="{{ route('departamento.edit',$dep->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="#" onclick="remover('{{ route('departamento.destroy',$dep->id) }}');" class="btn btn-sm btn-danger">Apagar</a>
-                        </td>
-            </tr>
-            @endforeach
+    <!--Caixa de pergunta-->
+    <script>
+        function remover(route) {
+            if (confirm('Você deseja remover o departamento ?'))
+                window.location = route;
+        }
+
+    </script>
+
+    <x-header />
+
+    @if(session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{session()->get('success')}}
+    </div>
+    @endif
+
+    <main class="container-fluid">
+
+        <h2 class="my-5">Lista de Departamentos</h2>
+
+        <div class="br-table" ...>
+            <!-- Cabeçalho -->
+            <!-- Dados -->
+            <table class="tabela">
+                <caption>Lista de Departamentos</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Sigla</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Data de cadastro</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                    <thead>
+                    <tbody>
+                        <!--Pega as informações do banco-->
+                        @foreach($departamentos as $dep)
+                        <tr>
+                            <td>{{$dep->nome}}</td>
+                            <td>{{$dep->sigla_departamento}}</td>
+                            <td>{{$dep->descricao}}</td>
+                            <td>{{$dep->timestamp}}</td>
+                            <td>{{$dep->status}}</td>
+
+
+                            <td>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
+                                </button>
+
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
+            </table>
+            <!-- Rodapé -->
 
-</table>
+        </div>
 
-</div>
+        <div class="d-flex justify-content-end">
+            <button onclick="window.location='{{ url('departamento/create'); }}'" class="br-button primary mt-6"
+                type="button">
+                Cadastrar departamento
+            </button>
+        </div>
+
+    </main>
 </body>
+
 </html>

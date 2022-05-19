@@ -5,9 +5,10 @@
 
 <body>
 
+    <!--Caixa de pergunta-->
     <script>
         function remover(route) {
-            if (confirm('Você deseja remover o cliente ?'))
+            if (confirm('Você deseja remover o tipo de documento ?'))
                 window.location = route;
         }
 
@@ -23,19 +24,17 @@
 
     <main class="container-fluid">
 
-        <h2 class="my-5">Lista de Clientes</h2>
+        <h2 class="my-5">Lista de Tipos de Documento</h2>
 
         <div class="br-table" ...>
             <!-- Cabeçalho -->
             <!-- Dados -->
             <table class="tabela">
-                <caption>Lista de Clientes</caption>
+                <caption>Lista de Tipos de Documento</caption>
                 <thead>
                     <tr>
-                        <th scope="col">Razão social</th>
-                        <th scope="col">CNPJ</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Telefone</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Data de cadastro</th>
                         <th scope="col">Status</th>
                         <th scope="col">Ações</th>
@@ -43,14 +42,13 @@
                     <thead>
                     <tbody>
                         <!--Pega as informações do banco-->
-                        @foreach($clientes as $cli)
+                        @foreach($tipodocumentos as $tipodoc)
                         <tr>
-                            <td>{{$cli->nome}}</td>
-                            <td>{{$cli->cnpj}}</td>
-                            <td>{{$cli->email}}</td>
-                            <td>{{$cli->telefone}}</td>
-                            <td>{{$cli->timestamp}}</td>
-                            <td>{{$cli->status}}</td>
+                            <td>{{$tipodoc->nome}}</td>
+                            <td>{{$tipodoc->descricao}}</td>
+                            <td>{{$tipodoc->timestamp}}</td>
+                            <td>{{$tipodoc->status}}</td>
+
 
                             <td>
 
@@ -76,15 +74,13 @@
         </div>
 
         <div class="d-flex justify-content-end">
-            <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6"
+            <button onclick="window.location='{{ url('tipodocumento/create'); }}'" class="br-button primary mt-6"
                 type="button">
-                Cadastrar cliente
+                Cadastrar tipo de documento
             </button>
         </div>
 
     </main>
-
-
 </body>
 
 </html>

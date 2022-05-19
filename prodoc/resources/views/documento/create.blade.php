@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="col-lg-1 col-md-1 col-sm-1 pt-sm-5 mb-4">
-                    <button class="br-button circle small" type="button"><i class="fas fa-edit" aria-hidden="true"></i>
+                    <button onclick="window.location = '{{ url('tipodocumento'); }}'" class="br-button circle small" type="button"><i class="fas fa-edit" aria-hidden="true"></i>
                     </button>
                 </div>
 

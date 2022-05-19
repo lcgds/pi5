@@ -14,7 +14,7 @@
         <div class="d-flex flex-sm-wrap justify-content-around align-content-around">
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
-                <a class="text-gray-80" href="http://">
+                <a class="text-gray-80" href="{{ url('documento'); }}">
                     <div class="card-header">
                         <div class="text-weight-semi-bold text-up-02">Documentos</div>
                     </div>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
-                <a class="text-gray-80" href="http://">
+                <a class="text-gray-80" href="{{ url('cliente'); }}">
                     <div class="card-header">
                         <div class="text-weight-semi-bold text-up-02">Clientes</div>
                     </div>
@@ -47,7 +47,7 @@
             </div>
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
-                <a class="text-gray-80" href="http://">
+                <a class="text-gray-80" href="{{ url('funcionario'); }}">
                     <div class="card-header">
                         <div class="text-weight-semi-bold text-up-02">Funcionários</div>
                     </div>
@@ -73,7 +73,7 @@
             </div>
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
-                <a class="text-gray-80" href="http://">
+                <a class="text-gray-80" href="{{ url('departamento'); }}">
                     <div class="card-header">
                         <div class="text-weight-semi-bold text-up-02">Departamentos</div>
                     </div>

@@ -7,7 +7,7 @@
 
     <x-header />
 
-    <main class="container">
+    <main class="container-fluid">
 
         <h2 class="my-5">Lista de Documentos</h2>
 

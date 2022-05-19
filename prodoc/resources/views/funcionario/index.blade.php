@@ -1,53 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    
-    <title>Lista de Funcionarios</title>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<html lang="pt-BR">
 
-<!--Caixa de pergunta-->
-<script>
-    function remover(route){
-        if(confirm('Você deseja remover o funcionário ?'))
-        window.location = route;
-    }
+<x-head />
+
+<body>
+
+    <!--Caixa de pergunta-->
+    <script>
+        function remover(route) {
+            if (confirm('Você deseja remover o funcionário?'))
+                window.location = route;
+        }
+
     </script>
 
-</head>
-<body>
-    <h1>Lista de Funcionarios</h1>
-    <a href="{{Route('funcionario.create') }}" class="btn btn-lg btn-primary">Criar Funcionario</a>
-    <div class="row">
-    <table class="tabela table-striped">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-            </tr>
-    <thead>
-        <tbody>
-            <!--Pega as informações do banco-->
-            @foreach($funcionarios as $func)
-            <tr>
-                    <td>{{$func->id}}</td>
-                    <td>{{$func->nome}}</td>
-                    <td>{{$func->email}}</td>
-                    <td>{{$func->telefone}}</td>
-                    <td> 
-                        <a href="#" class="btn btn-sm btn-info">Visualizar</a>
-                        <a href="{{ route('funcionario.edit',$func->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="#" onclick="remover('{{ route('funcionario.destroy',$func->id) }}');" class="btn btn-sm btn-danger">Apagar</a>
-                        </td>
-            </tr>
-            @endforeach
+    <x-header />
+
+    @if(session()->has('success'))
+    <div class="alert alert-success" role="alert">
+        {{session()->get('success')}}
+    </div>
+    @endif
+
+    <main class="container-fluid">
+
+
+        <h2 class="my-5">Lista de Funcionários</h2>
+
+        <div class="br-table" ...>
+            <!-- Cabeçalho -->
+            <!-- Dados -->
+            <table class="tabela">
+                <caption>Lista de Funcionários</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                    <thead>
+                    <tbody>
+                        <!--Pega as informações do banco-->
+                        @foreach($funcionarios as $func)
+                        <tr>
+                            <td>{{$func->nome}}</td>
+                            <td>{{$func->email}}</td>
+                            <td>{{$func->telefone}}</td>
+                            <td>Lorem</td> <!-- Departamento -->
+                            <td>{{$func->status}}</td>
+
+
+                            <td>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
+                                </button>
+
+                            </td>
+                        </tr>
+                        @endforeach
                     </tbody>
+            </table>
+            <!-- Rodapé -->
 
-</table>
+        </div>
 
-</div>
+        <div class="d-flex justify-content-end">
+            <button onclick="window.location='{{ url('funcionario/create'); }}'" class="br-button primary mt-6"
+                type="button">
+                Cadastrar funcionário
+            </button>
+        </div>
+    </main>
+
 </body>
+
 </html>

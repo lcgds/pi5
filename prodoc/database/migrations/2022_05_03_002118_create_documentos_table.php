@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+           // $table->string('nome');
             $table->string('descricao');
-            $table->string('status');
+          //  $table->string('status');
             $table->timestamps();
         });
     }
@@ -30,5 +30,9 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('documentos');
-    }
+        Schema::table('documentos', function ($table) {
+            $table->dropColumn('nome','status');
+    });
+    
+}
 };

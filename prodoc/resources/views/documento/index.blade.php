@@ -30,8 +30,8 @@
                         @foreach($documentos as $doc)
                         <tr>
                             <td>{{$doc->id}}</td>
-                            <!--<td>Tipo de documento</td>-->
-                            <!--<td>Data de cadastro</td>-->
+                            <td>Tipo de documento</td>
+                            <td>{{$doc->timestamps}}</td>
                             <td>{{$doc->status}}</td>
                             <td>
 

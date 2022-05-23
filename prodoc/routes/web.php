@@ -13,6 +13,7 @@ require __DIR__.'/auth.php';
 //Route::get('/', function () {
   //  return view('welcome');
 //});
+
 Route::get('/', function () {
     return view('login');
 })->name('welcome');

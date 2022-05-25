@@ -7,7 +7,35 @@
 
     <x-header />
 
-    <main class="container-fluid">
+    <main class="container-md">
+
+        <div class="br-breadcrumb my-4">
+            <ul class="crumb-list">
+                <li class="crumb home">
+                    <div class="br-button circle">
+                        <span class="sr-only">
+                            Página inicial
+                        </span>
+                        <i class="icon fas fa-home"></i>
+                    </div>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('documento.index'); }}">Documentos</a>
+                </li>
+
+                <li class="crumb" data-active="active">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <span>Consultar</span>
+                </li>
+            </ul>
+        </div>
 
         <h2 class="my-5">Lista de Documentos</h2>
 
@@ -35,31 +63,33 @@
                             <td>{{$doc->status}}</td>
                             <td>
 
-                            <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
-                            </button>
-
-                            <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
+                                </button>
+
+                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                    aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
                                 </button>
     </main>
 
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-            </table>
-            <!-- Rodapé -->
+    </td>
+    </tr>
+    @endforeach
+    </tbody>
+    </table>
+    <!-- Rodapé -->
 
-        </div>
+    </div>
 
-        <div class="d-flex justify-content-end">
-        <button onclick="window.location='{{ url('documento/create'); }}'"
-            class="br-button primary mt-5" type="button">
+    <div class="d-flex justify-content-end">
+        <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5" type="button">
             Cadastrar documento
         </button>
-        </div>
+    </div>
 
 </body>
 

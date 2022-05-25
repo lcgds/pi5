@@ -7,7 +7,35 @@
 <body>
     <x-header />
 
-    <main class="container">
+    <main class="container-md">
+
+        <div class="br-breadcrumb my-4">
+            <ul class="crumb-list">
+                <li class="crumb home">
+                    <div class="br-button circle">
+                        <span class="sr-only">
+                            Página inicial
+                        </span>
+                        <i class="icon fas fa-home"></i>
+                    </div>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('departamento.index'); }}">Departamentos</a>
+                </li>
+
+                <li class="crumb" data-active="active">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <span>Cadastrar</span>
+                </li>
+            </ul>
+        </div>
 
         <h2 class="my-5">Cadastro de Departamento</h2>
 

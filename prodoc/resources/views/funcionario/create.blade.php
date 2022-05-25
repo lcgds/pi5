@@ -6,7 +6,35 @@
 <body>
     <x-header />
 
-    <main class="container">
+    <main class="container-md">
+
+        <div class="br-breadcrumb my-4">
+            <ul class="crumb-list">
+                <li class="crumb home">
+                    <div class="br-button circle">
+                        <span class="sr-only">
+                            Página inicial
+                        </span>
+                        <i class="icon fas fa-home"></i>
+                    </div>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
+                </li>
+
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('funcionario.index'); }}">Funcionários</a>
+                </li>
+
+                <li class="crumb" data-active="active">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <span>Cadastrar</span>
+                </li>
+            </ul>
+        </div>
 
         <h2 class="my-5">Cadastro de Funcionário</h2>
 
@@ -40,14 +68,14 @@
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-departamento">Departamento</label>
-                            
+
                             <div class="input-group">
                                 <div class="input-icon">
-                                <i class="fas fa-search"></i>
+                                    <i class="fas fa-search"></i>
                                 </div>
                                 <input id="select-departamento" type="text" placeholder="Selecione um departamento" />
                             </div>
-                            
+
                             <button class="br-button circle small" type="button" tabindex="-1" data-trigger>
                                 <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
                             </button>

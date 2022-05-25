@@ -8,7 +8,26 @@
 
     <x-header/>
 
-    <main class="container">
+    <main class="container-md">
+
+        <div class="br-breadcrumb my-4">
+            <ul class="crumb-list">
+                <li class="crumb home">
+                    <div class="br-button circle">
+                        <span class="sr-only">
+                            Página inicial
+                        </span>
+                        <i class="icon fas fa-home"></i>
+                    </div>
+                </li>
+
+                <li class="crumb" data-active="active">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <span>Dashboard</span>
+                </li>
+            </ul>
+        </div>
+
         <h2 class="my-5">Dashboard</h2>
 
         <div class="d-flex flex-sm-wrap justify-content-around align-content-around">

@@ -542,7 +542,7 @@
                 <div class="header-menu">
 
                     <div class="header-info">
-                        <h1 class="header-title h6 my-0"><a href="{{ url('dashboard'); }}">Pro Doc</a></h1>
+                        <h1 class="header-title h6 my-0">Pro Doc</h1>
                         <div class="header-subtitle pb-3 text-base">Professional Documentation</div>
                     </div>
                 </div>

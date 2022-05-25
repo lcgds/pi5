@@ -10,6 +10,7 @@ class tipodocumento extends Model
     use HasFactory;
     protected $fillable = ['id','nome','descricao'];
 
+    //Pertence a muitos
     public function documentos(){
         return $this->hasMany(Documento::class);
     }

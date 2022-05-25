@@ -61,6 +61,8 @@
                             <td>Tipo de documento</td>
                             <td>{{$doc->timestamps}}</td>
                             <td>{{$doc->status}}</td>
+                            <td>{{ $doc->tipodocumento->nome }}</td>
+
                             <td>
 
                                 <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"

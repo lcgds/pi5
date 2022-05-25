@@ -77,11 +77,11 @@
                         <!--Pega as informações do banco-->
                         @foreach($tipodocumentos as $tipodoc)
                         <tr>
-                            <td>{{$tipodoc->nome}}</td>
+                            <td>{{$tipodoc->nome}} {{$cat->tipodoc }}</td>
                             <td>{{$tipodoc->descricao}}</td>
                             <td>{{$tipodoc->timestamp}}</td>
                             <td>{{$tipodoc->status}}</td>
-
+                            <td>{{$tipodoc->documentos}}</td>
 
                             <td>
 

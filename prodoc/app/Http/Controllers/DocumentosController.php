@@ -26,7 +26,7 @@ class DocumentosController extends Controller
             }
 
             public function edit(Documento $documento){
-                return view('documento.edit')->with('documento', $documento);
+                return view('documento.edit')->with(['documento'=> $documento,'tipodocumentos'=>tipodocumento::all()]);
                    }
              
             public function update(Request $request, Documento $documento){

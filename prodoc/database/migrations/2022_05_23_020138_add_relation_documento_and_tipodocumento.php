@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('documentos', function (Blueprint $table) {
-            $table->id();
-            $table->string('descricao');
-            $table->string('status')->default('Ativo');
-            $table->timestamps();
+        Schema::table('documentos', function (Blueprint $table) {
+            $table->string('tipodocumentos_nome');
+            
         });
     }
 
@@ -28,10 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('documentos');
-        Schema::table('documentos', function ($table) {
-            $table->dropColumn('nome','status');
-    });
-    
-}
+        Schema::table('documento', function (Blueprint $table) {
+            //
+        });
+    }
 };

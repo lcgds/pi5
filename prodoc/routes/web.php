@@ -39,7 +39,9 @@ Route::middleware('auth')->group(function () {
 	Route::get('/documento', [DocumentosController::class, 'index'])->name('documento.index');
 	Route::get('/documento/create', [DocumentosController::class,'create'])->name('documento.create');
 	Route::post('/documento/store', [DocumentosController::class,'store'])->name('documento.store');
-	
+	Route::get('/documento/edit/{documento}', [documentoController::class,'edit'])->name('documento.edit');
+	Route::post('/documento/update/{documento}', [documentoController::class,'update'])->name('documento.update');
+	Route::get('/documento/destroy/{documento}', [documentoController::class,'destroy'])->name('documento.destroy');
 
 	// CRUD Funcionário
 	Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('funcionario.index');

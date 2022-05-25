@@ -134,6 +134,16 @@
                 <div class="col-lg-8 col-md-10 col-sm-12 d-flex justify-content-end">
                     <button class="br-button secondary mr-4" type="button">Cancelar</button>
                     <button type="submit" class="br-button primary">Cadastrar</button>
+
+                <div class="row">
+                <span class="form-label">TipoDocumento</span>
+               <select class="form-select" name="tipodocumento_nome">
+                   @foreach($tipodocumentos as $tipodoc)
+                    <option value="{{$tipodoc->id}}"> {{$tipodoc->nome}} </option>
+                   
+                    @endforeach
+                </select>
+            </div>
                 </div>
             </div>
         </form>

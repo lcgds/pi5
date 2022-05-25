@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Documento;
+use App\Models\tipodocumento;
+
 
 class DocumentosController extends Controller
 {
@@ -13,7 +15,7 @@ class DocumentosController extends Controller
     }
     //Criar Documento
     public function create(){
-        return view('documento.create');
+        return view('documento.create')->with('tipodocumentos', tipodocumento::all());
         }
     //Armazenar dados no banco
         public function store(Request $request){

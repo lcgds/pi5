@@ -17,9 +17,21 @@
     <x-header />
 
     @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
-        {{session()->get('success')}}
-    </div>
+        <div class="br-message success" role="alert">
+            <div class="icon"><i class="fas fa-check-circle fa-lg" aria-hidden="true"></i>
+            </div>
+            <div class="content">
+                <span class="message-title">Sucesso.</span>
+                <span class="message-body">
+                    {{ session()->get('success') }}
+                </span>
+            </div>
+            <div class="close">
+                <button class="br-button circle small" type="button" aria-label="Fechar"><i class="fas fa-times"
+                        aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
     @endif
 
     <main class="container-md">
@@ -77,11 +89,10 @@
                         <!--Pega as informações do banco-->
                         @foreach($tipodocumentos as $tipodoc)
                         <tr>
-                            <td>{{$tipodoc->nome}} {{$cat->tipodoc }}</td>
+                            <td>{{$tipodoc->nome}}</td>
                             <td>{{$tipodoc->descricao}}</td>
-                            <td>{{$tipodoc->timestamp}}</td>
+                            <td>{{$tipodoc->created_at}}</td>
                             <td>{{$tipodoc->status}}</td>
-                            <td>{{$tipodoc->documentos}}</td>
 
                             <td>
 
@@ -89,8 +100,9 @@
                                     aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
+                                <button onclick="window.location = '{{ url('tipodocumento/edit/'.$tipodoc->id); }}'"
+                                    class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Editar"><i
+                                        class="fas fa-edit" aria-hidden="true"></i>
                                 </button>
 
                                 <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"

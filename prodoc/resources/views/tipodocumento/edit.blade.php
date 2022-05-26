@@ -41,25 +41,47 @@
             </ul>
         </div>
 
-        <h2 class="my-5">Editar Tipos de Documentos</h2>
+        <p class="my-5 h4">Detalhes do Tipo de Documentos</p>
 
         <form method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
+
             @csrf
+
             <div class="row">
-                <span class="form-label">Id</span>
-                <input type="text" name="id" class="form-control" value=" {{$tipodocumento->id}} ">
-            </div>
-            <div class="row">
-                <span class="form-label">Nome</span>
-                <textarea class="form-control" name="nome"> {{$tipodocumento->nome}} </textarea>
-            </div>
-            <div class="row">
-                <span class="form-label">Descrição</span>
-                <textarea class="form-control" name="descricao"> {{$tipodocumento->descricao}} </textarea>
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="br-input">
+                        <label for="input-tipoDocumento-nome" class="form-label">Título</label>
+                        <div class="input-group">
+                            <div class="input-icon"><i class="fas fa-file" aria-hidden="true"></i>
+                            </div>
+                            <input id="input-tipoDocumento-nome" type="text" class="form-control" name="nome"
+                                placeholder="Ex.: Memorando" value="{{$tipodocumento->nome}}"></input>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
+
+            <div class="row">
+                <div class="col-lg-6 col-md-8 mb-4">
+                    <div class="br-textarea">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao"
+                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300">{{$tipodocumento->descricao}}</textarea>
+                        <div class="text-base mt-1">
+                            <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
+                            <span class="current"></span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
             <div class="d-flex justify-content-end">
-                <button class="br-button secondary mr-4" type="button">Cancelar</button>
+                <x-btn-cancel/>
                 <button type="submit" class="br-button primary">Editar</button>
             </div>
         </form>

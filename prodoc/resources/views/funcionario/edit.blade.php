@@ -56,6 +56,7 @@
             <textarea class="form-control" name="telefone"> {{ $funcionario->telefone }} </textarea>
         </div>
         <div class="row mt-4">
+            <x-btn-cancel/>
             <button type="submit" class="btn btn-sucess btn-lg">Salvar</button>
         </div>
     </form>

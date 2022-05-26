@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<x-head />
+<x-head/>
 
 <body>
 
-    <x-header />
+    <x-header/>
 
     <main class="container-md">
 
@@ -50,6 +50,7 @@
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
+
                     <div class="br-input">
                         <label for="input-tipoDocumento-nome" class="form-label">Título</label>
                         <div class="input-group">
@@ -63,22 +64,24 @@
                 </div>
             </div>
 
+
             <div class="row">
                 <div class="col-lg-6 col-md-8 mb-4">
                     <div class="br-textarea">
-                        <label for="textarea-tipoDocumento-descricao">Descrição</label>
-                        <textarea id="textarea-tipoDocumento-descricao"
-                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300"></textarea name="descricao">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao"
+                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300"></textarea>
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>
                         </div>
                     </div>
+
                 </div>
             </div>
 
             <div class="d-flex justify-content-end">
-                <button class="br-button secondary mr-4" type="button">Cancelar</button>
+                <x-btn-cancel/>
                 <button type="submit" class="br-button primary">Cadastrar</button>
             </div>
         </form>

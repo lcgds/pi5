@@ -82,7 +82,7 @@
 
 
             <div class="d-flex justify-content-end">
-                <button class="br-button secondary mr-4" type="button">Cancelar</button>
+                <x-btn-cancel/>
                 <button type="submit" class="br-button primary">Cadastrar</button>
             </div>
 

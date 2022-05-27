@@ -15,11 +15,7 @@
 
     <x-header />
 
-    @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
-        {{session()->get('success')}}
-    </div>
-    @endif
+    <x-alert-message/>
 
     <main class="container-md">
 
@@ -62,8 +58,10 @@
                     <tr>
                         <th scope="col">Razão social</th>
                         <th scope="col">CNPJ</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Telefone</th>
+                        <!--
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Telefone</th>
+                        -->
                         <th scope="col">Data de cadastro</th>
                         <th scope="col">Status</th>
                         <th scope="col">Ações</th>
@@ -75,22 +73,24 @@
                         <tr>
                             <td>{{$cli->nome}}</td>
                             <td>{{$cli->cnpj}}</td>
-                            <td>{{$cli->email}}</td>
-                            <td>{{$cli->telefone}}</td>
-                            <td>{{$cli->timestamp}}</td>
+                            <!--
+                                <td>{{$cli->email}}</td>
+                                <td>{{$cli->telefone}}</td>
+                            -->
+                            <td>{{$cli->created_at}}</td>
                             <td>{{$cli->status}}</td>
 
                             <td>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                <button onclick="window.location = '{{ url('cliente/read/'.$cli->id); }}'" class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
                                     aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                <button onclick="window.location = '{{ url('cliente/edit/'.$cli->id); }}'" class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
                                     aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
                                 </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                <button onclick="window.location = '{{ url('cliente/destroy/'.$cli->id); }}'" class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
                                     aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
                                 </button>
 

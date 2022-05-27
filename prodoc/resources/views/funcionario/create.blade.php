@@ -43,11 +43,6 @@
 
             <p class="text-bold">Informações básicas</p>
 
-            <!--<div class="row">
-                <span class="form-label">Id funcionario</span>
-                <input type="text" name="id" class="form-control">
-            </div>-->
-
             <div class="row">
 
                 <div class="col-lg-9 col-md-8 mb-4">
@@ -90,19 +85,6 @@
                                 </div>
                             </div>
 
-                            <div class="br-item divider" tabindex="-1">
-                                <div class="br-radio">
-                                    <input id="rb1" type="radio" name="opcao" value="opcao2" />
-                                    <label for="rb1">Opção 2</label>
-                                </div>
-                            </div>
-
-                            <div class="br-item divider" tabindex="-1">
-                                <div class="br-radio">
-                                    <input id="rb2" type="radio" name="opcao" value="opcao3" />
-                                    <label for="rb2">Opção 3</label>
-                                </div>
-                            </div>
                         </div>
 
                     </div>

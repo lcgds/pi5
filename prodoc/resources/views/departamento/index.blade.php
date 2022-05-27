@@ -16,11 +16,7 @@
 
     <x-header />
 
-    @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
-        {{session()->get('success')}}
-    </div>
-    @endif
+    <x-alert-message/>
 
     <main class="container-md">
         <div class="br-breadcrumb my-4">
@@ -62,7 +58,6 @@
                     <tr>
                         <th scope="col">Nome</th>
                         <th scope="col">Sigla</th>
-                        <th scope="col">Descrição</th>
                         <th scope="col">Data de cadastro</th>
                         <th scope="col">Status</th>
                         <th scope="col">Ações</th>
@@ -74,8 +69,7 @@
                         <tr>
                             <td>{{$dep->nome}}</td>
                             <td>{{$dep->sigla_departamento}}</td>
-                            <td>{{$dep->descricao}}</td>
-                            <td>{{$dep->timestamp}}</td>
+                            <td>{{$dep->created_at}}</td>
                             <td>{{$dep->status}}</td>
 
 
@@ -85,7 +79,7 @@
                                     aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
                                 </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                <button onclick="window.location = '{{ url('departamento/edit/'.$dep->id); }}'" class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
                                     aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
                                 </button>
 

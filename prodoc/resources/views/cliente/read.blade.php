@@ -32,16 +32,14 @@
 
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Editar</span>
+                    <span>Consultar</span>
                 </li>
             </ul>
         </div>
 
         <p class="my-5 h4">Detalhes de Cliente</p>
 
-        <form class="bg-gray-3 p-5" method="POST" action="{{route ('cliente.update', $cliente->id) }}">
-
-            @csrf
+        <div class="bg-gray-3 p-5">
 
             <div class="row">
 
@@ -51,7 +49,7 @@
                         <div class="input-group">
                             <div class="input-icon"><i class="fas fa-building" aria-hidden="true"></i>
                             </div>
-                            <input id="input-cliente-nome" type="text" class="form-control" name="nome"
+                            <input disabled id="input-cliente-nome" type="text" class="form-control" name="nome"
                                 placeholder="Ex.: PRO DOC LTDA." value="{{ $cliente->nome }}"></input>
                         </div>
 
@@ -64,7 +62,7 @@
                         <div class="input-group">
                             <div class="input-icon"><i class="fas fa-check"></i>
                             </div>
-                            <input type="text" id="input-cliente-cnpj" class="form-control" name="cnpj"
+                            <input disabled type="text" id="input-cliente-cnpj" class="form-control" name="cnpj"
                                 placeholder="Ex.: 00.000.000/0000-00" value="{{ $cliente->cnpj }}"></input>
                         </div>
 
@@ -82,7 +80,7 @@
                         <div class="input-group">
                             <div class="input-icon"><i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
-                            <input id="input-cliente-email" type="email" class="form-control" name="email"
+                            <input disabled id="input-cliente-email" type="email" class="form-control" name="email"
                                 placeholder="Ex.: prodoc@email.com.br" value="{{ $cliente->email }}"></input>
                         </div>
                     </div>
@@ -94,7 +92,7 @@
                         <div class="input-group">
                             <div class="input-icon"><i class="fas fa-phone" aria-hidden="true"></i>
                             </div>
-                            <input type="tel" id="input-cliente-telefone" class="form-control" name="telefone"
+                            <input disabled type="tel" id="input-cliente-telefone" class="form-control" name="telefone"
                                 placeholder="Ex.: 99999-9999" value="{{ $cliente->telefone }}"></input>
                         </div>
                     </div>
@@ -103,11 +101,14 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <x-btn-cancel/>
-                <x-btn-update/>
+                
+                <button onclick="window.location = '{{ url('cliente/edit/'.$cliente->id); }}'" class="br-button primary circle" type="button" aria-label="Editar">
+                    <i class="fas fa-edit" aria-hidden="true"></i>
+                </button>
+
             </div>
 
-        </form>
+        </div>
 
     </main>
 

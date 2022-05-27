@@ -16,11 +16,7 @@
 
     <x-header />
 
-    @if(session()->has('success'))
-    <div class="alert alert-success" role="alert">
-        {{session()->get('success')}}
-    </div>
-    @endif
+    <x-alert-message/>
 
     <main class="container-md">
 
@@ -76,7 +72,7 @@
                             <td>{{$func->nome}}</td>
                             <td>{{$func->email}}</td>
                             <td>{{$func->telefone}}</td>
-                            <td>Lorem</td> <!-- Departamento -->
+                            <td>Lorem Ipsum</td> <!-- Departamento -->
                             <td>{{$func->status}}</td>
 
 

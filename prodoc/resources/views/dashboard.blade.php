@@ -65,6 +65,7 @@
                 </a>
             </div>
 
+            <!--
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
                 <a class="text-gray-80" href="{{ url('funcionario'); }}">
                     <div class="card-header">
@@ -90,6 +91,7 @@
                     </div>
                 </a>
             </div>
+            -->
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
                 <a class="text-gray-80" href="{{ url('departamento'); }}">

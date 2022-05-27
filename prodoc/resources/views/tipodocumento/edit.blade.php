@@ -43,7 +43,7 @@
 
         <p class="my-5 h4">Detalhes do Tipo de Documentos</p>
 
-        <form method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
+        <form class="bg-gray-3 p-5" method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
 
             @csrf
 
@@ -82,7 +82,7 @@
 
             <div class="d-flex justify-content-end">
                 <x-btn-cancel/>
-                <button type="submit" class="br-button primary">Editar</button>
+                <x-btn-update/>
             </div>
         </form>
     </main>

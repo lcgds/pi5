@@ -42,11 +42,6 @@
             @csrf
             <p class="text-bold">Informações básicas</p>
 
-            <!--<div class="row">
-                <span class="form-label">Id Cliente</span>
-                <input type="text" name="id" class="form-control">
-            </div>-->
-
             <div class="row">
 
                 <div class="col-lg-7 col-md-7 mb-4">
@@ -107,7 +102,7 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <button class="br-button secondary mr-4" type="button">Cancelar</button>
+                <x-btn-cancel/>
                 <button type="submit" class="br-button primary">Cadastrar</button>
             </div>
 

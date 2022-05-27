@@ -93,8 +93,8 @@
 
 
             <div class="d-flex justify-content-end">
-                <button class="br-button secondary mr-4" type="button">Cancelar</button>
-                <button type="submit" class="br-button primary">Editar</button>
+                <x-btn-cancel/>
+                <x-btn-update/>
             </div>
         </form>
     </main>

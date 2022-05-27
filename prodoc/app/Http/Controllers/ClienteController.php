@@ -27,6 +27,10 @@ class ClienteController extends Controller
    return view('cliente.edit')->with('cliente', $cliente);
       }
 
+      public function read(Cliente $cliente){
+        return view('cliente.read')->with('cliente', $cliente);
+           }
+
       public function update(Request $request, Cliente $cliente){
           $cliente->update($request->all());
           session()->flash('success', 'cliente alterado com sucesso!');

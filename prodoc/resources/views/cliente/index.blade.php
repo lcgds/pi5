@@ -49,11 +49,7 @@
 
         <h2 class="my-5">Lista de Clientes</h2>
 
-        <div class="br-table" ...>
-            <!-- Cabeçalho -->
-            <!-- Dados -->
-            <table class="tabela">
-                <caption>Lista de Clientes</caption>
+            <table>
                 <thead>
                     <tr>
                         <th scope="col">Razão social</th>
@@ -99,19 +95,20 @@
                         @endforeach
                     </tbody>
             </table>
-            <!-- Rodapé -->
 
-        </div>
 
         <div class="d-flex justify-content-end">
             <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6"
                 type="button">
-                Cadastrar cliente
+                <i class="fas fa-plus mr-1"
+                                aria-hidden="true"></i>Cadastrar cliente
             </button>
         </div>
 
     </main>
 
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 

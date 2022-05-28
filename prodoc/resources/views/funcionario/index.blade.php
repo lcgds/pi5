@@ -16,7 +16,7 @@
 
     <x-header />
 
-    <x-alert-message/>
+    <x-alert-message />
 
     <main class="container-md">
 
@@ -50,62 +50,59 @@
 
         <h2 class="my-5">Lista de Funcionários</h2>
 
-        <div class="br-table" ...>
-            <!-- Cabeçalho -->
-            <!-- Dados -->
-            <table class="tabela">
-                <caption>Lista de Funcionários</caption>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">Departamento</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                </tr>
                 <thead>
+                <tbody>
+                    <!--Pega as informações do banco-->
+                    @foreach($funcionarios as $func)
                     <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">E-mail</th>
-                        <th scope="col">Telefone</th>
-                        <th scope="col">Departamento</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
+                        <td>{{$func->nome}}</td>
+                        <td>{{$func->email}}</td>
+                        <td>{{$func->telefone}}</td>
+                        <td>Lorem Ipsum</td> <!-- Departamento -->
+                        <td>{{$func->status}}</td>
+
+
+                        <td>
+
+                            <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
+                                aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
+                            </button>
+
+                            <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Editar"><i
+                                    class="fas fa-edit" aria-hidden="true"></i>
+                            </button>
+
+                            <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Encerrar"><i
+                                    class="fas fa-trash" aria-hidden="true"></i>
+                            </button>
+
+                        </td>
                     </tr>
-                    <thead>
-                    <tbody>
-                        <!--Pega as informações do banco-->
-                        @foreach($funcionarios as $func)
-                        <tr>
-                            <td>{{$func->nome}}</td>
-                            <td>{{$func->email}}</td>
-                            <td>{{$func->telefone}}</td>
-                            <td>Lorem Ipsum</td> <!-- Departamento -->
-                            <td>{{$func->status}}</td>
-
-
-                            <td>
-
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
-                                </button>
-
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-            </table>
-            <!-- Rodapé -->
-
-        </div>
+                    @endforeach
+                </tbody>
+        </table>
 
         <div class="d-flex justify-content-end">
             <button onclick="window.location='{{ url('funcionario/create'); }}'" class="br-button primary mt-6"
-                type="button">
+                type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
                 Cadastrar funcionário
             </button>
         </div>
     </main>
+
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 

@@ -29,9 +29,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('documentos');
-        Schema::table('documentos', function ($table) {
-            $table->dropColumn('nome','status');
-    });
-    
 }
 };

@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<x-head/>
+<x-head />
 
-<body class="container mt-5">
+<body>
 
-<x-header/>
+    <x-header />
 
-    <div class="br-breadcrumb my-4">
-        <ul class="crumb-list">
-            <li class="crumb home">
-                <div class="br-button circle">
-                    <span class="sr-only">
-                        Página inicial
-                    </span>
-                    <i class="icon fas fa-home"></i>
-                </div>
-            </li>
+    <main class="container-md">
 
-            <li class="crumb">
-                <i class="icon fas fa-chevron-right"></i>
-                <a href="{{ Route('dashboard'); }}">Dashboard</a>
-            </li>
+        <div class="br-breadcrumb my-4">
+            <ul class="crumb-list">
+                <li class="crumb home">
+                    <div class="br-button circle">
+                        <span class="sr-only">
+                            Página inicial
+                        </span>
+                        <i class="icon fas fa-home"></i>
+                    </div>
+                </li>
 
-            <li class="crumb">
-                <i class="icon fas fa-chevron-right"></i>
-                <a href="{{ Route('funcionario.index'); }}">Funcionários</a>
-            </li>
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
+                </li>
 
-            <li class="crumb" data-active="active">
-                <i class="icon fas fa-chevron-right"></i>
-                <span>Editar</span>
-            </li>
-        </ul>
-    </div>
+                <li class="crumb">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <a href="{{ Route('funcionario.index'); }}">Funcionários</a>
+                </li>
 
-    <p class="h4 my-5">Detalhes do Funcionario</p>
+                <li class="crumb" data-active="active">
+                    <i class="icon fas fa-chevron-right"></i>
+                    <span>Editar</span>
+                </li>
+            </ul>
+        </div>
 
-    <form class="bg-gray-3 p-5" method="POST" action="{{route ('funcionario.update', $funcionario->id) }}">
+        <p class="h4 my-5">Detalhes do Funcionario</p>
 
-        @csrf
+        <form class="bg-gray-3 p-5" method="POST" action="{{route ('funcionario.update', $funcionario->id) }}">
 
-        <p class="text-bold">Informações básicas</p>
+            @csrf
+
+            <p class="text-bold">Informações básicas</p>
 
             <div class="row">
 
@@ -123,11 +125,17 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                <x-btn-cancel/>
-                <x-btn-update/>
+                <x-btn-cancel />
+                <x-btn-update />
             </div>
 
-    </form>
+        </form>
+
+        <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+        <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
+
+    </main>
+
 </body>
 
 </html>

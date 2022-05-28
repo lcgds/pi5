@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <x-head />
 
@@ -32,21 +31,14 @@
 
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Cadastrar</span>
+                    <span>Consultar</span>
                 </li>
             </ul>
         </div>
 
-        <h2 class="my-5">Cadastro de Departamento</h2>
+        <p class="my-5 h4">Detalhes do Departamento</p>
 
-        <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('departamento.store') }}">
-            @csrf
-
-            <!--<div class="br-input">
-                <label class="form-label">Id Departamento</label>
-                <input type="text" name="id" class="form-control">
-            </div>-->
-
+        <div class="bg-gray-3 p-5">
 
             <div class="row">
 
@@ -57,8 +49,8 @@
                             <div class="input-icon">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <input id="input-departamento-nome" type="text" name="nome"
-                                placeholder="Ex.: Administrativo"></input>
+                            <input disabled id="input-departamento-nome" type="text" name="nome"
+                                placeholder="Ex.: Administrativo" value="{{ $departamento->nome }}"></input>
                         </div>
 
                     </div>
@@ -71,8 +63,9 @@
                             <div class="input-icon">
                                 <i class="fas fa-spell-check"></i>
                             </div>
-                            <input id="input-departamento-sigla_departamento" type="text" name="sigla_departamento"
-                                placeholder="Ex.: ADM"></input>
+                            <input disabled id="input-departamento-sigla_departamento" type="text"
+                                name="sigla_departamento" placeholder="Ex.: ADM"
+                                value="{{ $departamento->sigla_departamento }}"></input>
                         </div>
 
                     </div>
@@ -80,18 +73,19 @@
 
             </div>
 
-
             <div class="d-flex justify-content-end">
-                <x-btn-cancel/>
-                <button type="submit" class="br-button primary">Cadastrar</button>
+                <button onclick="window.location = '{{ url('departamento/edit/'.$departamento->id); }}'"
+                    class="br-button primary" type="button" aria-label="Editar">
+                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
+                </button>
             </div>
 
-        </form>
+            </form>
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
-    
+
 </body>
 
 </html>

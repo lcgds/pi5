@@ -69,7 +69,8 @@
                     <div class="br-textarea">
                         <label for="descricao">Descrição</label>
                         <textarea id="descricao" name="descricao"
-                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300">{{$tipodocumento->descricao}}</textarea>
+                            placeholder="Digite aqui a descrição do tipo de documento." rows="4"
+                            maxlength="300">{{$tipodocumento->descricao}}</textarea>
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>
@@ -81,11 +82,14 @@
 
 
             <div class="d-flex justify-content-end">
-                <x-btn-cancel/>
-                <x-btn-update/>
+                <x-btn-cancel />
+                <x-btn-update />
             </div>
         </form>
     </main>
+
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 

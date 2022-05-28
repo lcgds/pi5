@@ -5,7 +5,17 @@
 
 <body>
 
+    <script>
+        function remover(route) {
+            if (confirm('Você deseja remover o cliente ?'))
+                window.location = route;
+        }
+
+    </script>
+
     <x-header />
+
+    <x-alert-message />
 
     <main class="container-md">
 
@@ -39,63 +49,58 @@
 
         <h2 class="my-5">Lista de Documentos</h2>
 
-        <div class="br-table" ...>
-            <!-- Cabeçalho -->
-            <!-- Dados -->
-            <table class="tabela">
-                <caption>Lista de Documentos</caption>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th scope="col">Nº</th>
+                    <th scope="col">Tipo de documento</th>
+                    <th scope="col">Data de cadastro</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Ações</th>
+                </tr>
                 <thead>
+                <tbody>
+                    <!--Pega as informações do banco-->
+                    @foreach($documentos as $doc)
                     <tr>
-                        <th scope="col">Nº do documento</th>
-                        <th scope="col">Tipo de documento</th>
-                        <th scope="col">Data de cadastro</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
+                        <td>{{$doc->id}}</td>
+                        <td>Lorem Ipsum</td>
+                        <td>{{$doc->created_at}}</td>
+                        <td>{{$doc->status}}</td>
+
+                        <td>
+                            <button onclick="window.location = '{{ url('documento/read/'.$doc->id); }}'"
+                                class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Visualizar"><i
+                                    class="fas fa-eye" aria-hidden="true"></i>
+                            </button>
+
+                            <button onclick="window.location = '{{ url('documento/edit/'.$doc->id); }}'"
+                                class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Editar"><i
+                                    class="fas fa-edit" aria-hidden="true"></i>
+                            </button>
+
+                            <button onclick="window.location = '{{ url('documento/destroy/'.$doc->id); }}'"
+                                class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Encerrar"><i
+                                    class="fas fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </td>
+
                     </tr>
-                    <thead>
-                    <tbody>
-                        <!--Pega as informações do banco-->
-                        @foreach($documentos as $doc)
-                        <tr>
-                            <td>{{$doc->id}}</td>
-                            <td>{{$doc->tipodocumento->nome}}</td>
-                            <td>{{$doc->timestamps}}</td>
-                            <td>{{$doc->status}}</td>
-<<<<<<< Updated upstream
-=======
-                            <td>{{$doc->tipodocumento_nome }}</td>
->>>>>>> Stashed changes
+                    @endforeach
+                </tbody>
+        </table>
 
-                            <td>
+        <div class="d-flex justify-content-end">
+            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5"
+                type="button">
+                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
+            </button>
 
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Editar"><i class="fas fa-edit" aria-hidden="true"></i>
-                                </button>
-
-                                <button class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                    aria-label="Encerrar"><i class="fas fa-trash" aria-hidden="true"></i>
-                                </button>
+        </div>
     </main>
 
-    </td>
-    </tr>
-    @endforeach
-    </tbody>
-    </table>
-    <!-- Rodapé -->
-
-    </div>
-
-    <div class="d-flex justify-content-end">
-        <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5" type="button">
-            Cadastrar documento
-        </button>
-       
-    </div>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 

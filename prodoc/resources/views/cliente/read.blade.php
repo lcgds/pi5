@@ -102,8 +102,8 @@
 
             <div class="d-flex justify-content-end">
                 
-                <button onclick="window.location = '{{ url('cliente/edit/'.$cliente->id); }}'" class="br-button primary circle" type="button" aria-label="Editar">
-                    <i class="fas fa-edit" aria-hidden="true"></i>
+            -><button onclick="window.location = '{{ url('cliente/edit/'.$cliente->id); }}'" class="br-button primary" type="button" aria-label="Editar">
+                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
                 </button>
 
             </div>
@@ -112,6 +112,9 @@
 
     </main>
 
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
+    
 </body>
 
 </html>

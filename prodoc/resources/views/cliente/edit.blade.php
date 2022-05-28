@@ -111,6 +111,9 @@
 
     </main>
 
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
+    
 </body>
 
 </html>

@@ -39,7 +39,7 @@
 
         <h2 class="my-5">Cadastro de Documento</h2>
 
-        <form class="bg-gray-3 p-5 mb-5 container-fluid" method="POST" action="{{ route('documento.store') }}">
+        <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('documento.store') }}">
             @csrf
 
             <!--<div class="row">
@@ -66,17 +66,17 @@
                         </div>
 
                         @foreach($tipodocumentos as $tipodoc)
-                        
-                            <div class="br-list" tabindex="0">
-                                <div class="br-item divider" tabindex="-1">
-                                    <div class="br-radio">
-                                        <input id="rb0" type="radio" name="opcao" value="{{$tipodoc->id}}" />
-                                        <label for="rb0">{{$tipodoc->nome}}</label>
-                                    </div>
+
+                        <div class="br-list" tabindex="0">
+                            <div class="br-item divider" tabindex="-1">
+                                <div class="br-radio">
+                                    <input id="rb0" type="radio" name="opcao" value="{{$tipodoc->id}}" />
+                                    <label for="rb0">{{$tipodoc->nome}}</label>
                                 </div>
                             </div>
-                        
-                        @endforeach 
+                        </div>
+
+                        @endforeach
 
                     </div>
 
@@ -138,12 +138,15 @@
                 <div class="col-lg-8 col-md-10 col-sm-12 d-flex justify-content-end">
                     <button class="br-button secondary mr-4" type="button">Cancelar</button>
                     <button type="submit" class="br-button primary">Cadastrar</button>
-                </div>    
+                </div>
             </div>
+
         </form>
+
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
+    <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 

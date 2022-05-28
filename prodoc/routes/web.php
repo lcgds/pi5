@@ -39,9 +39,9 @@ Route::middleware('auth')->group(function () {
 	Route::get('/documento', [DocumentosController::class, 'index'])->name('documento.index');
 	Route::get('/documento/create', [DocumentosController::class,'create'])->name('documento.create');
 	Route::post('/documento/store', [DocumentosController::class,'store'])->name('documento.store');
-	Route::get('/documento/edit/{documento}', [documentoController::class,'edit'])->name('documento.edit');
-	Route::post('/documento/update/{documento}', [documentoController::class,'update'])->name('documento.update');
-	Route::get('/documento/destroy/{documento}', [documentoController::class,'destroy'])->name('documento.destroy');
+	Route::get('/documento/edit/{documento}', [DocumentosController::class,'edit'])->name('documento.edit');
+	Route::post('/documento/update/{documento}', [DocumentosController::class,'update'])->name('documento.update');
+	Route::get('/documento/destroy/{documento}', [DocumentosController::class,'destroy'])->name('documento.destroy');
 
 	// CRUD Funcionário
 	Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('funcionario.index');
@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/departamento', [DepartamentoController::class, 'index'])->name('departamento.index');
 	Route::get('/departamento/create', [DepartamentoController::class,'create'])->name('departamento.create');
 	Route::post('/departamento/store', [DepartamentoController::class,'store'])->name('departamento.store');
+	Route::get('/departamento/read/{departamento}', [DepartamentoController::class,'read'])->name('departamento.read');
 	Route::get('/departamento/edit/{departamento}', [DepartamentoController::class,'edit'])->name('departamento.edit');
 	Route::post('/departamento/update/{departamento}', [DepartamentoController::class,'update'])->name('departamento.update');
 	Route::get('/departamento/destroy/{departamento}', [DepartamentoController::class,'destroy'])->name('departamento.destroy');
@@ -75,6 +76,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/tipodocumento', [tipodocumentoController::class, 'index'])->name('tipodocumento.index');
 	Route::get('/tipodocumento/create', [tipodocumentoController::class,'create'])->name('tipodocumento.create');
 	Route::post('/tipodocumento/store', [tipodocumentoController::class,'store'])->name('tipodocumento.store');
+	Route::get('/tipodocumento/read/{tipodocumento}', [tipodocumentoController::class,'read'])->name('tipodocumento.read');
 	Route::get('/tipodocumento/edit/{tipodocumento}', [tipodocumentoController::class,'edit'])->name('tipodocumento.edit');
 	Route::post('/tipodocumento/update/{tipodocumento}', [tipodocumentoController::class,'update'])->name('tipodocumento.update');
 	Route::get('/tipodocumento/destroy/{tipodocumento}', [tipodocumentoController::class,'destroy'])->name('tipodocumento.destroy');

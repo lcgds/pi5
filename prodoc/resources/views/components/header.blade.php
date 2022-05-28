@@ -559,7 +559,7 @@
 
                 <div class="header-login">
                     <div class="header-sign-in">
-                        <button onclick="window.location = '{{ url('login'); }}'" class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user"
+                        <button onclick="window.location = '{{ url('login'); }}'" class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user mr-1"
                                 aria-hidden="true"></i><span class="d-sm-inline">Minha conta</span>
                         </button>
                     </div>

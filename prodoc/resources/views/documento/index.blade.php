@@ -61,6 +61,10 @@
                             <td>{{$doc->tipodocumento->nome}}</td>
                             <td>{{$doc->timestamps}}</td>
                             <td>{{$doc->status}}</td>
+<<<<<<< Updated upstream
+=======
+                            <td>{{$doc->tipodocumento_nome }}</td>
+>>>>>>> Stashed changes
 
                             <td>
 
@@ -90,6 +94,7 @@
         <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5" type="button">
             Cadastrar documento
         </button>
+       
     </div>
 
 </body>

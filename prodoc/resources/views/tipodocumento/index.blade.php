@@ -73,7 +73,11 @@
                         <!--Pega as informações do banco-->
                         @foreach($tipodocumentos as $tipodoc)
                         <tr>
+<<<<<<< Updated upstream
                             <td>{{$tipodoc->nome}}</td>
+=======
+                            <td>{{$tipodoc->nome}} {{$doc->tipodoc }}</td>
+>>>>>>> Stashed changes
                             <td>{{$tipodoc->descricao}}</td>
                             <td>{{$tipodoc->created_at}}</td>
                             <td>{{$tipodoc->status}}</td>

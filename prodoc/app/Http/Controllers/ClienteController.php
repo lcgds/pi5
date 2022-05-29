@@ -20,7 +20,7 @@ class ClienteController extends Controller {
     public
     function store(Request $request) {
         cliente::create($request->all());
-        session()->flash('success', 'cliente cadastrado com sucesso!');
+        session()->flash('success', 'O Cliente foi cadastrado.');
         //Redireciona a rota pra pagina inicial
         return redirect(route('cliente.index'));
     }
@@ -38,14 +38,14 @@ class ClienteController extends Controller {
     public
     function update(Request $request, Cliente $cliente) {
         $cliente->update($request->all());
-        session()->flash('success', 'cliente alterado com sucesso!');
+        session()->flash('success', 'Os dados do Cliente foram atualizados.');
         return redirect(route('cliente.index'));
     }
 
     public
     function destroy(Cliente $cliente) {
         $cliente->delete();
-        session()->flash('success', 'cliente apagado com sucesso!');
+        session()->flash('success', 'O Cliente selecionado foi deletado.');
         return redirect(route('cliente.index'));
 
     }

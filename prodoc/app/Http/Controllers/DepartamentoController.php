@@ -20,6 +20,7 @@ class DepartamentoController extends Controller {
     public
     function store(Request $request) {
         departamento::create($request->all());
+        session()->flash('success', 'O Departamento foi cadastrado.');
         //Redireciona a rota pra pagina inicial
         return redirect(route('departamento.index'));
     }
@@ -37,14 +38,14 @@ class DepartamentoController extends Controller {
     public
     function update(Request $request, Departamento $departamento) {
         $departamento->update($request->all());
-        session()->flash('success', 'departamento alterado com sucesso!');
+        session()->flash('success', 'Os dados do Departamento foram atualizados.');
         return redirect(route('departamento.index'));
     }
 
     public
     function destroy(Departamento $departamento) {
         $departamento->delete();
-        session()->flash('success', 'departamento apagado com sucesso!');
+        session()->flash('success', 'O Departamento selecionado foi deletado.');
         return redirect(route('departamento.index'));
 
     }

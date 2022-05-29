@@ -20,6 +20,7 @@ class tipodocumentoController extends Controller {
     public
     function store(Request $request) {
         tipodocumento::create($request->all());
+        session()->flash('success', 'O Tipo de Documentado foi cadastrado.');
         //Redireciona a rota pra pagina inicial
         return redirect(route('tipodocumento.index'));
     }
@@ -37,14 +38,14 @@ class tipodocumentoController extends Controller {
     public
     function update(Request $request, tipodocumento $tipodocumento) {
         $tipodocumento->update($request->all());
-        session()->flash('success', 'tipo documento alterado com sucesso!');
+        session()->flash('success', 'Os dados do Tipo de Documento foram atualizados.');
         return redirect(route('tipodocumento.index'));
     }
 
     public
     function destroy(tipodocumento $tipodocumento) {
         $tipodocumento->delete();
-        session()->flash('success', 'tipo documento apagado com sucesso!');
+        session()->flash('success', 'O Tipo de Documento foi deletado.');
         return redirect(route('tipodocumento.index'));
 
     }

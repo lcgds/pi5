@@ -14,10 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('documentos', function (Blueprint $table) {
-        // $table->string('tipodocumentos_nome');
-        $table->foreign('tipodocumentos_nome')->
-        references('nome')->
-        on('tipodocumento');
+        $table->string('tipodocumentos_nome');
+       
      
         });
     }
@@ -30,7 +28,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('documentos', function (Blueprint $table) {
-            //
+            
         });
     }
 };

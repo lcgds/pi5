@@ -49,7 +49,8 @@
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-4 col-sm-9 mb-4">
+                <div class="col-lg-3 col-md-4 col-sm-5 mb-4">
+
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-tipoDocumento">Tipo de documento</label>
@@ -70,7 +71,7 @@
                         <div class="br-list" tabindex="0">
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input id="rb0" type="radio" name="opcao" value="{{$tipodoc->id}}" />
+                                    <input name="tipodocumentos_id" id="rb0" type="radio" value="{{$tipodoc->id}}" />
                                     <label for="rb0">{{$tipodoc->nome}}</label>
                                 </div>
                             </div>
@@ -82,13 +83,13 @@
 
                 </div>
 
-                <div class="col-lg-1 col-md-1 col-sm-1 pt-sm-5 mb-4">
+                <div class="col-lg-1 col-md-1 col-sm-1 pt-sm-4 mb-4">
                     <button onclick="window.location = '{{ url('tipodocumento'); }}'" class="br-button circle small"
                         type="button"><i class="fas fa-edit" aria-hidden="true"></i>
                     </button>
                 </div>
 
-                <div class="col-lg-4 col-md-5 col-sm-12 ml-lg-4 mb-4">
+                <div class="col-lg-4 col-md-5 col-sm-6 ml-lg-4 mb-4">
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-cliente">Emissor</label>
@@ -115,8 +116,6 @@
 
                     </div>
                 </div>
-
-            </div>
 
             </div>
 

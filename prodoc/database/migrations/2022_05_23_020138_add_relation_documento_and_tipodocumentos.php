@@ -14,9 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('documentos', function (Blueprint $table) {
-        $table->string('tipodocumentos_nome');
-       
-     
+            $table->integer('tipodocumentos_id');
         });
     }
 
@@ -28,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('documentos', function (Blueprint $table) {
-            
+            $table->dropColumn('tipodocumentos_id');
         });
     }
 };

@@ -64,7 +64,7 @@
                     @foreach($documentos as $doc)
                     <tr>
                         <td>{{$doc->id}}</td>
-                        <td>Lorem Ipsum</td>
+                        <td>{{$doc->tipodocumento->nome}}</td>
                         <td>{{$doc->created_at}}</td>
                         <td>{{$doc->status}}</td>
 

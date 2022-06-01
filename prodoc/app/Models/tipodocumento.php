@@ -11,7 +11,10 @@ class tipodocumento extends Model
     protected $fillable = ['id','nome','descricao'];
 
     //Pertence a muitos
+    /*
     public function documentos(){
         return $this->hasMany(Documento::class);
     }
+    */
+    
 }

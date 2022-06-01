@@ -8,11 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Documento extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','descricao', 'tipodocumento_nome'];
+    protected $fillable = ['id','descricao', 'tipodocumentos_id'];
 
-    //Pertence a 1 .
-    public function tipodocumento(){
-        return $this->belongsTo(tipodocumento::class);
-
+    public function tipodocumento() {
+        // 1 'Tipo de Documento' pertence a 'Documento' 
+        return $this->belongsTo(tipodocumento::class, 'tipodocumentos_id' /*FK na minha tabela*/,   'id' /*PK na tabela 'Tipo de Documento'*/);
     }
 }

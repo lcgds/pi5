@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/documento/create', [DocumentosController::class,'create'])->name('documento.create');
 	Route::post('/documento/store', [DocumentosController::class,'store'])->name('documento.store');
 	Route::get('/documento/edit/{documento}', [DocumentosController::class,'edit'])->name('documento.edit');
+	Route::get('/documento/read/{documento}', [DocumentosController::class,'read'])->name('documento.read');
 	Route::post('/documento/update/{documento}', [DocumentosController::class,'update'])->name('documento.update');
 	Route::get('/documento/destroy/{documento}', [DocumentosController::class,'destroy'])->name('documento.destroy');
 

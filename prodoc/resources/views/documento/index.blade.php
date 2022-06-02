@@ -54,8 +54,9 @@
                 <tr>
                     <th scope="col">Nº</th>
                     <th scope="col">Tipo de documento</th>
+                    <th scope="col">Emissor</th>
                     <th scope="col">Data de cadastro</th>
-                    <th scope="col">Status</th>
+                    <!--<th scope="col">Status</th>-->
                     <th scope="col">Ações</th>
                 </tr>
                 <thead>
@@ -65,8 +66,9 @@
                     <tr>
                         <td>{{$doc->id}}</td>
                         <td>{{$doc->tipodocumento->nome}}</td>
+                        <td>{{$doc->cliente->nome}}</td>
                         <td>{{$doc->created_at}}</td>
-                        <td>{{$doc->status}}</td>
+                        <!--<td>{{$doc->status}}</td>-->
 
                         <td>
                             <button onclick="window.location = '{{ url('documento/read/'.$doc->id); }}'"

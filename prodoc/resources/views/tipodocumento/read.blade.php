@@ -78,14 +78,13 @@
                 </div>
             </div>
 
-
             <div class="d-flex justify-content-end">
-            <button onclick="window.location = '{{ url('tipodocumento/edit/'.$tipodocumento->id); }}'"
+                <button onclick="window.location = '{{ url('tipodocumento/edit/'.$tipodocumento->id); }}'"
                     class="br-button primary" type="button" aria-label="Editar">
                     <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
                 </button>
             </div>
-</div>
+        </div>
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

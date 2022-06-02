@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Documento;
+use App\Models\Cliente;
 use App\Models\tipodocumento;
 
 
@@ -16,7 +17,7 @@ class DocumentosController extends Controller {
     //Criar Documento
     public
     function create() {
-        return view('documento.create')->with('tipodocumentos', tipodocumento::all());
+        return view('documento.create')->with(['tipodocumento' => tipodocumento::all(), 'cliente' => Cliente::all()]);
     }
     //Armazenar dados no banco
     public
@@ -28,8 +29,13 @@ class DocumentosController extends Controller {
     }
 
     public
+    function read(Documento $documento) {
+        return view('documento.read')->with('documento', $documento);
+    }
+
+    public
     function edit(Documento $documento) {
-        return view('documento.edit')->with(['documento' => $documento, 'tipodocumentos' => tipodocumento::all()]);
+        return view('documento.edit')->with(['documento' => $documento, 'tipodocumento' => tipodocumento::all(), 'cliente' => Cliente::all()]);
     }
 
     public

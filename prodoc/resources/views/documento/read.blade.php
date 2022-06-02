@@ -32,20 +32,18 @@
 
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Cadastrar</span>
+                    <span>Consultar</span>
                 </li>
             </ul>
         </div>
 
-        <h2 class="my-5">Cadastro de Documento</h2>
+        <p class="my-5 h4">Detalhes do Documento</p>
 
-        <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('documento.store') }}">
-
-            @csrf
+        <div class="bg-gray-3 p-5 mb-5">
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-4 col-sm-5 mb-4">
+                <div class="col-lg-4 col-md-5 col-sm-6 mb-4">
 
                     <div class="br-select">
                         <div class="br-input">
@@ -54,35 +52,23 @@
                             <div class="input-group">
 
                                 <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input id="select-tipoDocumento" type="text" placeholder="Selecione um item" />
+                                <input disabled id="select-tipoDocumento" type="text" value="{{$documento->tipodocumento->nome}}"/>
                             </div>
 
-                            <button class="br-button circle small" type="button" tabindex="-1" data-trigger>
+                            <button disabled class="br-button circle small" type="button" tabindex="-1" data-trigger>
                                 <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
                             </button>
                         </div>
 
-                        @foreach($tipodocumento as $tipodoc)
-
                         <div class="br-list" tabindex="0">
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="tipodocumentos_id" id="rb0" type="radio" value="{{$tipodoc->id}}" />
-                                    <label for="rb0">{{$tipodoc->nome}}</label>
+                                    <input name="tipodocumentos_id" id="rb0" type="radio" value="{{$documento->tipodocumento->id}}" disabled />
                                 </div>
                             </div>
                         </div>
-
-                        @endforeach
-
                     </div>
 
-                </div>
-
-                <div class="col-lg-1 col-md-1 col-sm-1 pt-sm-4 mb-4">
-                    <button onclick="window.location = '{{ url('tipodocumento'); }}'" class="br-button circle small"
-                        type="button"><i class="fas fa-edit" aria-hidden="true"></i>
-                    </button>
                 </div>
 
                 <div class="col-lg-4 col-md-5 col-sm-6 ml-lg-4 mb-4">
@@ -93,26 +79,22 @@
                             <div class="input-group">
 
                                 <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input id="select-cliente" type="text" placeholder="Selecione um item" />
+                                <input disabled id="select-cliente" type="text" value="{{$documento->cliente->nome}}"/>
                             </div>
 
-                            <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
+                            <button disabled class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
                                 <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
                             </button>
                         </div>
 
-                        @foreach($cliente as $cli)
-
                         <div class="br-list" tabindex="0">
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="clientes_id" id="rb1" type="radio" value="{{$cli->id}}" />
-                                    <label for="rb1">{{$cli->nome}}</label>
+                                    <input disabled name="clientes" id="rb1" type="radio" name="opcao" value="{{$documento->cliente->id}}" />
+                                    <label for="rb1">$documento->cliente->nome</label>
                                 </div>
                             </div>
                         </div>
-
-                        @endforeach
 
                     </div>
                 </div>
@@ -123,21 +105,20 @@
                 <div class="col-lg-8 col-md-10 col-sm-12 mb-4">
                     <div class="br-textarea">
                         <label for="textarea-documento-descricao">Descrição</label>
-                        <textarea id="textarea-documento-descricao" placeholder="Digite aqui a descrição do documento."
-                            rows="4" maxlength="300" name="descricao"></textarea>
+                        <textarea disabled id="textarea-documento-descricao" 
+                            rows="4" maxlength="300" name="descricao" value="{{$documento->descricao}}">{{$documento->descricao}}</textarea>
                         <div class="text-base mt-1">
-                            <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-8 col-md-10 col-sm-12 d-flex justify-content-end">
-                    <x-btn-cancel />
-                    <button type="submit" class="br-button primary">Cadastrar</button>
-                </div>
+            <div class="d-flex justify-content-end">
+                <button onclick="window.location = '{{ url('documento/edit/'.$documento->id); }}'"
+                    class="br-button primary" type="button" aria-label="Editar">
+                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
+                </button>
             </div>
 
         </form>

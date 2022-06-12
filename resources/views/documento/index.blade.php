@@ -5,14 +5,6 @@
 
 <body>
 
-    <script>
-        function remover(route) {
-            if (confirm('Você deseja remover o cliente ?'))
-                window.location = route;
-        }
-
-    </script>
-
     <x-header />
 
     <x-alert-message />
@@ -49,6 +41,7 @@
 
         <h2 class="my-5">Lista de Documentos</h2>
 
+        @if ($documentos->count()>0)
         <table class="tabela">
             <thead>
                 <tr>
@@ -135,8 +128,25 @@
                 type="button">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
             </button>
-
         </div>
+
+        @else
+            <div class="d-flex flex-fill justify-content-center align-items-center">
+                <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404"/>
+                <div>
+                    <h3>Nenhum documento encontrado!</h3>
+                    <span>Para cadastrar um documento basta clicar no botão logo abaixo.</span>
+                    <button onclick="window.location='{{ url('documento/create'); }}'" class="d-block br-button primary mt-5"
+                    type="button">
+                    <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar
+                    </button>
+                </div>
+                
+            </div>
+        @endif
+
+
+        
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

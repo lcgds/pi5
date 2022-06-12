@@ -41,6 +41,7 @@
 
         <h2 class="my-5">Lista de Clientes</h2>
 
+        @if ($clientes->count()>0)
         <table>
             <thead>
                 <tr>
@@ -89,7 +90,8 @@
                                         <div class="br-modal-content">
 
                                             <div class="text-center br-modal-header">
-                                                <i class="fas fa-exclamation fa-8x circle text-warning" aria-hidden="true"></i>
+                                                <i class="fas fa-exclamation fa-8x circle text-warning"
+                                                    aria-hidden="true"></i>
                                             </div>
 
                                             <div class="br-modal-body text-center">
@@ -128,13 +130,26 @@
                 </tbody>
         </table>
 
-
         <div class="d-flex justify-content-end">
             <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6"
                 type="button">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar cliente
             </button>
         </div>
+        @else
+        <div class="d-flex flex-fill justify-content-center align-items-center">
+            <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404" />
+            <div>
+                <h3>Nenhum cliente encontrado!</h3>
+                <span>Para cadastrar um cliente basta clicar no botão logo abaixo.</span>
+                <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6 d-block"
+                    type="button">
+                    <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar
+                </button>
+            </div>
+
+        </div>
+        @endif
 
     </main>
 

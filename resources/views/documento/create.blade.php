@@ -48,32 +48,35 @@
                 <div class="col-lg-3 col-md-4 col-sm-5 mb-4">
 
                     <div class="br-select">
+
                         <div class="br-input">
+
                             <label for="select-tipoDocumento">Tipo de documento</label>
 
                             <div class="input-group">
-
                                 <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input id="select-tipoDocumento" type="text" placeholder="Selecione um item" />
+                                <input id="select-tipoDocumento" type="text" placeholder="Selecione um item" required/>
                             </div>
 
-                            <button class="br-button circle small" type="button" tabindex="-1" data-trigger>
-                                <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                            <button class="br-button circle small" aria-label="Exibir lista" type="button" tabindex="-1"
+                                data-trigger><span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
                             </button>
-                        </div>
 
-                        @foreach($tipodocumento as $tipodoc)
+                        </div>
 
                         <div class="br-list" tabindex="0">
+
+                            @foreach($tipodocumento as $tipodoc)
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="tipodocumentos_id" id="rb0" type="radio" value="{{$tipodoc->id}}" />
-                                    <label for="rb0">{{$tipodoc->nome}}</label>
+                                    <input name="tipodocumentos_id" id="td{{$tipodoc->id}}" type="radio" value="{{$tipodoc->id}}" />
+                                    <label for="td{{$tipodoc->id}}">{{$tipodoc->nome}}</label>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
 
-                        @endforeach
 
                     </div>
 
@@ -93,7 +96,7 @@
                             <div class="input-group">
 
                                 <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input id="select-cliente" type="text" placeholder="Selecione um item" />
+                                <input id="select-cliente" type="text" placeholder="Selecione um item" required/>
                             </div>
 
                             <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
@@ -101,18 +104,19 @@
                             </button>
                         </div>
 
-                        @foreach($cliente as $cli)
-
                         <div class="br-list" tabindex="0">
-                            <div class="br-item divider" tabindex="-1">
-                                <div class="br-radio">
-                                    <input name="clientes_id" id="rb1" type="radio" value="{{$cli->id}}" />
-                                    <label for="rb1">{{$cli->nome}}</label>
+
+                            @foreach($cliente as $cli)
+                                <div class="br-item divider" tabindex="-1">
+                                    <div class="br-radio">
+                                        <input name="clientes_id" id="cl{{$cli->id}}" type="radio" value="{{$cli->id}}"/>
+                                        <label for="cl{{$cli->id}}">{{$cli->nome}}</label>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
+
                         </div>
 
-                        @endforeach
 
                     </div>
                 </div>
@@ -124,7 +128,7 @@
                     <div class="br-textarea">
                         <label for="textarea-documento-descricao">Descrição</label>
                         <textarea id="textarea-documento-descricao" placeholder="Digite aqui a descrição do documento."
-                            rows="4" maxlength="300" name="descricao"></textarea>
+                            rows="4" maxlength="300" name="descricao" required></textarea>
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>

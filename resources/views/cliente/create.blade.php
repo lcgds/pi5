@@ -51,7 +51,7 @@
                             <div class="input-icon"><i class="fas fa-building" aria-hidden="true"></i>
                             </div>
                             <input id="input-cliente-nome" type="text" class="form-control" name="nome"
-                                placeholder="Ex.: PRO DOC LTDA."></input>
+                                placeholder="Ex.: PRO DOC LTDA." required autofocus></input>
                         </div>
 
                     </div>
@@ -64,7 +64,7 @@
                             <div class="input-icon"><i class="fas fa-check"></i>
                             </div>
                             <input type="text" id="input-cliente-cnpj" class="form-control" name="cnpj"
-                                placeholder="Ex.: 00.000.000/0000-00"></input>
+                                placeholder="Ex.: 00.000.000/0000-00" required></input>
                         </div>
 
                     </div>
@@ -82,7 +82,7 @@
                             <div class="input-icon"><i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
                             <input id="input-cliente-email" type="email" class="form-control" name="email"
-                                placeholder="Ex.: prodoc@email.com.br"></input>
+                                placeholder="Ex.: prodoc@email.com.br" required></input>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                             <div class="input-icon"><i class="fas fa-phone" aria-hidden="true"></i>
                             </div>
                             <input type="tel" id="input-cliente-telefone" class="form-control" name="telefone"
-                                placeholder="Ex.: 99999-9999"></input>
+                                placeholder="Ex.: 99999-9999" required></input>
                         </div>
                     </div>
                 </div>

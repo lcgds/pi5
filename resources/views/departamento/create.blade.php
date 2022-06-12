@@ -42,12 +42,6 @@
         <form class="bg-gray-3 p-5 mb-5" method="POST" action="{{ route('departamento.store') }}">
             @csrf
 
-            <!--<div class="br-input">
-                <label class="form-label">Id Departamento</label>
-                <input type="text" name="id" class="form-control">
-            </div>-->
-
-
             <div class="row">
 
                 <div class="col-lg-9 col-md-8 mb-4">
@@ -58,7 +52,7 @@
                                 <i class="fas fa-briefcase"></i>
                             </div>
                             <input id="input-departamento-nome" type="text" name="nome"
-                                placeholder="Ex.: Administrativo"></input>
+                                placeholder="Ex.: Administrativo" required autofocus></input>
                         </div>
 
                     </div>
@@ -72,7 +66,7 @@
                                 <i class="fas fa-spell-check"></i>
                             </div>
                             <input id="input-departamento-sigla_departamento" type="text" name="sigla_departamento"
-                                placeholder="Ex.: ADM"></input>
+                                placeholder="Ex.: ADM" required></input>
                         </div>
 
                     </div>

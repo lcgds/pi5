@@ -57,7 +57,7 @@
                             <div class="input-icon"><i class="fas fa-file" aria-hidden="true"></i>
                             </div>
                             <input id="input-tipoDocumento-nome" type="text" class="form-control" name="nome"
-                                placeholder="Ex.: Memorando"></input>
+                                placeholder="Ex.: Memorando" required autofocus></input>
                         </div>
 
                     </div>
@@ -71,7 +71,7 @@
                         <label for="descricao">Descrição</label>
                         <textarea id="descricao" name="descricao"
                             placeholder="Digite aqui a descrição do tipo de documento." rows="4"
-                            maxlength="300"></textarea>
+                            maxlength="300" required></textarea>
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>

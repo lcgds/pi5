@@ -3,7 +3,11 @@
 <x-head />
 
 <body>
+
     <x-header />
+
+    <x-alert-message />
+
     <main class="container-md">
 
         <div class="br-breadcrumb my-4">

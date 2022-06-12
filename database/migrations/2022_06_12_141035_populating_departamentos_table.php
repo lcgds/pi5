@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        DB::table('departamentos')->insert([
+            ['nome' => 'Tecnologia da Informação', 'sigla_departamento' => 'DETIN'],
+            ['nome' => 'Recursos Humanos', 'sigla_departamento' => 'DEARH'],
+            ['nome' => 'Atendimento', 'sigla_departamento' => 'DEATE'],
+            ['nome' => 'Operacional', 'sigla_departamento' => 'DEOPE'],
+            ['nome' => 'Jurídico', 'sigla_departamento' => 'DEJUR']
+        ]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        DB::table('departamentos')->delete([
+            ['nome' => 'Tecnologia da Informação', 'sigla_departamento' => 'DETIN'],
+            ['nome' => 'Recursos Humanos', 'sigla_departamento' => 'DEARH'],
+            ['nome' => 'Atendimento', 'sigla_departamento' => 'DEATE'],
+            ['nome' => 'Operacional', 'sigla_departamento' => 'DEOPE'],
+            ['nome' => 'Jurídico', 'sigla_departamento' => 'DEJUR']
+        ]);
+    }
+};

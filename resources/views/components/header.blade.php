@@ -557,10 +557,20 @@
                     </button>
                 </div>
 
+                <!--
                 <div class="header-login">
                     <div class="header-sign-in">
                         <button onclick="window.location = '{{ url('login'); }}'" class="br-sign-in small" type="button" data-trigger="login"><i class="fas fa-user mr-1"
                                 aria-hidden="true"></i><span class="d-sm-inline">Minha conta</span>
+                        </button>
+                    </div>
+                </div>
+                -->
+
+                <div class="header-logout">
+                    <div class="header-sign-in">
+                        <button onclick="window.location = '{{ url('logout'); }}'" class="br-sign-in small" type="button" data-trigger="logout"><i class="fas fa-door-open mr-1"
+                                aria-hidden="true"></i><span class="d-sm-inline">Sair</span>
                         </button>
                     </div>
                 </div>

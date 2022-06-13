@@ -64,18 +64,21 @@
                             </button>
                         </div>
 
-                        @foreach($tipodocumento as $tipodoc)
-
                         <div class="br-list" tabindex="0">
+
+                            @foreach($tipodocumento as $tipodoc)
+
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="tipodocumentos_id" id="rb0" type="radio" value="{{$tipodoc->id}}" />
-                                    <label for="rb0">{{$tipodoc->nome}}</label>
+                                    <input name="tipodocumentos_id" id="td{{$tipodoc->id}}"
+                                        type="radio" value="{{$tipodoc->id}}" />
+                                    <label for="td{{$tipodoc->id}}">{{$tipodoc->nome}}</label>
                                 </div>
                             </div>
-                        </div>
 
-                        @endforeach
+                            @endforeach
+
+                        </div>
 
                     </div>
 
@@ -95,7 +98,8 @@
                             <div class="input-group">
 
                                 <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input id="select-cliente" type="text" value="{{$documento->cliente->nome}}" placeholder="Selecione um item" />
+                                <input id="select-cliente" type="text" value="{{$documento->cliente->nome}}"
+                                    placeholder="Selecione um item" />
                             </div>
 
                             <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
@@ -103,18 +107,20 @@
                             </button>
                         </div>
 
-                        @foreach($cliente as $cli)
-
                         <div class="br-list" tabindex="0">
+
+                            @foreach($cliente as $cli)
+
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="clientes_id" id="rb1" type="radio" value="{{$cli->id}}" />
-                                    <label for="rb1">{{$cli->nome}}</label>
+                                    <input name="clientes_id" id="cl{{$cli->id}}" type="radio" value="{{$cli->id}}" />
+                                    <label for="cl{{$cli->id}}">{{$cli->nome}}</label>
                                 </div>
                             </div>
-                        </div>
 
-                        @endforeach
+                            @endforeach
+
+                        </div>
 
                     </div>
                 </div>

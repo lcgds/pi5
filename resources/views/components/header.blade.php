@@ -549,6 +549,7 @@
 
             </div>
 
+            @if (Auth::check())
             <div class="col header-actions d-flex justify-content-end my-0">
 
                 <div class="header-search-trigger">
@@ -576,6 +577,8 @@
                 </div>
 
             </div>
+            @endif
+
 
         </div>
 

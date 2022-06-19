@@ -1,5 +1,7 @@
 <x-guest-layout>
-    <x-auth-card>
+<div class="br-card rounded col-lg-4 col-md-6 col-sm-8 py-2 px-6">
+<div class="card-header h2 text-center">Cadastro</div>
+
         <x-slot name="logo">
             <a href="/">
                 <img height="20rem" src="{{ asset('docs-b.svg') }}"/>
@@ -14,47 +16,64 @@
             @csrf
 
             <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Nome')" />
-
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
+            <div class="mx-2">
+                    <div class="br-input input-highlight">
+                        <label class="text-bold" for="name">Nome</label>
+                        <div class="input-group">
+                            <div class="input-icon"><i class="fas fa-user" aria-hidden="true"></i>
+                            </div>
+                            <input id="name" type="text" name="name" placeholder="Digite seu nome" required
+                                autofocus />
+                        </div>
+                    </div>
+                </div>
 
             <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+            <div class="mx-2 my-4">
+                    <div class="br-input input-highlight">
+                        <label class="text-bold" for="email">Login</label>
+                        <div class="input-group">
+                            <div class="input-icon"><i class="fas fa-envelope" aria-hidden="true"></i>
+                            </div>
+                            <input id="email" type="email" name="email" placeholder="Ex.: fulano@email.com.br" required
+                                autofocus />
+                        </div>
+                    </div>
+                </div>
 
             <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Senha')" />
+            <div class="mx-2 my-4">
+                    <div class="br-input input-highlight input-button">
+                        <label class="text-bold" for="password">Senha</label>
+                        <div class="input-group">
+                            <div class="input-icon"><i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
+                            <input id="password" type="password" name="password"
+                                placeholder="Digite sua senha de segurança" required />
+                        </div>
+                    </div>
+                </div>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
 
             <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirmar Senha')" />
+            <div class="mx-2 my-4">
+                    <div class="br-input input-highlight input-button">
+                        <label class="text-bold" for="password_confirmation">Confirmar senha</label>
+                        <div class="input-group">
+                            <div class="input-icon"><i class="fas fa-lock" aria-hidden="true"></i>
+                            </div>
+                            <input id="password_confirmation" type="password" name="password_confirmation"
+                                placeholder="Repita sua senha de segurança" required />
+                        </div>
+                    </div>
+                </div>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Já está registrado?') }}
-                </a>
-
-                <x-button class="ml-4">
+            <div class="flex items-center justify-end mt-6 mb-3">
+                <x-button>
                     {{ __('Cadastrar-se') }}
                 </x-button>
             </div>
         </form>
-    </x-auth-card>
+</div>
 </x-guest-layout>

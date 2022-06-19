@@ -5,6 +5,10 @@
 
 <body>
 
+    @php
+        $temp_id = null;
+    @endphp
+
     <x-header />
 
     <x-alert-message />
@@ -88,7 +92,7 @@
                                             </div>
 
                                             <div class="br-modal-body text-center">
-                                                <p>Você tem certeza que deseja deletar o Documentodestroy selecionado?</p>
+                                                <p>Você tem certeza que deseja deletar o Documento selecionado?</p>
                                                 <p>Essa ação não poderá ser desfeita.</p>
                                             </div>
 

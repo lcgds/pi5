@@ -101,12 +101,43 @@
             </div>
 
             <div class="d-flex justify-content-end">
-                
-            -><button onclick="window.location = '{{ url('cliente/edit/'.$cliente->id); }}'" class="br-button primary" type="button" aria-label="Editar">
+
+                <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
+                    <div class="br-modal medium">
+                        <div class="br-modal-dialog p-4">
+                            <div class="br-modal-content">
+                                <div class="text-center br-modal-header">
+                                    <i class="fas fa-exclamation fa-8x circle text-warning" aria-hidden="true"></i>
+                                </div>
+                                <div class="br-modal-body text-center">
+                                    <p>Você tem certeza que deseja deletar o Cliente selecionado?</p>
+                                    <p>Essa ação não poderá ser desfeita.</p>
+                                </div>
+                                <div class="br-modal-footer justify-content-center">
+                                    <button class="br-button secondary" type="button" id="scrimfechar"
+                                        data-dismiss="scrimexample">Cancelar
+                                    </button>
+                                    <button onclick="window.location = '{{ url('cliente/delete/'.$cliente->id); }}'"
+                                        class="br-button primary mt-3 mt-sm-0 ml-sm-3" type="button">Deletar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-inline scrimutilexemplo">
+                    <button class="br-button bg-danger text-pure-0" type="button" aria-label="Encerrar"><i
+                            class="fas fa-trash mr-1" aria-hidden="true"></i>Excluir
+                    </button>
+                </div>
+
+                <button onclick="window.location = '{{ url('cliente/edit/'.$cliente->id); }}'"
+                    class="br-button primary ml-4" type="button" aria-label="Editar">
                     <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
                 </button>
-
             </div>
+
+
 
         </div>
 
@@ -114,7 +145,7 @@
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
-    
+
 </body>
 
 </html>

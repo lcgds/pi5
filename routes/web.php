@@ -43,7 +43,9 @@ Route::middleware('auth')->group(function () {
 	Route::get('/documento/edit/{documento}', [DocumentosController::class,'edit'])->name('documento.edit');
 	Route::get('/documento/read/{documento}', [DocumentosController::class,'read'])->name('documento.read');
 	Route::post('/documento/update/{documento}', [DocumentosController::class,'update'])->name('documento.update');
-	Route::get('/documento/destroy/{documento}', [DocumentosController::class,'destroy'])->name('documento.destroy');
+	//Route::get('/documento/destroy/{documento}', [DocumentosController::class,'destroy'])->name('documento.destroy');
+	Route::get('/documento/delete/{documento}', [DocumentosController::class,'delete'])->name('documento.delete');
+
 
 	// CRUD Funcionário
 	Route::get('/funcionario', [FuncionarioController::class, 'index'])->name('funcionario.index');
@@ -61,7 +63,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/cliente/read/{cliente}', [ClienteController::class,'read'])->name('cliente.read');
 	Route::get('/cliente/edit/{cliente}', [ClienteController::class,'edit'])->name('cliente.edit');
 	Route::post('/cliente/update/{cliente}', [ClienteController::class,'update'])->name('cliente.update');
-	Route::get('/cliente/destroy/{cliente}', [ClienteController::class,'destroy'])->name('cliente.destroy');
+	//Route::get('/cliente/destroy/{cliente}', [ClienteController::class,'destroy'])->name('cliente.destroy');
+	Route::get('/cliente/delete/{cliente}', [ClienteController::class,'delete'])->name('cliente.delete');
 	
 
 	// CRUD Departamento
@@ -71,7 +74,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/departamento/read/{departamento}', [DepartamentoController::class,'read'])->name('departamento.read');
 	Route::get('/departamento/edit/{departamento}', [DepartamentoController::class,'edit'])->name('departamento.edit');
 	Route::post('/departamento/update/{departamento}', [DepartamentoController::class,'update'])->name('departamento.update');
-	Route::get('/departamento/destroy/{departamento}', [DepartamentoController::class,'destroy'])->name('departamento.destroy');
+	//Route::get('/departamento/destroy/{departamento}', [DepartamentoController::class,'destroy'])->name('departamento.destroy');
+	Route::get('/departamento/delete/{departamento}', [DepartamentoController::class,'delete'])->name('departamento.delete');
 	
 
 	// CRUD Tipo de Documento
@@ -81,7 +85,8 @@ Route::middleware('auth')->group(function () {
 	Route::get('/tipodocumento/read/{tipodocumento}', [tipodocumentoController::class,'read'])->name('tipodocumento.read');
 	Route::get('/tipodocumento/edit/{tipodocumento}', [tipodocumentoController::class,'edit'])->name('tipodocumento.edit');
 	Route::post('/tipodocumento/update/{tipodocumento}', [tipodocumentoController::class,'update'])->name('tipodocumento.update');
-	Route::get('/tipodocumento/destroy/{tipodocumento}', [tipodocumentoController::class,'destroy'])->name('tipodocumento.destroy');
+	//Route::get('/tipodocumento/destroy/{tipodocumento}', [tipodocumentoController::class,'destroy'])->name('tipodocumento.destroy');
+	Route::get('/tipodocumento/delete/{tipodocumento}', [tipodocumentoController::class,'delete'])->name('tipodocumento.delete');
 
 });
 

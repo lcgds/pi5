@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Documento extends Model
 {
     use HasFactory;
+    use SoftDeletes;
+
     protected $fillable = ['id','descricao', 'tipodocumentos_id', 'clientes_id'];
 
     public function tipodocumento() {

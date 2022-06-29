@@ -43,10 +43,14 @@ class ClienteController extends Controller {
     }
 
     public
-    function destroy(Cliente $cliente) {
-        $cliente->delete();
-        session()->flash('success', 'O Cliente selecionado foi deletado.');
-        return redirect(route('cliente.index'));
-
+    function delete(Cliente $cliente) {
+        if($cliente->documentos->count() > 0) {
+            session()->flash('warning', 'O Cliente selecionado possui documentos ativos. Portanto, não é possível deletá-lo.');
+            return redirect(route('cliente.index'));
+        } else {
+            $cliente->delete();
+            session()->flash('success', 'O Cliente selecionado foi deletado.');
+            return redirect(route('cliente.index'));
+        }
     }
 }

@@ -46,12 +46,10 @@ class DocumentosController extends Controller {
     }
 
     public
-    function destroy(Documento $documento) {
+    function delete(Documento $documento) {
         $documento->delete();
         session()->flash('success', 'O Documento selecionado foi deletado.');
         return redirect(route('documento.index'));
 
     }
-
-
 }

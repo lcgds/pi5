@@ -43,7 +43,7 @@ class DepartamentoController extends Controller {
     }
 
     public
-    function destroy(Departamento $departamento) {
+    function delete(Departamento $departamento) {
         $departamento->delete();
         session()->flash('success', 'O Departamento selecionado foi deletado.');
         return redirect(route('departamento.index'));

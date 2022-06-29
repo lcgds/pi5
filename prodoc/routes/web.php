@@ -6,6 +6,7 @@ use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\tipodocumentoController;
+use App\Http\Controllers\MovimentacaoController;
 
 
 require __DIR__.'/auth.php';
@@ -81,6 +82,13 @@ Route::middleware('auth')->group(function () {
 	Route::get('/tipodocumento/edit/{tipodocumento}', [tipodocumentoController::class,'edit'])->name('tipodocumento.edit');
 	Route::post('/tipodocumento/update/{tipodocumento}', [tipodocumentoController::class,'update'])->name('tipodocumento.update');
 	Route::get('/tipodocumento/destroy/{tipodocumento}', [tipodocumentoController::class,'destroy'])->name('tipodocumento.destroy');
+
+	// CRUD Movimentação
+	Route::get('/movimentacao', [MovimentacaoController::class, 'index'])->name('movimentacao.index');
+	Route::get('/movimentacao/create', [MovimentacaoController::class,'create'])->name('movimentacao.create');
+	Route::post('/movimentacao/store', [MovimentacaoController::class,'store'])->name('movimentacao.store');
+	//Route::get('/movimentacao/read/{movimentacao}', [MovimentacaoController::class,'read'])->name('movimentacao.read');
+
 
 });
 

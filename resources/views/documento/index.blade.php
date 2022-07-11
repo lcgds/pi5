@@ -5,10 +5,6 @@
 
 <body>
 
-    @php
-        $temp_id = null;
-    @endphp
-
     <x-header />
 
     <x-alert-message />
@@ -43,7 +39,14 @@
             </ul>
         </div>
 
-        <h2 class="my-5">Lista de Documentos</h2>
+        <div class="my-5 d-flex justify-content-between">
+            <h2>Lista de Documentos</h2>
+
+            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5"
+                type="button">
+                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
+            </button>
+        </div>
 
         @if ($documentos->count()>0)
         <table class="tabela">
@@ -84,13 +87,6 @@
                     @endforeach
                 </tbody>
         </table>
-
-        <div class="d-flex justify-content-end">
-            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5"
-                type="button">
-                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
-            </button>
-        </div>
 
         @else
             <div class="d-flex flex-fill justify-content-center align-items-center">

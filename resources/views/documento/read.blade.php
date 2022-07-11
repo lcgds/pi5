@@ -37,88 +37,10 @@
             </ul>
         </div>
 
-        <p class="my-5 h4">Detalhes do Documento</p>
+        <div class="d-flex justify-content-between">
+            <h2 class="">Documento nº {{$documento->id}}</h2>
 
-        <div class="bg-gray-3 p-5 mb-5">
-
-            <div class="row">
-
-                <div class="col-lg-4 col-md-5 col-sm-6 mb-4">
-
-                    <div class="br-select">
-                        <div class="br-input">
-                            <label for="select-tipoDocumento">Tipo de documento</label>
-
-                            <div class="input-group">
-
-                                <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input disabled id="select-tipoDocumento" type="text"
-                                    value="{{$documento->tipodocumento->nome}}" />
-                            </div>
-
-                            <button disabled class="br-button circle small" type="button" tabindex="-1" data-trigger>
-                                <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
-                            </button>
-                        </div>
-
-                        <div class="br-list" tabindex="0">
-                            <div class="br-item divider" tabindex="-1">
-                                <div class="br-radio">
-                                    <input name="tipodocumentos_id" id="rb0" type="radio"
-                                        value="{{$documento->tipodocumento->id}}" disabled />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-5 col-sm-6 ml-lg-4 mb-4">
-                    <div class="br-select">
-                        <div class="br-input">
-                            <label for="select-cliente">Emissor</label>
-
-                            <div class="input-group">
-
-                                <div class="input-icon"><i class="fas fa-search"></i></div>
-                                <input disabled id="select-cliente" type="text" value="{{$documento->cliente->nome}}" />
-                            </div>
-
-                            <button disabled class="br-button circle small" onclick="" type="button" tabindex="-1"
-                                data-trigger>
-                                <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
-                            </button>
-                        </div>
-
-                        <div class="br-list" tabindex="0">
-                            <div class="br-item divider" tabindex="-1">
-                                <div class="br-radio">
-                                    <input disabled name="clientes" id="rb1" type="radio" name="opcao"
-                                        value="{{$documento->cliente->id}}" />
-                                    <label for="rb1">$documento->cliente->nome</label>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 col-md-10 col-sm-12 mb-4">
-                    <div class="br-textarea">
-                        <label for="textarea-documento-descricao">Descrição</label>
-                        <textarea disabled id="textarea-documento-descricao" rows="4" maxlength="300" name="descricao"
-                            value="{{$documento->descricao}}">{{$documento->descricao}}</textarea>
-                        <div class="text-base mt-1">
-                            <span class="current"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="d-flex justify-content-end">
+            <div class="d-flex align-items-center">
                 <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
 
                     <div class="br-modal medium">
@@ -159,14 +81,164 @@
                     </button>
 
                 </div>
+
+                <button onclick="" class="br-button secondary ml-4" type="button" aria-label="Encaminhar">
+                    <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
+                </button>
+
                 <button onclick="window.location = '{{ url('documento/edit/'.$documento->id); }}'"
                     class="br-button primary ml-4" type="button" aria-label="Editar">
                     <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
                 </button>
             </div>
 
-            </form>
 
+        </div>
+
+        <p class="h5">Detalhes do Documento</p>
+
+        <div class="mb-5">
+
+            <div class="row">
+
+                <div class="col-lg-5 col-md-5 col-sm-6 mb-4">
+
+                    <div class="br-select">
+                        <div class="br-input">
+                            <label for="select-tipoDocumento">Tipo de documento</label>
+
+                            <div class="input-group">
+
+                                <div class="input-icon"><i class="fas fa-search"></i></div>
+                                <input disabled id="select-tipoDocumento" type="text"
+                                    value="{{$documento->tipodocumento->nome}}" />
+                            </div>
+
+                            <button disabled class="br-button circle small" type="button" tabindex="-1" data-trigger>
+                                <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="br-list" tabindex="0">
+                            <div class="br-item divider" tabindex="-1">
+                                <div class="br-radio">
+                                    <input name="tipodocumentos_id" id="rb0" type="radio"
+                                        value="{{$documento->tipodocumento->id}}" disabled />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-6 ml-lg-4 mb-4">
+                    <div class="br-select">
+                        <div class="br-input">
+                            <label for="select-cliente">Emissor</label>
+
+                            <div class="input-group">
+
+                                <div class="input-icon"><i class="fas fa-search"></i></div>
+                                <input disabled id="select-cliente" type="text" value="{{$documento->cliente->nome}}" />
+                            </div>
+
+                            <button disabled class="br-button circle small" onclick="" type="button" tabindex="-1"
+                                data-trigger>
+                                <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="br-list" tabindex="0">
+                            <div class="br-item divider" tabindex="-1">
+                                <div class="br-radio">
+                                    <input disabled name="clientes" id="rb1" type="radio" name="opcao"
+                                        value="{{$documento->cliente->id}}" />
+                                    <label for="rb1">$documento->cliente->nome</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-10 col-sm-12">
+                    <div class="br-textarea">
+                        <label for="textarea-documento-descricao">Descrição</label>
+                        <textarea disabled id="textarea-documento-descricao" rows="4" maxlength="300" name="descricao"
+                            value="{{$documento->descricao}}">{{$documento->descricao}}</textarea>
+                        <div class="text-base mt-1">
+                            <span class="current"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <span class="br-divider my-6"></span>
+
+        <p class="h5">Dados do Emissor</p>
+
+        <div class="row mb-5">
+
+            <div class="col">
+                <div class="br-input">
+                    <label for="input-cnpj">CNPJ</label>
+                    <input disabled id="input-cnpj" type="text" value="{{$documento->cliente->cnpj}}" />
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="br-input">
+                    <label for="input-email">E-mail</label>
+                    <input disabled id="input-email" type="text" value="{{$documento->cliente->email}}" />
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="br-input">
+                    <label for="input-telefone">Telefone</label>
+                    <input disabled id="input-telefone" type="text" value="{{$documento->cliente->telefone}}" />
+                </div>
+            </div>
+
+        </div>
+
+        <span class="br-divider my-6"></span>
+
+        <p class="h5">Última atualização</p>
+
+        <div class="br-textarea mb-5">
+            <textarea disabled rows="4"
+                id="textarea-ultima-atualizacao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quisquam exercitationem dicta, ipsa modi earum nostrum rerum, assumenda officiis dignissimos accusantium architecto consequuntur mollitia quibusdam eveniet sed veniam ipsam fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est fugiat.</textarea>
+        </div>
+
+        <span class="br-divider my-6"></span>
+
+        <p class="h5">Histórico de movimentações</p>
+
+        <table class="mb-10xh">
+            <thead>
+                <tr>
+                    <th>Remetente</th>
+                    <th>Destino</th>
+                    <th>Observação</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Lorem</td>
+                    <td>Lorem</td>
+                    <td>Lorem</td>
+                    <td>Lorem</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

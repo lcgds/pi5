@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <x-head />
 
 <body>
 
-<<<<<<< HEAD
-    @php
-    $temp_id = null;
-    @endphp
-
-=======
->>>>>>> 9ef4270426a0a22826c8339eb9203550bac5dbcc
     <x-header />
 
     <x-alert-message />
@@ -34,28 +26,31 @@
                     <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('documento.index'); }}">Documentos</a>
-                </li>
-
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Consultar</span>
+                    <span>Buscar documento</span>
                 </li>
             </ul>
         </div>
 
-        <div class="my-5 d-flex justify-content-between">
-            <h2>Lista de Documentos</h2>
+        <h2 class="my-5">Buscar documento</h2>
+        <form class="bg-gray-3 p-5 mb-5" action="{{ url('/pesquisadocumennto') }}" method="get">
+            @csrf
+            <div class="br-input">
+                <label for="input-pesquisa" class="form-label">Número identificador do documento</label>
+                <div class="input-group">
+                    <div class="input-icon"><i class="fas fa-file" aria-hidden="true"></i>
+                    </div>
+                    <input id="input-cliente-nome" type="text" class="form-control" type="search" name="pesquisa" placeholder="Ex.: 012345">
+                </div>
+            </div>
 
-            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5"
-                type="button">
-                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
-            </button>
-        </div>
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="br-button primary"><i class="fas fa-search" aria-hidden="true"></i>Pesquisar</button>
+            </div>
+        </form>
 
-        @if ($documentos->count() > 0)
+        {{-- @if ($documentos->count() > 0) --}}
         <table class="tabela">
             <thead>
                 <tr>
@@ -90,32 +85,6 @@
                     @endforeach
                 </tbody>
         </table>
-
-<<<<<<< HEAD
-        <div class="d-flex justify-content-end">
-            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5" type="button">
-                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
-            </button>
-        </div>
-
-=======
->>>>>>> 9ef4270426a0a22826c8339eb9203550bac5dbcc
-        @else
-        <div class="d-flex flex-fill justify-content-center align-items-center">
-            <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404" />
-            <div>
-                <h3>Nenhum documento encontrado!</h3>
-                <span>Para cadastrar um documento basta clicar no botão logo abaixo.</span>
-                <button onclick="window.location='{{ url('documento/create'); }}'" class="d-block br-button primary mt-5" type="button">
-                    <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar
-                </button>
-            </div>
-
-        </div>
-        @endif
-
-
-
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

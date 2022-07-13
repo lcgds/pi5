@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('movimentacao', function (Blueprint $table) {
-            $table->id();
-           // $table->string(observacao);
-            $table->timestamps();
+        Schema::table('movimentacao', function (Blueprint $table) {
+            $table->integer('users_id');
         });
     }
 
@@ -27,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('movimentacao');
+        Schema::table('movimentacao', function (Blueprint $table) {
+         //   $table->dropColumn('users_id');
+        });
     }
 };

@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movimentacao extends Model
 {
+
+  
+    
     use HasFactory;
     protected $fillable = ['documentos_id','departamento_id','users_id','observacao'];
 

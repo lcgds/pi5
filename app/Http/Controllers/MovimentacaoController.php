@@ -12,11 +12,11 @@ use App\Models\Movimentacao;
 class MovimentacaoController extends Controller {
     //Pagina Inicial
     public function index() {
-        return view('movimentacao.index');//->with('movimentacao', Movimentacao::all());
+        return view('movimentacao.index')->with('movimentacao', Movimentacao::all());
     }
     //Criar Mov
     public function create() {
-        return view('movimentacao.create');//->with(['documento' => documento::all(), 'users' => Users::all()]);
+        return view('movimentacao.create')->with(['documento' => documento::all(), 'users' => Users::all()]);
     }
     //Armazenar dados no banco
     public function store(Request $request) {

@@ -39,7 +39,15 @@
             </ul>
         </div>
 
-        <h2 class="my-5">Lista de Departamentos</h2>
+        <div class="my-5 d-flex justify-content-between">
+            <h2>Lista de Departamentos</h2>
+
+            <button onclick="window.location='{{ url('departamento/create'); }}'" class="br-button primary mt-6"
+                type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
+                Cadastrar departamento
+            </button>
+        </div>
+
 
         @if ($departamentos->count()>0)
         <table class="tabela">
@@ -80,12 +88,6 @@
                 </tbody>
         </table>
 
-        <div class="d-flex justify-content-end">
-            <button onclick="window.location='{{ url('departamento/create'); }}'" class="br-button primary mt-6"
-                type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                Cadastrar departamento
-            </button>
-        </div>
         @else 
         <div class="d-flex flex-fill justify-content-center align-items-center">
                 <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404"/>

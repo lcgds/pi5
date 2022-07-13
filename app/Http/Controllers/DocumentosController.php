@@ -52,4 +52,17 @@ class DocumentosController extends Controller {
         return redirect(route('documento.index'));
 
     }
+
+    public 
+    function search(){
+        $search_text = $_GET['pesquisa'];
+        $documentos = Documento::where('id', 'LIKE', '%' .$search_text. '%')->get();
+
+        if ( $documentos->count() == 0){
+            session()->flash('warning', 'Documento não localizado. Verifique o número do documento..');
+            return view('documento.search', compact('documentos'));
+        }else{
+            return view('documento.search', compact('documentos'));
+        }
+    }
 }

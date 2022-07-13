@@ -32,10 +32,10 @@ Route::middleware('auth')->group(function () {
 	})->name('dashboard');
 	
 	Route::get('/pesquisa', function () {
-		session()->flash('warning', 'Página em desenvolvimento. A função de busca ainda não foi implementada.');
 		return view('search');
 	})->name('search');
 
+	Route::get('/pesquisadocumento', [DocumentosController::class, 'search'])->name('search');
 
 	// CRUD Documento
 	Route::get('/documento', [DocumentosController::class, 'index'])->name('documento.index');

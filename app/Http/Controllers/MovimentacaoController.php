@@ -7,6 +7,8 @@ use App\Models\Documento;
 use App\Models\Cliente;
 use App\Models\tipodocumento;
 use App\Models\Movimentacao;
+use App\Models\User;
+
 
 
 class MovimentacaoController extends Controller {
@@ -16,7 +18,7 @@ class MovimentacaoController extends Controller {
     }
     //Criar Mov
     public function create() {
-        return view('movimentacao.create')->with(['documento' => documento::all(), 'users' => Users::all()]);
+        return view('movimentacao.create')->with(['documento' => documento::all(), 'users' => User::all()]);
     }
     //Armazenar dados no banco
     public function store(Request $request) {

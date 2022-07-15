@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Documento;
 use App\Models\Cliente;
 use App\Models\tipodocumento;
+use App\Models\Movimentacao;
+
 
 
 class DocumentosController extends Controller {
@@ -30,7 +32,7 @@ class DocumentosController extends Controller {
 
     public
     function read(Documento $documento) {
-        return view('documento.read')->with('documento', $documento);
+        return view('documento.read')->with(['documento' => $documento, 'movimentacoes' => Movimentacao::all()]);
     }
 
     public
@@ -51,6 +53,17 @@ class DocumentosController extends Controller {
         session()->flash('success', 'O Documento selecionado foi deletado.');
         return redirect(route('documento.index'));
 
+    }
+
+    public function forward(Documento $documento) {
+        return view('documento.forward')->with('documento', $documento);
+    }
+
+    public
+    function send(Request $request, Documento $documento) {
+        //$documento->update($request->all());
+        session()->flash('success', 'O envio do Documento foi registrado.');
+        return redirect(route('documento.index'));
     }
 
     public 

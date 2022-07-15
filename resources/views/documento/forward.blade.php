@@ -32,7 +32,7 @@
 
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Consultar</span>
+                    <span>Encaminhar</span>
                 </li>
             </ul>
         </div>
@@ -41,59 +41,55 @@
             <h2 class="">Documento nº {{$documento->id}}</h2>
 
             <div class="d-flex align-items-center">
-                <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
+                <x-btn-cancel/>   
 
-                    <div class="br-modal medium">
+                <button onclick="" class="br-button primary ml-4" type="button" aria-label="Encaminhar">
+                    <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
+                </button>
+            </div>
+        </div>
 
-                        <div class="br-modal-dialog p-4">
+        <p class="h5">Encaminhamento</p>
 
-                            <div class="br-modal-content">
+        <div class="br-select mb-4">
+            <div class="br-input">
+                <label for="select-cliente">Destino</label>
 
-                                <div class="text-center br-modal-header">
-                                    <i class="fas fa-exclamation fa-8x circle text-warning" aria-hidden="true"></i>
-                                </div>
+                <div class="input-group">
 
-                                <div class="br-modal-body text-center">
-                                    <p>Você tem certeza que deseja deletar o Documento selecionado?</p>
-                                    <p>Essa ação não poderá ser desfeita.</p>
-                                </div>
+                    <div class="input-icon"><i class="fas fa-search"></i></div>
+                    <input id="select-cliente" type="text" placeholder="Selecione um item" required />
+                </div>
 
-                                <div class="br-modal-footer justify-content-center">
+                <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
+                    <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                </button>
+            </div>
 
-                                    <button class="br-button secondary" type="button" id="scrimfechar"
-                                        data-dismiss="scrimexample">Cancelar
-                                    </button>
+            <div class="br-list" tabindex="0">
 
-                                    <button onclick="window.location = '{{ url('documento/delete/'.$documento->id); }}'"
-                                        class="br-button primary mt-3 mt-sm-0 ml-sm-3" type="button">Deletar
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
+                <div class="br-item divider" tabindex="-1">
+                    <div class="br-radio">
+                        <input name="clientes_id" id="" type="radio" value="" />
+                        <label for=""></label>
                     </div>
                 </div>
 
-                <div class="d-inline scrimutilexemplo">
-
-                    <button class="br-button bg-danger text-pure-0" type="button" aria-label="Encerrar"><i
-                            class="fas fa-trash mr-1" aria-hidden="true"></i>Encerrar
-                    </button>
-
-                </div>
-
-                <button onclick="window.location = '{{ url('documento/forward/'.$documento->id); }}'" class="br-button secondary ml-4" type="button" aria-label="Encaminhar">
-                    <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
-                </button>
-
-                <button onclick="window.location = '{{ url('documento/edit/'.$documento->id); }}'"
-                    class="br-button primary ml-4" type="button" aria-label="Editar">
-                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
-                </button>
             </div>
 
 
         </div>
+
+
+        <div class="br-textarea mb-5">
+            <label for="textarea-obs">Observação</label>
+            <textarea rows="4" id="textarea-obs" maxlength="300"></textarea>
+            <div class="text-base mt-1"><span class="limit">Limite máximo de <strong>300</strong>
+                    caracteres</span><span class="current"></span></div>
+        </div>
+
+        <span class="br-divider my-6"></span>
+
 
         <p class="h5">Detalhes do Documento</p>
 
@@ -178,67 +174,9 @@
 
         </div>
 
-        <span class="br-divider my-6"></span>
+        
 
-        <p class="h5">Dados do Emissor</p>
 
-        <div class="row mb-5">
-
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-cnpj">CNPJ</label>
-                    <input disabled id="input-cnpj" type="text" value="{{$documento->cliente->cnpj}}" />
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-email">E-mail</label>
-                    <input disabled id="input-email" type="text" value="{{$documento->cliente->email}}" />
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-telefone">Telefone</label>
-                    <input disabled id="input-telefone" type="text" value="{{$documento->cliente->telefone}}" />
-                </div>
-            </div>
-
-        </div>
-
-        <span class="br-divider my-6"></span>
-
-        <p class="h5">Última atualização</p>
-
-        <div class="br-textarea mb-5">
-            <textarea disabled rows="4"
-                id="textarea-ultima-atualizacao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quisquam exercitationem dicta, ipsa modi earum nostrum rerum, assumenda officiis dignissimos accusantium architecto consequuntur mollitia quibusdam eveniet sed veniam ipsam fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est fugiat.</textarea>
-        </div>
-
-        <span class="br-divider my-6"></span>
-
-        <p class="h5">Histórico de movimentações</p>
-
-        <table class="mb-10xh">
-            <thead>
-                <tr>
-                    <th>Remetente</th>
-                    <th>Destino</th>
-                    <th>Observação</th>
-                    <th>Data</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                </tr>
-            </tbody>
-        </table>
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

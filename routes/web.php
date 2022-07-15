@@ -46,6 +46,9 @@ Route::middleware('auth')->group(function () {
 	Route::post('/documento/update/{documento}', [DocumentosController::class,'update'])->name('documento.update');
 	//Route::get('/documento/destroy/{documento}', [DocumentosController::class,'destroy'])->name('documento.destroy');
 	Route::get('/documento/delete/{documento}', [DocumentosController::class,'delete'])->name('documento.delete');
+	Route::get('/documento/forward/{documento}', [DocumentosController::class,'forward'])->name('documento.forward');
+	Route::post('/documento/send', [DocumentosController::class,'send'])->name('documento.send');
+
 
 
 	// CRUD Funcionário

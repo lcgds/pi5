@@ -47,10 +47,12 @@
         <div class="my-5 d-flex justify-content-between">
             <h2>Lista de Tipos de Documento</h2>
 
+            @if ($tipodocumentos->count()>0)
             <button onclick="window.location='{{ url('tipodocumento/create'); }}'" class="br-button primary mt-6"
                 type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
                 Cadastrar tipo de documento
             </button>
+            @endif
         </div>
 
 

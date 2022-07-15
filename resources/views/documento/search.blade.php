@@ -34,7 +34,7 @@
         </div>
 
         <h2 class="my-5">Buscar documento</h2>
-        <form class="bg-gray-3 p-5 mb-5" action="{{ url('/pesquisadocumennto') }}" method="get">
+        <form class="bg-gray-3 p-5 mb-5" action="{{ url('/pesquisadocumento') }}" method="get">
             @csrf
             <div class="br-input">
                 <label for="input-pesquisa" class="form-label">Número identificador do documento</label>

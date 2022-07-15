@@ -5,13 +5,6 @@
 
 <body>
 
-<<<<<<< HEAD
-    @php
-    $temp_id = null;
-    @endphp
-
-=======
->>>>>>> 9ef4270426a0a22826c8339eb9203550bac5dbcc
     <x-header />
 
     <x-alert-message />
@@ -49,10 +42,12 @@
         <div class="my-5 d-flex justify-content-between">
             <h2>Lista de Documentos</h2>
 
+            @if ($documentos->count() > 0)
             <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5"
                 type="button">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
             </button>
+            @endif
         </div>
 
         @if ($documentos->count() > 0)
@@ -91,15 +86,6 @@
                 </tbody>
         </table>
 
-<<<<<<< HEAD
-        <div class="d-flex justify-content-end">
-            <button onclick="window.location='{{ url('documento/create'); }}'" class="br-button primary mt-5" type="button">
-                <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar documento
-            </button>
-        </div>
-
-=======
->>>>>>> 9ef4270426a0a22826c8339eb9203550bac5dbcc
         @else
         <div class="d-flex flex-fill justify-content-center align-items-center">
             <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404" />

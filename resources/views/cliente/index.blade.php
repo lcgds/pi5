@@ -42,10 +42,12 @@
         <div class="d-flex my-5 justify-content-between">
             <h2>Lista de Clientes</h2>
             
+            @if ($clientes->count()>0)
             <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6"
                 type="button">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar cliente
             </button>
+            @endif
         </div>
 
         @if ($clientes->count()>0)

@@ -37,56 +37,65 @@
             </ul>
         </div>
 
-        <div class="d-flex justify-content-between">
-            <h2 class="">Documento nº {{$documento->id}}</h2>
+        <form action="{{ route('documento.send') }}" method="post">
+            @csrf
 
-            <div class="d-flex align-items-center">
-                <x-btn-cancel/>   
 
-                <button onclick="" class="br-button primary ml-4" type="button" aria-label="Encaminhar">
-                    <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
-                </button>
-            </div>
-        </div>
+            <div class="d-flex justify-content-between">
+                <h2 class="">Documento nº {{$documento->id}}</h2>
 
-        <p class="h5">Encaminhamento</p>
+                <div class="d-flex align-items-center">
+                    <x-btn-cancel />
 
-        <div class="br-select mb-4">
-            <div class="br-input">
-                <label for="select-cliente">Destino</label>
-
-                <div class="input-group">
-
-                    <div class="input-icon"><i class="fas fa-search"></i></div>
-                    <input id="select-cliente" type="text" placeholder="Selecione um item" required />
+                    <button type="submit" class="br-button primary ml-4" type="button" aria-label="Encaminhar">
+                        <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
+                    </button>
                 </div>
-
-                <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
-                    <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
-                </button>
             </div>
 
-            <div class="br-list" tabindex="0">
+            <p class="h5">Encaminhamento</p>
 
-                <div class="br-item divider" tabindex="-1">
-                    <div class="br-radio">
-                        <input name="clientes_id" id="" type="radio" value="" />
-                        <label for=""></label>
+            <input class="d-none hidden" type="number" name="doc_id" id="doc_id" value="{{$documento->id}}" hidden>
+
+            <div class="br-select mb-4">
+                <div class="br-input">
+                    <label for="select-cliente">Destino</label>
+
+                    <div class="input-group">
+
+                        <div class="input-icon"><i class="fas fa-search"></i></div>
+                        <input id="select-cliente" type="text" placeholder="Selecione um item" required />
                     </div>
+
+                    <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
+                        <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                    </button>
                 </div>
 
+                <div class="br-list" tabindex="0">
+
+                    @foreach($departamentos as $dep)
+                    <div class="br-item divider" tabindex="-1">
+                        <div class="br-radio">
+                            <input name="dep_id" id="dep{{$dep->id}}" type="radio" value="{{$dep->id}}" />
+                            <label for="dep{{$dep->id}}">{{$dep->nome}}</label>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
 
+            <div class="br-textarea mb-5">
+                <label for="obs">Observação</label>
+                <textarea rows="4" id="obs" name="obs" maxlength="300"></textarea>
+                <div class="text-base mt-1">
+                    <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
+                    <span class="current"></span>
+                </div>
+            </div>
 
-        </div>
+        </form>
 
-
-        <div class="br-textarea mb-5">
-            <label for="textarea-obs">Observação</label>
-            <textarea rows="4" id="textarea-obs" maxlength="300"></textarea>
-            <div class="text-base mt-1"><span class="limit">Limite máximo de <strong>300</strong>
-                    caracteres</span><span class="current"></span></div>
-        </div>
 
         <span class="br-divider my-6"></span>
 
@@ -174,7 +183,7 @@
 
         </div>
 
-        
+
 
 
     </main>

@@ -17,12 +17,12 @@ class Movimentacao extends Model
 
 public function documento() {
     //  1 Movimentacao tem 1 Documento' 
-    return $this->belongsTo(documento::class, 'documentos_id' /*FK na minha tabela*/,   'id' /*PK na tabela ' Documento'*/);
+    return $this->belongsTo(Documento::class, 'documentos_id' /*FK na minha tabela*/,   'id' /*PK na tabela ' Documento'*/);
 }
 
 public function departamento() {
     // 1 Movimentação tem 1 'departamento' 
-    return $this->belongsTo(departamento::class, 'departamentos_id' /*FK na minha tabela*/,   'id' /*PK na tabela Departamento'*/);
+    return $this->belongsTo(Departamento::class, 'departamentos_id' /*FK na minha tabela*/,   'id' /*PK na tabela Departamento'*/);
 }
 
 public function users() {

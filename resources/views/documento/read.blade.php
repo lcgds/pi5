@@ -82,7 +82,8 @@
 
                 </div>
 
-                <button onclick="window.location = '{{ url('documento/forward/'.$documento->id); }}'" class="br-button secondary ml-4" type="button" aria-label="Encaminhar">
+                <button onclick="window.location = '{{ url('documento/forward/'.$documento->id); }}'"
+                    class="br-button secondary ml-4" type="button" aria-label="Encaminhar">
                     <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
                 </button>
 
@@ -207,13 +208,15 @@
 
         </div>
 
+        @if ($ultima_obs)
         <span class="br-divider my-6"></span>
+
 
         <p class="h5">Última atualização</p>
 
         <div class="br-textarea mb-5">
             <textarea disabled rows="4"
-                id="textarea-ultima-atualizacao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur quisquam exercitationem dicta, ipsa modi earum nostrum rerum, assumenda officiis dignissimos accusantium architecto consequuntur mollitia quibusdam eveniet sed veniam ipsam fuga? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum est fugiat.</textarea>
+                id="textarea-ultima-atualizacao">{{$ultima_obs->observacao}}</textarea>
         </div>
 
         <span class="br-divider my-6"></span>
@@ -231,14 +234,17 @@
             </thead>
 
             <tbody>
+                @foreach($movimentacoes as $mov)
                 <tr>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
-                    <td>Lorem</td>
+                    <td>{{$mov->users->name}}</td>
+                    <td>{{$mov->departamento->nome}}</td>
+                    <td>{{$mov->observacao}}</td>
+                    <td>{{$mov->created_at}}</td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
+        @endif
     </main>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>

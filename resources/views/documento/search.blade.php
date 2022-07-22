@@ -52,9 +52,9 @@
         @if ($documentos->count() > 0)
         
             @if ($documentos->count() > 1)
-                <h3 class="my-5">{{$documentos->count()}} documentos encontrados:</h3>
+                <h3 class="mt-6 mb-5">{{$documentos->count()}} documentos encontrados:</h3>
             @else
-                <h3 class="my-5">{{$documentos->count()}} documento encontrado:</h3>
+                <h3 class="mt-6 mb-5">{{$documentos->count()}} documento encontrado:</h3>
             @endif
         
         <table class="mb-10xh">

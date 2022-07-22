@@ -47,7 +47,7 @@
 
 
         @if ($tipodocumentos->count()>0)
-        <table>
+        <table class="mb-5">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>

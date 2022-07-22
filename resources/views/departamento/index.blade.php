@@ -48,7 +48,7 @@
 
 
         @if ($departamentos->count()>0)
-        <table class="tabela">
+        <table class="mb-10xh">
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
@@ -104,7 +104,11 @@
 
     </main>
 
+@if ($departamentos->count()>7)
+    <x-footer-flex/>
+@else
     <x-footer-fixed/>
+@endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

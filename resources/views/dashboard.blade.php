@@ -39,7 +39,7 @@
                     </div>
                     <div class="mt-3 card-content d-flex justify-content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" width="168"
-                            viewBox="0 0 24 24" fill="#144fb0">
+                            viewBox="0 0 24 24" fill="#0c326f">
                             <rect fill="none" height="24" width="24" />
                             <path
                                 d="M3,10.5c-0.55,0-1-0.45-1-1c0-0.55,0.45-1,1-1s1,0.45,1,1C4,10.05,3.55,10.5,3,10.5z M6,21 c-0.55,0-1-0.45-1-1c0-0.55,0.45-1,1-1s1,0.45,1,1C7,20.55,6.55,21,6,21z M11,3c0-0.55,0.45-1,1-1s1,0.45,1,1c0,0.55-0.45,1-1,1 S11,3.55,11,3z M12,15c-1.38,0-2.5-1.12-2.5-2.5c0-1.38,1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5C14.5,13.88,13.38,15,12,15z M18,19 c0.55,0,1,0.45,1,1c0,0.55-0.45,1-1,1s-1-0.45-1-1C17,19.45,17.45,19,18,19z M21,10.5c-0.55,0-1-0.45-1-1c0-0.55,0.45-1,1-1 s1,0.45,1,1C22,10.05,21.55,10.5,21,10.5z"
@@ -57,7 +57,7 @@
                         <div class="text-center text-weight-semi-bold text-up-02">Documentos</div>
                     </div>
                     <div class="mt-3 card-content d-flex justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#144fb0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#0c326f">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path d="M11.17 8l-.58-.59L9.17 6H4v12h16V8h-8z" opacity=".3" />
                             <path
@@ -74,7 +74,7 @@
                     </div>
 
                     <div class="mt-3 card-content d-flex justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#144fb0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#0c326f">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path d="M12 11h2v2h-2v2h2v2h-2v2h8V9h-8v2zm4 0h2v2h-2v-2zm0 4h2v2h-2v-2z" opacity=".3" />
                             <path
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="mt-3 card-content d-flex justify-content-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#144fb0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="168" viewBox="0 0 24 24" fill="#0c326f">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path d="M13 4H6v16h12V9h-5V4zm3 14H8v-2h8v2zm0-6v2H8v-2h8z" opacity=".3" />
                             <path

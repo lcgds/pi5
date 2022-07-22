@@ -46,7 +46,7 @@
         </div>
 
         @if ($clientes->count()>0)
-        <table>
+        <table class="mb-10xh">
             <thead>
                 <tr>
                     <th scope="col">Razão social</th>
@@ -110,7 +110,11 @@
 
     </main>
 
+@if ($clientes->count()>7)
+    <x-footer-flex/>
+@else
     <x-footer-fixed/>
+@endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

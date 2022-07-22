@@ -45,7 +45,7 @@
         </div>
 
         @if ($documentos->count() > 0)
-        <table class="tabela">
+        <table class="mb-10xh">
             <thead>
                 <tr>
                     <th scope="col">Nº</th>
@@ -101,7 +101,11 @@
 
     </main>
 
-    <x-footer-fixed />
+    @if ($documentos->count() > 7)
+        <x-footer-flex />
+    @else
+        <x-footer-fixed />
+    @endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

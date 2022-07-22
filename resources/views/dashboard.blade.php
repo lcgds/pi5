@@ -85,7 +85,7 @@
             </div>
 
             <div class="br-card py-2 px-4 mb-sm-6 rounder-sm">
-                <a class="text-gray-80" href="{{ url('tipodedocumento'); }}">
+                <a class="text-gray-80" href="{{ url('tipodocumento'); }}">
                     <div class="card-header">
                         <div class="text-center text-weight-semi-bold text-up-02">Tipos de documentos</div>
                     </div>

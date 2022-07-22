@@ -102,7 +102,11 @@
 
     </main>
 
-    <x-footer-fixed/>
+    @if ($tipodocumentos->count()>5)
+        <x-footer-flex/>
+    @else
+        <x-footer-fixed/>
+    @endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

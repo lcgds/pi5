@@ -26,5 +26,11 @@
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
+    <style>
+        textarea {
+            resize: none!important;
+        }
+    </style>
 
 </head>

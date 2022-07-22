@@ -50,7 +50,14 @@
         </form>
 
         @if ($documentos->count() > 0)
-        <table class="tabela">
+        
+            @if ($documentos->count() > 1)
+                <h3 class="my-5">{{$documentos->count()}} documento encontrado:</h3>
+            @else
+                <h3 class="my-5">{{$documentos->count()}} documentos encontrados:</h3>
+            @endif
+        
+        <table class="mb-10xh">
             <thead>
                 <tr>
                     <th scope="col">Nº</th>
@@ -91,7 +98,11 @@
         @endif
     </main>
 
-    <x-footer-fixed />
+    @if ($documentos->count() > 3)
+        <x-footer-flex />
+    @else
+        <x-footer-fixed />
+    @endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

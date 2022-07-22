@@ -24,11 +24,6 @@
 
                 <li class="crumb">
                     <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('documento.index'); }}">Documentos</a>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
                     <a href="{{ Route('tipodocumento.index'); }}">Tipos de Documentos</a>
                 </li>
 
@@ -40,7 +35,7 @@
         </div>
 
         <div class="my-5 d-flex justify-content-between">
-            <h2>Lista de Tipos de Documento</h2>
+            <h2 class="m-0">Lista de Tipos de Documento</h2>
 
             @if ($tipodocumentos->count()>0)
             <button onclick="window.location='{{ url('tipodocumento/create'); }}'" class="br-button primary mt-6"

@@ -36,7 +36,7 @@
             </ul>
         </div>
 
-        <h2 class="my-5">Detalhes do Tipo de Documento</h2>
+        <h2 class="my-5">Dados do Tipo de Documento</h2>
 
         <div class="bg-gray-3 p-5">
 

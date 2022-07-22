@@ -102,7 +102,7 @@
 
     </main>
 
-    @if ($tipodocumentos->count()>5)
+    @if ($tipodocumentos->count()>4)
         <x-footer-flex/>
     @else
         <x-footer-fixed/>

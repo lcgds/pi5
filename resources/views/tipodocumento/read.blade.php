@@ -38,7 +38,7 @@
 
         <h2 class="my-5">Dados do Tipo de Documento</h2>
 
-        <div class="bg-gray-3 p-5">
+        <div class="bg-gray-3 p-5 mb-5">
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -72,8 +72,9 @@
 
                 </div>
             </div>
-
-            <div class="d-flex justify-content-end">
+        </div>
+        
+        <div class="d-flex justify-content-end">
                 <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
 
                     <div class="br-modal medium">
@@ -121,7 +122,6 @@
                     <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
                 </button>
             </div>
-        </div>
     </main>
 
     <x-footer-fixed/>

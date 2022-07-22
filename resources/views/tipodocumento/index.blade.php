@@ -14,17 +14,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -78,8 +73,9 @@
 
                         <td>
 
-                            <button onclick="window.location = '{{ url('tipodocumento/read/'.$tipodoc->id); }}'" class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button"
-                                aria-label="Visualizar"><i class="fas fa-eye" aria-hidden="true"></i>
+                            <button onclick="window.location = '{{ url('tipodocumento/read/'.$tipodoc->id); }}'"
+                                class="br-button circle mt-3 mt-sm-0 ml-sm-3" type="button" aria-label="Visualizar"><i
+                                    class="fas fa-eye" aria-hidden="true"></i>
                             </button>
 
                             <button onclick="window.location = '{{ url('tipodocumento/edit/'.$tipodoc->id); }}'"
@@ -95,21 +91,24 @@
 
         @else
         <div class="d-flex flex-fill justify-content-center align-items-center">
-                <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404"/>
-                <div>
-                    <h3>Nenhum tipo de documento encontrado!</h3>
-                    <span>Para cadastrar um tipo de documento basta clicar no botão logo abaixo.</span>
-                    <button onclick="window.location='{{ url('tipodocumento/create'); }}'" class="d-block br-button primary mt-6"
-                type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                Cadastrar
-            </button>
-                </div>
-                
+            <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404" />
+            <div>
+                <h3>Nenhum tipo de documento encontrado!</h3>
+                <span>Para cadastrar um tipo de documento basta clicar no botão logo abaixo.</span>
+                <button onclick="window.location='{{ url('tipodocumento/create'); }}'"
+                    class="d-block br-button primary mt-6" type="button"><i class="fas fa-plus mr-1"
+                        aria-hidden="true"></i>
+                    Cadastrar
+                </button>
             </div>
+
+        </div>
         @endif
 
     </main>
-        
+
+    <x-footer-fixed/>
+
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 

@@ -12,17 +12,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -70,8 +65,8 @@
                     <div class="br-textarea">
                         <label for="descricao">Descrição</label>
                         <textarea id="descricao" name="descricao"
-                            placeholder="Digite aqui a descrição do tipo de documento." rows="4"
-                            maxlength="300" required></textarea>
+                            placeholder="Digite aqui a descrição do tipo de documento." rows="4" maxlength="300"
+                            required></textarea>
                         <div class="text-base mt-1">
                             <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                             <span class="current"></span>
@@ -88,9 +83,11 @@
         </form>
     </main>
 
+    <x-footer-fixed/>
+
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>
 
 </body>
 
-</html>]
+</html>

@@ -12,17 +12,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -37,16 +32,18 @@
             </ul>
         </div>
 
-        <p class="my-5 h4">Detalhes do Documento</p>
+        <h2 class="my-5">Dados do Documento</h2>
 
-        <form class="bg-gray-3 p-5" method="POST" action="{{route ('documento.update', $documento->id) }}">
+        <form method="POST" action="{{route ('documento.update', $documento->id) }}">
 
             @method('PATCH')
             @csrf
 
+            <div class="bg-gray-3 p-5 mb-5">
+
             <div class="row">
 
-                <div class="col-lg-3 col-md-4 col-sm-5 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
 
                     <div class="br-select">
                         <div class="br-input">
@@ -70,8 +67,8 @@
 
                             <div class="br-item divider" tabindex="-1">
                                 <div class="br-radio">
-                                    <input name="tipodocumentos_id" id="td{{$tipodoc->id}}"
-                                        type="radio" value="{{$tipodoc->id}}" />
+                                    <input name="tipodocumentos_id" id="td{{$tipodoc->id}}" type="radio"
+                                        value="{{$tipodoc->id}}" />
                                     <label for="td{{$tipodoc->id}}">{{$tipodoc->nome}}</label>
                                 </div>
                             </div>
@@ -84,13 +81,7 @@
 
                 </div>
 
-                <div class="col-lg-1 col-md-1 col-sm-1 pt-sm-4 mb-4">
-                    <button onclick="window.location = '{{ url('tipodocumento'); }}'" class="br-button circle small"
-                        type="button"><i class="fas fa-edit" aria-hidden="true"></i>
-                    </button>
-                </div>
-
-                <div class="col-lg-4 col-md-5 col-sm-6 ml-lg-4 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-cliente">Emissor</label>
@@ -128,7 +119,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-8 col-md-10 col-sm-12 mb-4">
+                <div class="col mb-4">
                     <div class="br-textarea">
                         <label for="textarea-documento-descricao">Descrição</label>
                         <textarea id="textarea-documento-descricao" placeholder="Digite aqui a descrição do documento."
@@ -141,6 +132,7 @@
                 </div>
             </div>
 
+            </div>
 
             <div class="d-flex justify-content-end">
                 <x-btn-cancel />
@@ -148,6 +140,8 @@
             </div>
         </form>
     </main>
+
+    <x-footer-fixed/>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

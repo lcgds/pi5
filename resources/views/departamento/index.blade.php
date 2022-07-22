@@ -14,17 +14,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -41,10 +36,10 @@
 
 
         <div class="my-5 d-flex justify-content-between">
-            <h2>Lista de Departamentos</h2>
+            <h2 class="m-0">Lista de Departamentos</h2>
 
             @if ($departamentos->count()>0)
-            <button onclick="window.location='{{ url('departamento/create'); }}'" class="br-button primary mt-6"
+            <button onclick="window.location='{{ url('departamento/create'); }}'" class="br-button primary"
                 type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
                 Cadastrar departamento
             </button>
@@ -91,22 +86,25 @@
                 </tbody>
         </table>
 
-        @else 
+        @else
         <div class="d-flex flex-fill justify-content-center align-items-center">
-                <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404"/>
-                <div>
-                    <h3>Nenhum departamento encontrado!</h3>
-                    <span>Para cadastrar um departamento basta clicar no botão logo abaixo.</span>
-                    <button onclick="window.location='{{ url('departamento/create'); }}'" class="d-block br-button primary mt-6"
-                type="button"><i class="fas fa-plus mr-1" aria-hidden="true"></i>
-                Cadastrar
-            </button>
-                </div>
-                
+            <img class="d-block mr-4" src="{{asset('404.png')}}" alt="Erro 404" />
+            <div>
+                <h3>Nenhum departamento encontrado!</h3>
+                <span>Para cadastrar um departamento basta clicar no botão logo abaixo.</span>
+                <button onclick="window.location='{{ url('departamento/create'); }}'"
+                    class="d-block br-button primary mt-6" type="button"><i class="fas fa-plus mr-1"
+                        aria-hidden="true"></i>
+                    Cadastrar
+                </button>
             </div>
+
+        </div>
         @endif
 
     </main>
+
+    <x-footer-fixed/>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

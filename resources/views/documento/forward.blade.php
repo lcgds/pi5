@@ -12,17 +12,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -37,76 +32,13 @@
             </ul>
         </div>
 
-        <form action="{{ route('documento.send') }}" method="post">
-            @csrf
+        <h2 class="my-5">Detalhes do Documento</h2>
 
-
-            <div class="d-flex justify-content-between">
-                <h2 class="">Documento nº {{$documento->id}}</h2>
-
-                <div class="d-flex align-items-center">
-                    <x-btn-cancel />
-
-                    <button type="submit" class="br-button primary ml-4" type="button" aria-label="Encaminhar">
-                        <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
-                    </button>
-                </div>
-            </div>
-
-            <p class="h5">Encaminhamento</p>
-
-            <input class="d-none hidden" type="number" name="doc_id" id="doc_id" value="{{$documento->id}}" hidden>
-
-            <div class="br-select mb-4">
-                <div class="br-input">
-                    <label for="select-cliente">Destino</label>
-
-                    <div class="input-group">
-
-                        <div class="input-icon"><i class="fas fa-search"></i></div>
-                        <input id="select-cliente" type="text" placeholder="Selecione um item" required />
-                    </div>
-
-                    <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
-                        <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
-                    </button>
-                </div>
-
-                <div class="br-list" tabindex="0">
-
-                    @foreach($departamentos as $dep)
-                    <div class="br-item divider" tabindex="-1">
-                        <div class="br-radio">
-                            <input name="dep_id" id="dep{{$dep->id}}" type="radio" value="{{$dep->id}}" />
-                            <label for="dep{{$dep->id}}">{{$dep->nome}}</label>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <div class="br-textarea mb-5">
-                <label for="obs">Observação</label>
-                <textarea rows="4" id="obs" name="obs" maxlength="300"></textarea>
-                <div class="text-base mt-1">
-                    <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
-                    <span class="current"></span>
-                </div>
-            </div>
-
-        </form>
-
-
-        <span class="br-divider my-6"></span>
-
-
-        <p class="h5">Detalhes do Documento</p>
-
-        <div class="mb-5">
+        <div class="bg-gray-3 p-5 mb-5">
 
             <div class="row">
 
-                <div class="col-lg-5 col-md-5 col-sm-6 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
 
                     <div class="br-select">
                         <div class="br-input">
@@ -136,7 +68,7 @@
 
                 </div>
 
-                <div class="col-lg-5 col-md-5 col-sm-6 ml-lg-4 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-cliente">Emissor</label>
@@ -169,7 +101,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-12 col-md-10 col-sm-12">
+                <div class="col">
                     <div class="br-textarea">
                         <label for="textarea-documento-descricao">Descrição</label>
                         <textarea disabled id="textarea-documento-descricao" rows="4" maxlength="300" name="descricao"
@@ -181,12 +113,65 @@
                 </div>
             </div>
 
+            <form class="my-5" action="{{ route('documento.send') }}" method="post">
+                @csrf
+
+                <span class="br-divider my-7x"></span>
+
+                <input class="d-none hidden" type="number" name="doc_id" id="doc_id" value="{{$documento->id}}" hidden>
+
+                <div class="br-select mb-4">
+                    <div class="br-input">
+                        <label for="select-cliente">Destino</label>
+
+                        <div class="input-group">
+
+                            <div class="input-icon"><i class="fas fa-search"></i></div>
+                            <input id="select-cliente" type="text" placeholder="Selecione um item" required />
+                        </div>
+
+                        <button class="br-button circle small" onclick="" type="button" tabindex="-1" data-trigger>
+                            <span class="sr-only">Exibir lista</span><i class="fas fa-angle-down"></i>
+                        </button>
+                    </div>
+
+                    <div class="br-list" tabindex="0">
+
+                        @foreach($departamentos as $dep)
+                        <div class="br-item divider" tabindex="-1">
+                            <div class="br-radio">
+                                <input name="dep_id" id="dep{{$dep->id}}" type="radio" value="{{$dep->id}}" />
+                                <label for="dep{{$dep->id}}">{{$dep->nome}}</label>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="br-textarea mb-5">
+                    <label for="obs">Observação</label>
+                    <textarea rows="4" id="obs" name="obs" maxlength="300"></textarea>
+                    <div class="text-base mt-1">
+                        <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
+                        <span class="current"></span>
+                    </div>
+                </div>
+
         </div>
 
+        <div class="d-flex justify-content-end mb-10xh">
+            <x-btn-cancel />
+            <button type="submit" class="br-button primary ml-4" type="button" aria-label="Encaminhar">
+                <i class="fas fa-share mr-1" aria-hidden="true"></i>Encaminhar
+            </button>
+        </div>
 
+        </form>
 
 
     </main>
+
+    <x-footer-flex />
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

@@ -11,17 +11,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -36,9 +31,9 @@
             </ul>
         </div>
 
-        <p class="my-5 h4">Detalhes do Departamento</p>
+        <h2 class="my-5">Detalhes do Departamento</h2>
 
-        <div class="bg-gray-3 p-5">
+        <div class="bg-gray-3 p-5 mb-5">
 
             <div class="row">
 
@@ -73,56 +68,60 @@
 
             </div>
 
-            <div class="d-flex justify-content-end">
-                <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
+        </div>
 
-                    <div class="br-modal medium">
+        <div class="d-flex justify-content-end">
+            <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
 
-                        <div class="br-modal-dialog p-4">
+                <div class="br-modal medium">
 
-                            <div class="br-modal-content">
+                    <div class="br-modal-dialog p-4">
 
-                                <div class="text-center br-modal-header">
-                                    <i class="fas fa-exclamation fa-8x circle text-warning" aria-hidden="true"></i>
-                                </div>
+                        <div class="br-modal-content">
 
-                                <div class="br-modal-body text-center">
-                                    <p>Você tem certeza que deseja deletar o Departamento selecionado?</p>
-                                    <p>Essa ação não poderá ser desfeita.</p>
-                                </div>
+                            <div class="text-center br-modal-header">
+                                <i class="fas fa-exclamation fa-8x circle text-warning" aria-hidden="true"></i>
+                            </div>
 
-                                <div class="br-modal-footer justify-content-center">
+                            <div class="br-modal-body text-center">
+                                <p>Você tem certeza que deseja deletar o Departamento selecionado?</p>
+                                <p>Essa ação não poderá ser desfeita.</p>
+                            </div>
 
-                                    <button class="br-button secondary" type="button" id="scrimfechar"
-                                        data-dismiss="scrimexample">Cancelar
-                                    </button>
+                            <div class="br-modal-footer justify-content-center">
 
-                                    <button onclick="window.location = '{{ url('departamento/delete/'.$departamento->id); }}'"
-                                        class="br-button primary mt-3 mt-sm-0 ml-sm-3" type="button">Deletar
-                                    </button>
+                                <button class="br-button secondary" type="button" id="scrimfechar"
+                                    data-dismiss="scrimexample">Cancelar
+                                </button>
 
-                                </div>
+                                <button
+                                    onclick="window.location = '{{ url('departamento/delete/'.$departamento->id); }}'"
+                                    class="br-button primary mt-3 mt-sm-0 ml-sm-3" type="button">Deletar
+                                </button>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="d-inline scrimutilexemplo">
-
-                    <button class="br-button bg-danger text-pure-0" type="button" aria-label="Encerrar"><i
-                            class="fas fa-trash mr-1" aria-hidden="true"></i>Excluir
-                    </button>
-
-                </div>
-
-                <button onclick="window.location = '{{ url('departamento/edit/'.$departamento->id); }}'"
-                    class="br-button primary ml-4" type="button" aria-label="Editar">
-                    <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
-                </button>
             </div>
 
-            </form>
+            <div class="d-inline scrimutilexemplo">
+
+                <button class="br-button bg-danger text-pure-0" type="button" aria-label="Encerrar"><i
+                        class="fas fa-trash mr-1" aria-hidden="true"></i>Excluir
+                </button>
+
+            </div>
+
+            <button onclick="window.location = '{{ url('departamento/edit/'.$departamento->id); }}'"
+                class="br-button primary ml-4" type="button" aria-label="Editar">
+                <i class="fas fa-edit mr-1" aria-hidden="true"></i>Editar
+            </button>
+        </div>
+
     </main>
+
+    <x-footer-fixed />
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

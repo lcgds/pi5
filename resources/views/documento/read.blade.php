@@ -12,17 +12,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -37,8 +32,8 @@
             </ul>
         </div>
 
-        <div class="d-flex justify-content-between">
-            <h2 class="">Documento nº {{$documento->id}}</h2>
+        <div class="my-5 d-flex justify-content-between">
+            <h2 class="m-0">Detalhes do Documento</h2>
 
             <div class="d-flex align-items-center">
                 <div class="br-scrim-util foco" id="scrimutilexample" data-scrim="true">
@@ -96,13 +91,12 @@
 
         </div>
 
-        <p class="h5">Detalhes do Documento</p>
 
-        <div class="mb-5">
+        <div class="bg-gray-3 p-5 mb-5">
 
             <div class="row">
 
-                <div class="col-lg-5 col-md-5 col-sm-6 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
 
                     <div class="br-select">
                         <div class="br-input">
@@ -132,7 +126,7 @@
 
                 </div>
 
-                <div class="col-lg-5 col-md-5 col-sm-6 ml-lg-4 mb-4">
+                <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
                     <div class="br-select">
                         <div class="br-input">
                             <label for="select-cliente">Emissor</label>
@@ -165,7 +159,7 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-12 col-md-10 col-sm-12">
+                <div class="col">
                     <div class="br-textarea">
                         <label for="textarea-documento-descricao">Descrição</label>
                         <textarea disabled id="textarea-documento-descricao" rows="4" maxlength="300" name="descricao"
@@ -179,49 +173,49 @@
 
         </div>
 
-        <span class="br-divider my-6"></span>
+        <h3 class="my-6">Dados do Emissor</h3>
 
-        <p class="h5">Dados do Emissor</p>
+        <div class="bg-gray-3 p-5 mb-5">
+            <div class="row mb-5">
 
-        <div class="row mb-5">
-
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-cnpj">CNPJ</label>
-                    <input disabled id="input-cnpj" type="text" value="{{$documento->cliente->cnpj}}" />
+                <div class="col">
+                    <div class="br-input">
+                        <label for="input-cnpj">CNPJ</label>
+                        <input disabled id="input-cnpj" type="text" value="{{$documento->cliente->cnpj}}" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-email">E-mail</label>
-                    <input disabled id="input-email" type="text" value="{{$documento->cliente->email}}" />
+                <div class="col">
+                    <div class="br-input">
+                        <label for="input-email">E-mail</label>
+                        <input disabled id="input-email" type="text" value="{{$documento->cliente->email}}" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="col">
-                <div class="br-input">
-                    <label for="input-telefone">Telefone</label>
-                    <input disabled id="input-telefone" type="text" value="{{$documento->cliente->telefone}}" />
+                <div class="col">
+                    <div class="br-input">
+                        <label for="input-telefone">Telefone</label>
+                        <input disabled id="input-telefone" type="text" value="{{$documento->cliente->telefone}}" />
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
 
         @if ($ultima_obs)
-        <span class="br-divider my-6"></span>
+        <h3 class="my-6">Última atualização</h3>
 
-
-        <p class="h5">Última atualização</p>
-
-        <div class="br-textarea mb-5">
-            <textarea disabled rows="4"
-                id="textarea-ultima-atualizacao">{{$ultima_obs->observacao}}</textarea>
+        <div class="bg-gray-3 p-5 mb-5">
+            <div class="br-textarea mb-5">
+                <label for="textarea-ultima-atualizacao">Observação</label>
+                <textarea disabled rows="4" id="textarea-ultima-atualizacao">{{$ultima_obs->observacao}}</textarea>
+            </div>
         </div>
 
-        <span class="br-divider my-6"></span>
+        <span class="br-divider my-10x"></span>
 
-        <p class="h5">Histórico de movimentações</p>
+        <h3 class="my-6">Histórico de movimentações</h3>
 
         <table class="mb-10xh">
             <thead>
@@ -246,6 +240,8 @@
         </table>
         @endif
     </main>
+
+    <x-footer-flex />
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

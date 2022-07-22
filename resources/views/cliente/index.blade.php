@@ -14,17 +14,12 @@
         <div class="br-breadcrumb my-4">
             <ul class="crumb-list">
                 <li class="crumb home">
-                    <div class="br-button circle">
+                    <div onclick="window.location = '{{Route('dashboard')}}'" class="br-button circle">
                         <span class="sr-only">
-                            Página inicial
+                            Painel inicial
                         </span>
                         <i class="icon fas fa-home"></i>
                     </div>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('dashboard'); }}">Dashboard</a>
                 </li>
 
                 <li class="crumb">
@@ -40,10 +35,10 @@
         </div>
 
         <div class="d-flex my-5 justify-content-between">
-            <h2>Lista de Clientes</h2>
-            
+            <h2 class="m-0">Lista de Clientes</h2>
+
             @if ($clientes->count()>0)
-            <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary mt-6"
+            <button onclick="window.location='{{ url('cliente/create'); }}'" class="br-button primary"
                 type="button">
                 <i class="fas fa-plus mr-1" aria-hidden="true"></i>Cadastrar cliente
             </button>
@@ -114,6 +109,8 @@
         @endif
 
     </main>
+
+    <x-footer-fixed/>
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

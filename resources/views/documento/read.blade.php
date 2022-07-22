@@ -241,7 +241,11 @@
         @endif
     </main>
 
-    <x-footer-flex />
+    @if ($ultima_obs)
+        <x-footer-flex />
+    @else
+        <x-footer-flex />
+    @endif
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

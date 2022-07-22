@@ -32,24 +32,24 @@
 
         <form class="bg-gray-3 p-5 mb-5" action="{{ url('/pesquisadocumento') }}" method="get">
             @csrf
-            <div>
-                <div class="br-input">
-                    <label for="input-pesquisa" class="form-label">Número identificador do documento</label>
-                    <div class="input-group">
-                        <div class="input-icon"><i class="fas fa-file" aria-hidden="true"></i>
-                        </div>
-                        <input id="input-cliente-nome" type="text" class="form-control" type="search" name="pesquisa"
-                            placeholder="Ex.: 012345">
+            <div class="br-input">
+                <label for="input-pesquisa" class="form-label">Número identificador do documento</label>
+                <div class="input-group">
+                    <div class="input-icon">
+                        <i class="fas fa-file" aria-hidden="true"></i>
                     </div>
+                    <input id="input-cliente-nome" type="text" class="form-control" type="search" name="pesquisa" placeholder="Ex.: 012345">
                 </div>
+            </div>
 
-                <div class="d-flex justify-content-end mt-4">
-                    <button type="submit" class="br-button primary"><i class="fas fa-search"
-                            aria-hidden="true"></i>Pesquisar</button>
-                </div>
+            <div class="d-flex justify-content-end mt-4">
+                <button type="submit" class="br-button primary">
+                    <i class="fas fa-search" aria-hidden="true"></i>Pesquisar
+                </button>
+            </div>
         </form>
 
-        {{-- @if ($documentos->count() > 0) --}}
+        @if ($documentos->count() > 0)
         <table class="tabela">
             <thead>
                 <tr>
@@ -88,6 +88,7 @@
                     @endforeach
                 </tbody>
         </table>
+        @endif
     </main>
 
     <x-footer-fixed />

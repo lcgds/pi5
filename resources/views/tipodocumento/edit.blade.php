@@ -21,11 +21,6 @@
 
                 <li class="crumb">
                     <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('documento.index'); }}">Documentos</a>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
                     <a href="{{ Route('tipodocumento.index'); }}">Tipos de Documentos</a>
                 </li>
 
@@ -36,7 +31,7 @@
             </ul>
         </div>
 
-        <p class="my-5 h4">Detalhes do Tipo de Documentos</p>
+        <h2 class="my-5">Detalhes do Tipo de Documentos</h2>
 
         <form class="bg-gray-3 p-5" method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
 

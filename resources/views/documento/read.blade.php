@@ -175,7 +175,7 @@
 
         <h3 class="my-6">Dados do Emissor</h3>
 
-        <div class="bg-gray-3 p-5 mb-5">
+        <div class="bg-gray-3 p-5 mb-10xh">
             <div class="row mb-5">
 
                 <div class="col">
@@ -240,12 +240,14 @@
         </table>
         @endif
     </main>
-
+    
+    <!--
     @if ($ultima_obs)
         <x-footer-flex />
     @else
         <x-footer-fixed />
     @endif
+    -->
 
     <script src="{{ asset('@govbr/dsgov/dist/dsgov-init.js') }}"></script>
     <script src="{{ asset('@govbr/dsgov/dist/dsgov.min.js') }}"></script>

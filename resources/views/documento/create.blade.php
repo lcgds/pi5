@@ -50,37 +50,41 @@
                                 <label for="select-tipoDocumento">Tipo de documento</label>
 
                                 <div class="input-group">
-                                    <div class="input-icon"><i class="fas fa-search"></i></div>
-                                    <input id="select-tipoDocumento" type="text" placeholder="Selecione um item"
-                                        required />
+
+                                    <div class="input-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+
+                                    <input id="select-tipoDocumento" type="text" placeholder="Selecione um item" required />
+
                                 </div>
 
                                 <button class="br-button circle small" aria-label="Exibir lista" type="button"
-                                    tabindex="-1" data-trigger><span class="sr-only">Exibir lista</span><i
-                                        class="fas fa-angle-down"></i>
+                                    tabindex="-1" data-trigger>
+                                    <span class="sr-only">Exibir lista</span>
+                                    <i class="fas fa-angle-down"></i>
                                 </button>
 
                             </div>
 
-
-
                             <div class="br-list" tabindex="0">
 
                                 @foreach($tipodocumento as $tipodoc)
+
                                 <div class="br-item divider" tabindex="-1">
+
                                     <div class="br-radio">
+
                                         <input name="tipodocumentos_id" id="td{{$tipodoc->id}}" type="radio"
                                             value="{{$tipodoc->id}}" />
+                                            
                                         <label for="td{{$tipodoc->id}}">{{$tipodoc->nome}}</label>
                                     </div>
                                 </div>
                                 @endforeach
 
                             </div>
-
                         </div>
-
-
                     </div>
 
                     <div class="col-sm-12 col-md-5 col-lg-6 mb-4">
@@ -122,11 +126,13 @@
 
                 <div class="row">
                     <div class="col mb-4">
+                        
                         <div class="br-textarea">
                             <label for="textarea-documento-descricao">Descrição</label>
                             <textarea id="textarea-documento-descricao"
                                 placeholder="Digite aqui a descrição do documento." rows="4" maxlength="300"
                                 name="descricao" required></textarea>
+                                
                             <div class="text-base mt-1">
                                 <span class="limit">Limite máximo de <strong>300</strong> caracteres</span>
                                 <span class="current"></span>

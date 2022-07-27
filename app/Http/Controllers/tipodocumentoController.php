@@ -44,7 +44,7 @@ class tipodocumentoController extends Controller {
 
     public
     function delete(tipodocumento $tipodocumento) {
-        if ($tipodocumento->documentos->count() == 0) {
+        if ($tipodocumento->documentos->count() == null) {
             session()->flash('warning', 'O Tipo de Documento selecionado possui documentos ativos. Portanto, não é possível deletá-lo.');
             return redirect(route('tipodocumento.index'));
         } else {

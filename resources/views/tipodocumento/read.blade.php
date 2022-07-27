@@ -21,11 +21,6 @@
 
                 <li class="crumb">
                     <i class="icon fas fa-chevron-right"></i>
-                    <a href="{{ Route('documento.index'); }}">Documentos</a>
-                </li>
-
-                <li class="crumb">
-                    <i class="icon fas fa-chevron-right"></i>
                     <a href="{{ Route('tipodocumento.index'); }}">Tipos de Documentos</a>
                 </li>
 

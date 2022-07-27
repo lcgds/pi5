@@ -35,7 +35,7 @@
 
         <form method="POST" action="{{route ('tipodocumento.update', $tipodocumento->id) }}">
             @csrf
-            <div class="bg-gray-3 p-5">
+            <div class="bg-gray-3 p-5 mb-5">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 mb-4">
 

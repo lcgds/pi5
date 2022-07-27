@@ -26,7 +26,7 @@
 
                 <li class="crumb" data-active="active">
                     <i class="icon fas fa-chevron-right"></i>
-                    <span>Editar</span>
+                    <span>Consultar</span>
                 </li>
             </ul>
         </div>

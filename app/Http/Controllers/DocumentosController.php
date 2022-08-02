@@ -77,7 +77,7 @@ class DocumentosController extends Controller {
     public 
     function search(){
         $search_text = $_GET['pesquisa'];
-        $documentos = Documento::where('id', 'LIKE', '%' .$search_text. '%')->get();
+        $documentos = Documento::withTrashed->where('id', 'LIKE', '%' .$search_text. '%')->get();
 
         if ( $documentos->count() == 0){
             session()->flash('warning', 'Documento não localizado. Verifique o número do documento..');
